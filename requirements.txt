@@ -7,6 +7,6 @@ python-dotenv
 tiktoken
 flask
 python-dotenv
-pandas
+pandas @ file:///C:/b/abs_cdcgk91igc/croots/recipe/pandas_1663772960432/work
 json
 joblib
