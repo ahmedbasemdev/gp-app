@@ -6,7 +6,7 @@ pinecone-client
 python-dotenv
 tiktoken
 flask
-dotenv
+python-dotenv
 pandas
 json
 joblib
