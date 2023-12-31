@@ -69,6 +69,10 @@ def stroke_prediction():
         prediction = stroke.perform_prediction(data, pipeline, model)
         return prediction
 
+@app.route("/hello")
+def say_hello():
+    return {"anser": "hello"}
+
 
 if __name__ == "__main__":
     app.run(debug=True)
