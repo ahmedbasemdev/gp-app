@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #questionInput {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        #answerDisplay {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            min-height: 100px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h1>Q&A Page</h1>
+
+    <form action="{{url_for('chat')}}" method="post">
+       <label for="h_question" class="form-label">Question</label>
+        <input name="question"  id="h_question" value="{{question}}">
+        <button type="submit">Submit</button>
+    </form>
+
+
+    <h2>Answer</h2>
+    <p>{{answer}}</p>
+
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+flask
+gunicorn
+openai
+langchain
+pinecone-client
+python-dotenv
+tiktoken
+flask
+dotenv
+pandas
+json
+joblib

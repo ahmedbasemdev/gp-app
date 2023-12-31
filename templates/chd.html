@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CHD Data Form</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        form {
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        label, input {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CHD</h1>
+    <form action="/chd" method="post">
+        <div class="form-group">
+            <label for="gender">Gender:</label>
+            <input type="text" id="gender" name="gender">
+        </div>
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age">
+        </div>
+        <div class="form-group">
+            <label for="education">Education:</label>
+            <input type="text" id="education" name="education">
+        </div>
+        <div class="form-group">
+            <label for="currentSmoker">Current Smoker (0 or 1):</label>
+            <input type="number" id="currentSmoker" name="currentSmoker">
+        </div>
+        <div class="form-group">
+            <label for="cigsPerDay">Cigarettes Per Day:</label>
+            <input type="number" id="cigsPerDay" name="cigsPerDay" step="0.1">
+        </div>
+        <div class="form-group">
+            <label for="BPMeds">BP Meds:</label>
+            <input type="number" id="BPMeds" name="BPMeds" step="0.1">
+        </div>
+        <div class="form-group">
+            <label for="prevalentStroke">Prevalent Stroke (0 or 1):</label>
+            <input type="number" id="prevalentStroke" name="prevalentStroke">
+        </div>
+        <div class="form-group">
+            <label for="prevalentHyp">Prevalent Hypertension (0 or 1):</label>
+            <input type="number" id="prevalentHyp" name="prevalentHyp">
+        </div>
+        <div class="form-group">
+            <label for="diabetes">Diabetes (0 or 1):</label>
+            <input type="number" id="diabetes" name="diabetes">
+        </div>
+        <div class="form-group">
+            <label for="totChol">Total Cholesterol:</label>
+            <input type="number" id="totChol" name="totChol" step="0.1">
+        </div>
+        <div class="form-group">
+            <label for="sysBP">Systolic BP:</label>
+            <input type="number" id="sysBP" name="sysBP" step="0.1">
+        </div>
+        <div class="form-group">
+            <label for="diaBP">Diastolic BP:</label>
+            <input type="number" id="diaBP" name="diaBP" step="0.1">
+        </div>
+        <div class="form-group">
+            <label for="BMI">BMI:</label>
+            <input type="number" id="BMI" name="BMI" step="0.01">
+        </div>
+        <div class="form-group">
+            <label for="heartRate">Heart Rate:</label>
+            <input type="number" id="heartRate" name="heartRate" step="0.1">
+        </div>
+        <div class="form-group">
+            <label for="glucose">Glucose:</label>
+            <input type="number" id="glucose" name="glucose" step="0.1">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+
+    <h1> {{ prediction }} </h1>
+</body>
+</html>
