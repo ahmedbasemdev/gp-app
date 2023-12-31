@@ -7,6 +7,5 @@ python-dotenv
 tiktoken
 flask
 python-dotenv
-pandas==1.4.4
-json
+pandas
 joblib
