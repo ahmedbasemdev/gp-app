@@ -1,17 +1,17 @@
 import pandas as pd
 from flask import Flask, render_template, request, url_for, jsonify
 from dotenv import load_dotenv, find_dotenv
-import os
-import json
 import joblib
-from QA import *
+from ChatBot import *
 import chd
 import stroke
 
 load_dotenv(find_dotenv(), override=True)
 app = Flask(__name__)
 index_name = 'ask-document'
-vector_store = insert_of_fetch_embeddings(index_name)
+
+
+# vector_store = insert_of_fetch_embeddings(index_name)
 
 
 @app.route("/")
@@ -27,20 +27,8 @@ def chat():
         return {"answer": answer}
 
 
-@app.route("/chd", methods=["GET"])
-def chd_prediction():
-    if request.method == "GET":
-        data = request.json
-
-        pipeline = joblib.load("chd/pipeline.joblib")
-        model = joblib.load("chd/best_model.joblib")
-
-        prediction = chd.perform_prediction(data, pipeline, model)
-        return prediction
-
-
 @app.route("/get_doctors", methods=["GET"])
-def det_doctors():
+def get_doctors():
     if request.method == "GET":
         user_city = request.form["city"]
         doctor_data = pd.read_excel('doctors.xlsx')
@@ -55,23 +43,37 @@ def det_doctors():
         return jsonify(data_list)
 
 
+@app.route("/cities", methods=["GET"])
+def get_cities():
+    doctor_data = pd.read_excel('doctors.xlsx')
+    cities = doctor_data.city
 
-
+    return list(cities.unique())
 
 
 @app.route("/stroke", methods=["GET"])
 def stroke_prediction():
     if request.method == "GET":
         data = request.json
-        pipeline = joblib.load("chd/pipeline.joblib")
-        model = joblib.load("chd/best_model.joblib")
+        pipeline = joblib.load("stroke/pipeline.joblib")
+        model = joblib.load("stroke/model.joblib")
 
         prediction = stroke.perform_prediction(data, pipeline, model)
         return prediction
 
-@app.route("/hello")
-def say_hello():
-    return {"anser": "hello"}
+
+@app.route("/chd", methods=["GET"])
+def chd_prediction():
+    if request.method == "GET":
+        data = request.json
+
+        pipeline = joblib.load("chd/pipeline.joblib")
+        model = joblib.load("chd/model.joblib")
+
+        prediction = chd.perform_prediction(data, pipeline, model)
+        return prediction
+    else:
+        return "Wrong Method"
 
 
 if __name__ == "__main__":

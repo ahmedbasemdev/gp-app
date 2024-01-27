@@ -1,5 +1,6 @@
 import os
 
+
 def load_document(file):
     import os
     name, extension = os.path.splitext(file)
@@ -30,13 +31,17 @@ def load_from_wikipedia(query, lang='en'):
 
     return data
 
+
 def chunk_data(data, chunk_size=256):
     from langchain.text_splitter import RecursiveCharacterTextSplitter
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=0)
     chunks = text_splitter.split_documents(data)
     return chunks
 
+
 import tiktoken
+
+
 def printing_cost(texts):
     enc = tiktoken.encoding_for_model('text-embedding-ada-002')
     total_tokens = sum([len(enc.encode(page.page_content)) for page in texts])
@@ -55,15 +60,7 @@ def insert_of_fetch_embeddings(index_name):
         api_key=os.environ.get('PINECODE_API_KEY'),
         environment=os.environ.get("PINECONE_ENV"))
 
-    if index_name in pinecone.list_indexes():
-        print(f"Index {index_name} already exists")
-        vector_store = Pinecone.from_existing_index(index_name, embeddings)
-    else:
-        print(f"Creating index name")
-        pinecone.create_index(index_name, dimension=1536,
-                              metric='cosine')
-        vector_store = Pinecone.from_documents(chunks, embeddings, index_name=index_name)
-        print("ok")
+    vector_store = Pinecone.from_existing_index(index_name, embeddings)
 
     return vector_store
 
@@ -87,7 +84,7 @@ def delete_index(index_name='all'):
 def ask_get_answer(vector_store, question):
     from langchain.chains import RetrievalQA
     from langchain.chat_models import ChatOpenAI
-
+    import time
     llm = ChatOpenAI(model='gpt-3.5-turbo', temperature=1)
     retriever = vector_store.as_retriever(search_type='similarity', search_kwargs={"k": 3})
     chain = RetrievalQA.from_chain_type(llm=llm, chain_type='stuff', retriever=retriever)

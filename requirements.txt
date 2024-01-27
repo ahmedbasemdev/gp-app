@@ -1,5 +1,6 @@
 flask
 gunicorn
+catboost
 openai
 langchain
 pinecone-client
