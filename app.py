@@ -51,6 +51,8 @@ def get_cities():
     return list(cities.unique())
 
 
+
+
 @app.route("/stroke", methods=["GET"])
 def stroke_prediction():
     if request.method == "GET":
