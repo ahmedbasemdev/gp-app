@@ -20,10 +20,12 @@ def home():
 
 @app.route("/chat", methods=['GET'])
 def chat():
-    if request.method == "GET":
+    try:
         question = request.form["question"]
         answer = chatbot.generate_answer(question)
         return {"answer": answer}
+    except Exception as e:
+        return {"error" :str(e)}
 
 
 @app.route("/get_doctors", methods=["GET"])
@@ -81,10 +83,4 @@ def chd_prediction():
 
 if __name__ == "__main__":
     app.run(debug=True)
-    # print("Loading Data..")
-    # data = load_from_wikipedia("استراتيجيات للوقاية من مرض القلب", 'ar')
-    # print("Chunk Data ..")
-    # chunks = chunk_data(data)
-    # delete_index("all")
-    # index_name = 'ask-document'
-    # vector_store = insert_of_fetch_embeddings(index_name)
+
