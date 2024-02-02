@@ -2,16 +2,15 @@ import pandas as pd
 from flask import Flask, render_template, request, url_for, jsonify
 from dotenv import load_dotenv, find_dotenv
 import joblib
-from ChatBot import *
+from ChatBot import ChatBotManager
 import chd
 import stroke
 
 load_dotenv(find_dotenv(), override=True)
 app = Flask(__name__)
-index_name = 'ask-document'
 
+chatbot = ChatBotManager()
 
-# vector_store = insert_of_fetch_embeddings(index_name)
 
 
 @app.route("/")
@@ -23,7 +22,7 @@ def home():
 def chat():
     if request.method == "GET":
         question = request.form["question"]
-        answer = ask_get_answer(vector_store, question)
+        answer = chatbot.generate_answer(question)
         return {"answer": answer}
 
 
@@ -53,9 +52,9 @@ def get_cities():
 
 
 
-@app.route("/stroke", methods=["POST"])
+@app.route("/stroke", methods=["GET"])
 def stroke_prediction():
-    if request.method == "POST":
+    if request.method == "GET":
         data = request.json
         pipeline = joblib.load("stroke/pipeline.joblib")
         model = joblib.load("stroke/model.joblib")
