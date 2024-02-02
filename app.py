@@ -53,15 +53,17 @@ def get_cities():
 
 
 
-@app.route("/stroke", methods=["GET"])
+@app.route("/stroke", methods=["POST"])
 def stroke_prediction():
-    if request.method == "GET":
+    if request.method == "POST":
         data = request.json
         pipeline = joblib.load("stroke/pipeline.joblib")
         model = joblib.load("stroke/model.joblib")
 
         prediction = stroke.perform_prediction(data, pipeline, model)
         return prediction
+    else:
+        return {"Wrong Method "}
 
 
 @app.route("/chd", methods=["GET"])
