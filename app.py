@@ -6,7 +6,6 @@ from ChatBot import ChatBotManager
 import chd
 import stroke
 
-load_dotenv(find_dotenv(), override=True)
 app = Flask(__name__)
 
 chatbot = ChatBotManager()
