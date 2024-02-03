@@ -1,6 +1,5 @@
 import pandas as pd
 from flask import Flask, render_template, request, url_for, jsonify
-from dotenv import load_dotenv, find_dotenv
 import joblib
 from ChatBot import ChatBotManager
 import chd
@@ -8,7 +7,7 @@ import stroke
 
 app = Flask(__name__)
 
-chatbot = ChatBotManager()
+#chatbot = ChatBotManager()
 
 
 
@@ -69,7 +68,9 @@ def stroke_prediction():
 @app.route("/chd", methods=["GET"])
 def chd_prediction():
     if request.method == "GET":
-        data = request.json
+        data = request.args.to_dict(flat=False)
+        print(data)
+        #data = request.json
 
         pipeline = joblib.load("chd/pipeline.joblib")
         model = joblib.load("chd/model.joblib")
