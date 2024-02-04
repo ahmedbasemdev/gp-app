@@ -20,13 +20,13 @@ Best."""
 
 
 def perform_prediction(sample_input_data, pipeline, model):
-    intput_df = pd.DataFrame(sample_input_data, index=[0])
-
+    intput_df = pd.DataFrame(sample_input_data, index=[1])
+    
     preprocessed_data = pipeline.transform(intput_df)
 
     prediction = model.predict(preprocessed_data)
-
+    
     if str(prediction[0]) == "1":
         return {"prediction": "1", "Message": postive_message}
     elif str(prediction[0]) == "0":
-        return {"prediction": "0", "Message": postive_message}
+        return {"prediction": "0", "Message": negative_message}

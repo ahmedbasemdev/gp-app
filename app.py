@@ -3,17 +3,26 @@ from flask import Flask, render_template, request, url_for, jsonify
 import joblib
 from ChatBot import ChatBotManager
 import chd
+
 import stroke
 
 app = Flask(__name__)
-
 #chatbot = ChatBotManager()
+
+
+@app.route("/chdform", methods=["POST"])
+def chds():
+    print(request.form)
+    data = request.form
+
+    return {"hello":str(request.form.get('age'))}
+
 
 
 
 @app.route("/")
 def home():
-    return render_template("home.html")
+    return render_template("stroke.html")
 
 
 @app.route("/chat", methods=['GET'])
@@ -52,15 +61,26 @@ def get_cities():
 
 
 
-@app.route("/stroke", methods=["GET"])
+@app.route("/stroke", methods=["POST"])
 def stroke_prediction():
-    if request.method == "GET":
-        data = request.json
+    if request.method == "POST":
+        data = {
+        "age": int(request.form.get('age')),
+        "hypertension": int(request.form.get('hypertension')),
+        "heart_disease": int(request.form.get('heart_disease')),
+        "avg_glucose_level": int(request.form.get('avg_glucose_level')),
+        "bmi": int(request.form.get('bmi')),
+        "gender": int(request.form.get('gender')),
+        "ever_married":int( request.form.get('ever_married')),
+        "work_type":int( request.form.get('work_type')),
+        "Residence_type": int(request.form.get('Residence_type')),
+        "smoking_status": int(request.form.get('smoking_status'))
+        }
         pipeline = joblib.load("stroke/pipeline.joblib")
         model = joblib.load("stroke/model.joblib")
-
         prediction = stroke.perform_prediction(data, pipeline, model)
-        return prediction
+        return render_template("stroke.html", 
+                               result = prediction['prediction'], message=prediction['Message'])
     else:
         return {"Wrong Method "}
 
@@ -83,4 +103,9 @@ def chd_prediction():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+
+
+
 

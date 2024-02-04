@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Health Data Form</title>
+</head>
+<body>
+    <h2>Health Data Input</h2>
+    <form action="/chdform" method="post">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" value="65"><br>
+
+        <label for="currentSmoker">Current Smoker (1 for Yes, 0 for No):</label>
+        <input type="number" id="currentSmoker" name="currentSmoker" value="1"><br>
+
+        <label for="cigsPerDay">Cigarettes Per Day:</label>
+        <input type="number" id="cigsPerDay" name="cigsPerDay" value="10"><br>
+
+        <label for="BPMeds">BP Meds (1 for Yes, 0 for No):</label>
+        <input type="number" id="BPMeds" name="BPMeds" value="1"><br>
+
+        <label for="prevalentStroke">Prevalent Stroke (1 for Yes, 0 for No):</label>
+        <input type="number" id="prevalentStroke" name="prevalentStroke" value="0"><br>
+
+        <label for="prevalentHyp">Prevalent Hypertensive (1 for Yes, 0 for No):</label>
+        <input type="number" id="prevalentHyp" name="prevalentHyp" value="1"><br>
+
+        <label for="diabetes">Diabetes (1 for Yes, 0 for No):</label>
+        <input type="number" id="diabetes" name="diabetes" value="1"><br>
+
+        <label for="totChol">Total Cholesterol:</label>
+        <input type="number" id="totChol" name="totChol" value="230"><br>
+
+        <label for="sysBP">Systolic BP:</label>
+        <input type="number" id="sysBP" name="sysBP" value="150"><br>
+
+        <label for="diaBP">Diastolic BP:</label>
+        <input type="number" id="diaBP" name="diaBP" value="90"><br>
+
+        <label for="BMI">BMI:</label>
+        <input type="number" id="BMI" name="BMI" value="35"><br>
+
+        <label for="heartRate">Heart Rate:</label>
+        <input type="number" id="heartRate" name="heartRate" value="100"><br>
+
+        <label for="glucose">Glucose:</label>
+        <input type="number" id="glucose" name="glucose" value="140"><br>
+
+        <label for="gender">Gender (1 for Male, 0 for Female):</label>
+        <input type="number" id="gender" name="gender" value="1"><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <p>{{result}}</p>
+</body>
+</html>
