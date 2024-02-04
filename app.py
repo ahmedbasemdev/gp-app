@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, url_for, jsonify
 import joblib
 from ChatBot import ChatBotManager
 import chd
-
+import ecg_mi
 import stroke
 
 app = Flask(__name__)
@@ -22,7 +22,7 @@ def chds():
 
 @app.route("/")
 def home():
-    return render_template("stroke.html")
+    return render_template("index.html")
 
 
 @app.route("/chat", methods=['GET'])
@@ -61,7 +61,7 @@ def get_cities():
 
 
 
-@app.route("/stroke", methods=["POST"])
+@app.route("/stroke", methods=["POST","GET"])
 def stroke_prediction():
     if request.method == "POST":
         data = {
@@ -82,7 +82,7 @@ def stroke_prediction():
         return render_template("stroke.html", 
                                result = prediction['prediction'], message=prediction['Message'])
     else:
-        return {"Wrong Method "}
+        return render_template("stroke.html")
 
 
 @app.route("/chd", methods=["GET"])
@@ -99,6 +99,30 @@ def chd_prediction():
         return prediction
     else:
         return "Wrong Method"
+    
+@app.route("/ecg_mi", methods=['POST'])
+def ecg_mi():
+    data = {
+        "Age":int(request.files.get("Age")),
+        "Gender":request.files.get("Gender"),
+        "Heart rate":int(request.files.get("Heart rate")),
+        "Systolic blood pressure":int(request.files.get("Systolic blood pressure")),
+        "Diastolic blood pressure":int(request.files.get("Diastolic blood pressure")),
+        "Blood sugar":int(request.files.get("Blood sugar")),
+        "CK-M":int(request.files.get("CK-M")),
+        "Troponin":int(request.files.get("Troponin"))}
+    image_path = ""
+    pipeline = joblib.load("ecg_mi/")
+    model = joblib.load("chd/model.joblib")
+    ecg_model = joblib.load('ecg_mi/RF_model_ecg.pkl')
+    
+    result = ecg_mi.mi_ecg_prediction(data, pipeline, model, image_path, ecg_model)
+
+    return result
+
+    
+    
+
 
 
 if __name__ == "__main__":

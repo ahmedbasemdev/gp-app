@@ -4,43 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/Styles/index.css">
-    <title>Shefaa | Stroke</title>
-    <link rel="icon" type="image/png" href="static/images/logo.png">
+    <link rel="stylesheet" href="../Styles/index.css">
+    <title>Shefaa | CHD</title>
+    <link rel="icon" type="image/png" href="../images/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
+    <style> 
+    .i-right{
+        background-color: #08de9e19;
+    }
+    
 
-    <style>
-        .i-right{
-            background-color: #08de9e19;
-        }
-         /* Result */
-         
-          /* Stroke-form */
-          .Stroke-form{
-             display: flex;
-             align-items: center;
-             justify-content: center;
-             border: 1px solid black;
-             width: 50vw;
-             margin: auto;
-             padding: 30px;
-             margin-top: 5rem;
-             margin-bottom: 5rem;
-             box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-         
-          }
-          /* End Stroke-form */
+ /* Stroke-form */
+ .Stroke-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    width: 50vw;
+    margin: auto;
+    padding: 30px;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+
+ }
+ /* End Stroke-form */
+
+
+ /* Result */
  .Result{
     display: flex;
     align-items: center;
@@ -54,15 +55,13 @@
     width: 40vw;
     height: 200px;
     padding: 10px;
-    padding-left: 30px;
     border-radius: 20px;
+    padding-left: 30px;
     background-color: #08de9e1b;
  }
-/* Doctor Suggesion */
 
 
-
-/* Doctors */
+ /* Doctors */
 
 .doctors{
     display: flex;
@@ -71,9 +70,8 @@
     margin-bottom: 5rem;
     flex-direction: column;
     gap: 2rem;
-    background-color: rgba(127, 255, 212, 0.076);
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-
+    /* background-color: rgba(127, 255, 212, 0.076); */
+    
 }
 .doctorsContainer{
     display: flex;
@@ -88,8 +86,10 @@
             width: 80%;
             max-width: 1200px; /* Optional: Set a max-width for responsiveness */
             margin: auto;
-            height: 400px; /* Set the height to 500px */
+            height: 450px; /* Set the height to 500px */
             overflow: hidden; /* Hide overflow to hide the horizontal scrollbar */
+            padding: 3rem;
+            margin-top: -2rem;
         }
 
         /* Style for each slide/card */
@@ -101,6 +101,8 @@
             border-radius: 8px;
             overflow: hidden;
             height: 380px;
+            box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+
         }
 
         /* Style for the image inside the card */
@@ -127,7 +129,7 @@
         }
 
         .card-content h2{
-            color: rgb(0, 179, 255);
+            /* color: #20c0ac; */
             margin-bottom: 0.5rem;
         }
         .card-content p{
@@ -135,7 +137,8 @@
         }
         .card-btn{
             /* background-color: rgb(0, 145, 255); */
-            background-color: #08de9d;;
+            /* background-color: rgb(0, 179, 255); */
+            background-color: #08de9d;
             color: white;
             border-radius: 6px;
             /* padding: 3px; */
@@ -145,19 +148,20 @@
             /* margin-bottom: 2rem; */
         }
 /* End Doctor Suggesion */
+    
     </style>
 </head>
-
-
+   
+   
+   
     <body>
     <div class="home">
         <!-- NavBar -->
         <div class="n-wrapper" id='Navebar'>
             <div class="n-left">
                 <div class="n-logo">
-                    <img src="static/images/logo.png" />
-                    <P><a href="index.html" style="text-decoration: none;  color: #08de9d;">Shefaa</a></P>
-
+                    <img src="../images/logo.png" />
+                    <P><a href="index.html" style="text-decoration: none;  color:black;"><span style="color: #08de9d;;">Sh</span>efa<span style="color: #08de9d;;">a</span></a></P>
                 </div>
                 <Toggle />
             </div>
@@ -166,36 +170,36 @@
                     <ul>
                         <li>
                             <i class="fa-solid fa-house"></i>
-                            <a href="index.html">Home</a></li>
-                        <li class="nav-item dropdown">
+                            <a href="index.html" >Home</a></li>
+                        <li class="nav-item dropdown" >
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa-solid fa-robot"></i>
                                 Detector
                               </a>
                               <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="">ECG</a></li>
+                                <li><a class="dropdown-item" href="ecg.html">ECG</a></li>
                                 <li><a class="dropdown-item" href="stroke.html">Stroke</a></li>
                                 <li><a class="dropdown-item" href="./chd.html">CHD</a></li>
                               </ul>
                             <!-- <a href="detector.html">Detector</a> -->
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown" >
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa-solid fa-notes-medical"></i>
                                 Analysis
                               </a>
                               <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="stroke.html">Stroke</a></li>
-                                <li><a class="dropdown-item" href="./chd.html">CHD</a></li>
+                                <li><a class="dropdown-item" href="./strokeanalysis.html">Stroke</a></li>
+                                <li><a class="dropdown-item" href="chdanalysis.html">CHD</a></li>
                               </ul>
                             <!-- <a href="detector.html">Detector</a> -->
                         </li>
                         <li>
-                            <i class="fa-solid fa-circle-info"></i>
+                            <i class="fa-solid fa-circle-info" ></i>
                             <a href="about2.html">About</a></li>
                             <li>
                                 <i class="fa-solid fa-notes-medical"></i>
-                                <a href="chat.html">Chatbot</a></li>
+                                <a href="chat.html" >Chatbot</a></li>
                         <!-- <li style="margin-left: 17rem; "><a>Schedule</a></li> -->
                         <button class="button n-button" >
                             <a href="index.html" style="text-decoration: none; color: #20c0ac;">Get Started</a>
@@ -212,10 +216,9 @@
                 <div class="i-name">
                     <span>Check Your Dental</span>
                     <span>Health Today</span>
-                    <span style="font-family: Cairo, sans-serif;">Understanding your stroke risk is now simpler than ever. Our Stroke Predictor
-                        utilizes algorithms to evaluate your risk based on key health indicators. Enter your
-                        details and receive an immediate assessment to help you manage your health
-                        proactively.
+                    <span>Assess your risk of developing Coronary Heart Disease (CHD) within the next 10
+                        years. Our CHD Predictor, powered by the Framingham Heart Study data. Simply fill in
+                        the form and gain valuable insights into your heart health.
                     </span>
                 </div>
                 <button class=" button i-button" id="homeBtn">Get Started</button>
@@ -226,112 +229,101 @@
 
             </div>
             <div class="i-right">
-                <img src="static/images/Stroke Detector.png" alt="" id="introImg" class="animate-on-scroll"/>
+                <img src="../images/CHD Detector.png" alt="" id="introImg" class="animate-on-scroll"/>
 
             </div>
         </div>
 
         <!-- Stroke Questionaire -->
         <div class='Services-Sheader' style="margin-top: 3rem; ">
-            <p class='Services-h'> Stroke Questionaire </p>
-            <p class='Services-p'>Answer this Questions </p>
+            <p class='Services-h'> CHD Questionaire </p>
+            <p class='Services-p'>Answer this Quick Questions </p>
         </div>
         <div class="Stroke-form" >
-            <form id="my-form" style="width: 50vw;" action="/stroke" method="post">
-                
-                    <label for="gender"  class="mb-3">What is your gender?</label>
-                    <select class="form-select mb-3" aria-label="Default select example" id="gender" name="gender" required>
-                        <!-- <option selected>Open this select menu</option> -->
-                        <option value="0" >Male</option>
-                        <option value="1">Female</option>
-                    </select>
-                   
-               
-                    <label for="worktype" class="mb-3">Which of the following best describes your current work status?</label>
-                    <select class="form-select mb-3" aria-label="Default select example" required id="worktype" name="work_type">
-                        <!-- <option selected>Open this select menu</option> -->
-                        <option value="1">Private</option>
-                        <option value="2"> Self-Employed</option>
-                        <option value="3">Govt_job, Children</option>
-                        <option value="4">Never_Worked</option>
 
-                    </select>
-              
-                  
-                    <label for="age" class="mb-3">What is your current age?</label>
-                    <input type="number" class="form-control mb-3" id="age" placeholder="Your Age" name="age" required>
-                 
-                    <label for="bloodpressure" class="mb-3">Have you been diagnosed with hypertension (high blood pressure)?</label>
-                    <select class="form-select mb-3" aria-label="Default select example" id="bloodpressure" name="hypertension" required>
-                        <!-- <option selected>Open this select menu</option> -->
-                        <option value="1">Yes</option>
-                        <option value="0">No</option>
-                    </select>
+            <form style="width: 50vw;">
+                <label for="age" class="mb-3">AGE:</label>
+                <input type="number" class="form-control mb-3"  id="age" name="age" value="65" class="mb-3"><br>
                 
-                    <label for="status" class="mb-3">Have you ever been married?</label>
-                    <select class="form-select mb-3" aria-label="Default select example" id="status" name="ever_married" required>
-                        <!-- <option selected>Open this select menu</option> -->
-                        <option value="1">Yes</option>
-                        <option value="0">No</option>
-                    </select>
-                
-                    <label for="workstatus" class="mb-3">Heart disease</label>
-                    <select class="form-select mb-3" aria-label="Default select example" id="status" name="heart_disease" required>
-                        <!-- <option selected>Open this select menu</option> -->
-                        <option value="1">Yes</option>
-                        <option value="0">No</option>
-                </select> 
-               
-                    <label for="area" class="mb-3">Do you live in an urban or rural area?</label>
-                    <select class="form-select mb-3" aria-label="Default select example" id="area" name="Residence_type" required>
-                        <!-- <option selected>Open this select menu</option> -->
-                        <option value="0">urban</option>
-                        <option value="1">Rural</option>
-                    </select>
-                
-                    <label for="glucose" class="mb-3">What is your most recent fasting blood glucose level (mg/dL)?</label>
-                    <input type="number" class="form-control mb-3" id="glucose" placeholder="Blood glucose level" name="avg_glucose_level" required>
-                  
-                    <label for="Mass" class="mb-3">What is your current Body Mass Index (BMI)?</label>
-                    <input type="number" class="form-control mb-3" id="Mass" placeholder="Body Mass Index" name="bmi" required>
-               
-                    <label for="smokingstatus" class="form-label mb-3">Which of the following best describes your smoking status?</label>
-                    <select class="form-select mb-3" aria-label="Default select example" id="smokingstatus" name="smoking_status" required> 
-                        <!-- <option selected>Open this select menu</option> -->
-                        <option value="1">Never Smoked</option>
-                        <option value="2">Smokes</option>
-                        <option value="3">Formerly Smoked</option>
-                        <!-- <option value="2">Smokes</option> -->
+                <label for="currentsmoker" class="mb-3">current smokers:</label>
+                <select class="form-select mb-3" aria-label="Default select example" id="currentSmoker" name="currentSmoker" required>
+                    <!-- <option selected>Open this select menu</option> -->
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
 
-                    </select>
-               
-                  
-                  
-                <!-- <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div> -->
-                <input type="submit" value="Check your Heart" 
-                    style="background-color: rgb(3, 208, 92); color: white; padding: 10px;
-                    width: 300px;  align-self: center; font-size: 26px; border-radius: 10px; margin: auto auto; margin-left: 13rem ; margin-top: 2rem;" >
-              </form>
+                <label for="cigsPerDay" class="mb-3">Cigarettes Per Day:</label>
+                <input type="number" class="form-control mb-3"  id="cigsPerDay" name="cigsPerDay" value="10"><br>
+        
+                <label for="BPMeds" class="mb-3">BP Meds:</label>
+                <select class="form-select mb-3" aria-label="Default select example" id="BPMeds" name="BPMeds" required>
+                        <!-- <option selected>Open this select menu</option> -->
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                </select>
+                            
+                <label for="prevalentStroke" class="mb-3">Prevalent Stroke:</label>
+                <select class="form-select mb-3" aria-label="Default select example"   id="prevalentStroke" name="prevalentStroke" required>
+                    <!-- <option selected>Open this select menu</option> -->
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+
+                <label for="PrevalentHyp" class="mb-3">Prevalent Hypertensive:</label>
+                <select class="form-select mb-3" aria-label="Default select example"  id="prevalentHyp" name="prevalentHyp" required>
+                        <!-- <option selected>Open this select menu</option> -->
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                </select>        
+
+                <label for="diabetes" class="form-label mb-3">Diabetes (1 for Yes, 0 for No):</label>
+                <input type="number" class="form-control mb-3" id="diabetes" name="diabetes" value="1"><br>
+
+                <label for="totChol" class="mb-3">Total cholestrol:</label>
+                <input type="number" class="form-control mb-3" id="totChol" name="totChol"  value="230"><br>
+        
+                <label for="sysBP" class="mb-3">AGE:</label>
+                <input type="number" class="form-control mb-3" id="sysBP" name="sysBP" value="150"><br>
+        
+                <label for="diaBP" class="mb-3">diaBP:</label>
+                <input type="number" class="form-control mb-3" id="diaBP" name="diaBP" value="150"><br>
+        
+                <label for="BMI" class="mb-3">BMI:</label>
+                <input type="number" class="form-control mb-3" id="BMI" name="BMI" value="65"><br>
+        
+                <label for="heartRate" class="mb-3">Heart Rate:</label>
+                <input type="number" class="form-control mb-3" id="heartRate" name="heartRate" value="100"><br>
+        
+                <label for="glucose" class="mb-3">Glucose:</label>
+                <input type="number"  class="form-control mb-3" id="glucose" name="glucose" value="140"><br>
+        
+                <label for="gender" class="mb-3">GENDER:</label>
+                <select class="form-select mb-3" aria-label="Default select example" id="gender" name="gender" required>
+                    <!-- <option selected>Open this select menu</option> -->
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select>        
+                <button type="submit"  value="Check your Heart" onclick="getDataAndSubmit()"
+                style="background-color: rgb(3, 208, 92); color: white; padding: 10px;
+                width: 300px;  align-self: center; font-size: 26px; border-radius: 10px; margin: auto auto; margin-left: 13rem; margin-top: 2rem;" >submit</button>
+               </form>
         </div>
 
-        <!-- Result Secion -->
-            
-        <div class="Result">
-            <h1>Your Result</h1>
-            <div class="checkResult">
-                <p style="font-size: 20px; font-weight: bold;">{{message}}  </p>
-            </div>
-        </div>
-        <!-- End Result Secion -->
+<div class="Result">
+    <h1>Your Result</h1>
+    <div class="checkResult">
+        <p style="font-size: 20px; font-weight: bold;">Your Heart is good  </p>
+    </div>
+</div>
+
+
+
 <!-- Doctor Suggestion -->
 <div class="doctors">
     <div class="doctorsContainer">
-    <p style="color: rgb(0, 179, 255); font-size: 22px;">Doctors</p>
+    <!-- <p style="color: #20c0ac; font-size: 22px;">Doctors</p> -->
     <p style="font-size: 40px; margin-top: -1rem;"> Meet Our</p>
-    <p style="font-size: 45px; margin-top: -1.5rem;"> <span style="color: rgb(0, 179, 255);"> Top Rated </span>Doctors</p>
+    <p style="font-size: 45px; margin-top: -1.5rem;"> <span style="color: #20c0ac;"> Top Rated </span>Doctors</p>
     <p style="text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
          Quasi, voluptas exercitationem atque mollitia necessitatibus
           suscipit laudantium quia incidunt molestias dolorum! Quasi
@@ -342,7 +334,7 @@
 <div class="swiper-container">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
-            <img src="static/images/man.jpg" alt="Card Image 1">
+            <img src="../images/man.jpg" alt="Card Image 1">
             <div class="card-content">
                 <h2>Dr. Ahmed Ali</h2>
                 <p style="margin-bottom: -0.02rem;">Specialist Neurosergeon</p>
@@ -352,7 +344,7 @@
 
         </div>
         <div class="swiper-slide">
-            <img src="static/images/man.jpg" alt="Card Image 2">
+            <img src="../images/man.jpg" alt="Card Image 2">
             <div class="card-content">
                 <h2>Dr. Mohamed sayed</h2>
                 <p style="margin-bottom: -0.02rem;">Specialist Neurosergeon</p>
@@ -362,7 +354,7 @@
 
         </div>
         <div class="swiper-slide">
-            <img src="static/images/man.jpg" alt="Card Image 3">
+            <img src="../images/man.jpg" alt="Card Image 3">
             <div class="card-content">
                 <h2>Dr. Ali Kamel</h2>
                 <p style="margin-bottom: -0.02rem;">Specialist Neurosergeon</p>
@@ -372,7 +364,7 @@
 
         </div>
         <div class="swiper-slide">
-            <img src="static/images/man.jpg" alt="Card Image 4">
+            <img src="../images/man.jpg" alt="Card Image 3">
             <div class="card-content">
                 <h2>Header 3</h2>
                 <p>Paragraph 1</p>
@@ -382,7 +374,7 @@
 
         </div>
         <div class="swiper-slide">
-            <img src="static/images/man.jpg" alt="Card Image 5">
+            <img src="../images/man.jpg" alt="Card Image 3">
             <div class="card-content">
                 <h2>Header 3</h2>
                 <p>Paragraph 1</p>
@@ -392,13 +384,13 @@
         </div>
 
          <div class="swiper-slide">
-            <img src="static/images/man.jpg" alt="Card Image 6">
+            <img src="../images/man.jpg" alt="Card Image 3">
             <div class="card-content">
                 <h2>Header 3</h2>
                 <p>Paragraph 1</p>
                 <p>Paragraph 2</p>
             </div>
-            <button class="card-btn">Book Appointment</button>
+            <button class="card-btn" >Book Appointment</button>
         </div>
         <!-- Add more slides if needed -->
     </div>
@@ -408,10 +400,11 @@
    <!-- Pagination is now placed here -->
 <!-- End Doctor Suggestion -->
 
+
 <div class="footer" >
     <div class="footer-container" >
         <div class="left">
-            <img src="static/images/logo2.png"/>
+            <img src="../images/logo2.png"/>
             <!-- <p>alcnaknc cknndskvn vldnvdsnvs</p> -->
         </div>
         <div class="mid">
@@ -440,42 +433,9 @@
             </ul>
         </div>
     </div>
-</div>   
+</div>  
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
-
-function handleSubmit() {
-  event.preventDefault(); // Prevent default form submission
-
-  const formData = new FormData(document.getElementById("my-form"));
-  const urlEncodedData = new URLSearchParams(formData);
-  const jsonData = JSON.stringify(Object.fromEntries(urlEncodedData.entries()));
-
-  fetch("https://grad-app-aab7fc96d900.herokuapp.com/stroke", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: jsonData,
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      // Handle the API response here
-      console.log("API response:", data);
-      // Display the response to the user or use it for further actions
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-      // Handle any errors appropriately
-    });
-}
-
-
-
-
-
-
-
          // Initialize Swiper
     const swiper = new Swiper('.swiper-container', {
         slidesPerView: 3,
@@ -486,10 +446,65 @@ function handleSubmit() {
         },
     });
 
-    
+    function getDataAndSubmit() {
+      const apiUrl = 'https://grad-app-aab7fc96d900.herokuapp.com/chd';
+      const form = document.getElementById('myForm');
 
+      // Get form data as URLSearchParams
+      const formData = new URLSearchParams(new FormData(form));
+
+      // Construct the URL by appending form data
+      const fullUrl = `${apiUrl}?${formData.toString()}`;
+
+      // Make the GET request
+      fetch(fullUrl)
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    }
+
+
+    document.getElementById('my-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get form data
+            const formData = new FormData(this);
+
+            // Convert FormData to JSON
+            const jsonObject = {};
+            formData.forEach((value, key) => {
+                jsonObject[key] = value;
+            });
+
+            // API endpoint
+            const apiUrl = 'https://grad-app-aab7fc96d900.herokuapp.com/chd';
+
+            // Fetch data from the API
+            fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(jsonObject),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Handle the response data
+                console.log(data);
+
+                // Display the result on the page
+                document.getElementById('result').innerHTML = JSON.stringify(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
     </script>
-    <!-- <script src="static/Scripts/script.js"></script> -->
+    <script src="../Scripts/script.js"></script>
 </body>
 
 </html>

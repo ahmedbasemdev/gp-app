@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Shefaa | Chat</title>
+    <link rel="icon" type="image/png" href="../images/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" -->
+        <!-- integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <!-- Google Fonts Link For Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+   
+   
+    <script src="script.js" defer></script>
+
+    <style>
+        /* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --text-color: #FFFFFF;
+  --icon-color: #ACACBE;
+  --icon-hover-bg: #5b5e71;
+  --placeholder-color: #dcdcdc;
+  --outgoing-chat-bg: #343541;
+  --incoming-chat-bg: #444654;
+  --outgoing-chat-border: #343541;
+  --incoming-chat-border: #444654;
+}
+.light-mode {
+  --text-color: #343541;
+  --icon-color: #a9a9bc;
+  --icon-hover-bg: #f1f1f3;
+  --placeholder-color: #6c6c6c;
+  --outgoing-chat-bg: #FFFFFF;
+  --incoming-chat-bg: #F7F7F8;
+  --outgoing-chat-border: #FFFFFF;
+  --incoming-chat-border: #D9D9E3;
+}
+body {
+  background: var(--outgoing-chat-bg);
+}
+
+
+/* NavBar */
+
+.n-wrapper{
+    height:14vh;
+    width: 92vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    padding-left: 6rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 15px;
+    padding-left: 100px;
+    transition: padding-left 0.5s ease;
+    z-index: 999;
+    background-color: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.141);
+}
+.n-left{
+    flex: 2;
+    align-items: center;
+    display: flex;
+    gap: 2rem;
+}
+.n-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.n-logo:hover{
+    cursor: pointer;
+}
+.n-logo> img{
+margin-left: 2rem;
+ width: 150px;
+ height: 150px;
+}
+.n-logo p{
+    margin-left: -2rem;
+    font-size: 22px;
+    font-weight: bolder;
+    margin-right: 3rem;
+}
+.n-logo p:hover{
+    cursor: pointer;
+}
+.n-right{
+     display: flex;
+    flex: 10;
+    align-items: center;  
+    justify-content: center;
+    font-weight: 400;
+    font-size: 20px;
+    z-index: 2;
+    /* padding-top: 1.7rem; */
+}
+.u-list{
+    flex: 10;
+    margin-right: 120px;
+}
+.u-list>ul{
+    display: flex;
+    gap: 1.5rem;
+    margin-right: 30px;
+    list-style: none;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.701);
+}
+
+.u-list>ul>*:hover{
+    cursor: pointer;
+    color: #08de9d;
+    /* transform: scale(1.1); */
+
+}
+.u-list>ul li {
+    margin-right: 0.5rem;
+ }
+
+ /* li.active {
+    background-color: #4CAF50;
+  } */
+.u-list>ul li a{
+    text-decoration: none;
+    color: black;
+ }
+ .u-list>ul li a:hover{
+    text-decoration: none;
+    color: #08de9d;
+ }
+.u-list>ul li i{
+   margin-right: 0.5rem;
+}
+
+.dropdown-menu{
+    align-self: center;
+    
+}
+
+/* .u-list>ul>li:hover{
+    cursor: pointer;
+    color: var(--orange);
+} دي لما عملنا جزء link اللي في الاخر غيرناها * عشان تغير اللون */
+.n-button{
+    /* flex: 2; */
+    background-color: transparent;
+    width: 6rem;
+    /* height: 2rem; */
+    /* border: white; */
+    font-size: 14px;
+    color: black;
+    /* background-color: #20c0ac; */
+    border: 2px solid #20c0ac;
+    border-radius: 2rem;
+    padding: 2px 4px;
+    animation: pulse 1.8s infinite; /* Adjust the duration as needed */
+
+}
+
+.n-button:hover {
+    transform: scale(1.1); /* Adjust the scale factor as needed */
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+
+
+/* chat right side */
+.ChatPage{
+    display: flex;
+    height: 90vh;
+    position: fixed;
+    width: 100vw;
+    /* margin-top: 2.rem; */
+    /* color: var(--text-color); */
+}
+.chatLeftSide{
+    position: fixed;
+    bottom: 0.5rem;
+    flex: 2.5;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 90vh;
+    margin-top: 4.5rem;
+    border-right: 1px solid gray;
+    /* align-items: center; */
+}
+.chatLeftSide .chatup{
+    /* display: flex;
+    width: 100%; */
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+}
+.chatLeftSide .chatupContainer{
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+.chatLeftSide .chatupContainer img{
+    width: 90px;
+    height: 90px;
+}
+.chatLeftSide .chatupContainer p{
+    color: black;
+    margin-top: 0.7rem;
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: -1rem;
+}
+
+.chatLeftSide .chatmid{
+ display: flex;
+ align-items: center;
+ margin-left: -1rem;
+ justify-content: center;
+ margin-top: -1.5rem;
+}
+.chatLeftSide .chatmidContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* gap: 0.5rem; */
+    font-size: 20px;
+    color: black;
+}
+.chatLeftSide .chatmidContainer img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.chatLeftSide .chatdown{
+    position: absolute;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    width: 90%;
+    bottom: 1rem;
+    font-size: 18px;
+    color: black;
+}
+
+
+.chatRightSide{
+    flex: 9;
+    height: 90vh;
+    margin-top: 1rem;
+    padding-left: 2rem;
+}
+
+
+/* Chats container styling */
+.chat-container {
+  overflow-y: auto;
+  max-height: 90vh;
+  width: 70vw;
+  padding-bottom: 150px;
+  margin-top: 4rem;
+}
+:where(.chat-container, textarea)::-webkit-scrollbar {
+  width: 6px;
+}
+:where(.chat-container, textarea)::-webkit-scrollbar-track {
+  background: var(--incoming-chat-bg);
+  border-radius: 25px;
+}
+:where(.chat-container, textarea)::-webkit-scrollbar-thumb {
+  background: var(--icon-color);
+  border-radius: 25px;
+}
+.default-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 70vh;
+  padding: 0 10px;
+  text-align: center;
+  color: var(--text-color);
+}
+.default-text h1 {
+  font-size: 3.3rem;
+}
+.default-text p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+.chat-container .chat {
+  padding: 25px 10px;
+  display: flex;
+  justify-content: center;
+  color: var(--text-color);
+}
+.chat-container .chat.outgoing {
+  background: var(--outgoing-chat-bg);
+  border: 1px solid var(--outgoing-chat-border);
+}
+.chat-container .chat.incoming {
+  background: var(--incoming-chat-bg);
+  border: 1px solid var(--incoming-chat-border);
+}
+.chat .chat-content {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+span.material-symbols-rounded {
+  user-select: none;
+  cursor: pointer;
+}
+.chat .chat-content span {
+  cursor: pointer;
+  font-size: 1.3rem;
+  color: var(--icon-color);
+  visibility: hidden;
+}
+.chat:hover .chat-content:not(:has(.typing-animation), :has(.error)) span {
+  visibility: visible;
+}
+.chat .chat-details {
+  display: flex;
+  align-items: center;
+}
+.chat .chat-details img {
+  width: 35px;
+  height: 35px;
+  align-self: flex-start;
+  object-fit: cover;
+  border-radius: 2px;
+}
+.chat .chat-details p {
+  white-space: pre-wrap;
+  font-size: 1.05rem;
+  padding: 0 50px 0 25px;
+  color: var(--text-color);
+  word-break: break-word;
+}
+.chat .chat-details p.error {
+  color: #e55865;
+}
+.chat .typing-animation {
+  padding-left: 25px;
+  display: inline-flex;
+}
+.typing-animation .typing-dot {
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  margin: 0 3px;
+  opacity: 0.7;
+  background: var(--text-color);
+  animation: animateDots 1.5s var(--delay) ease-in-out infinite;
+}
+.typing-animation .typing-dot:first-child {
+  margin-left: 0;
+}
+@keyframes animateDots {
+  0%,44% {
+    transform: translateY(0px);
+  }
+  28% {
+    opacity: 0.4;
+    transform: translateY(-6px);
+  }
+  44% {
+    opacity: 0.2;
+  }
+}
+
+/* Typing container styling */
+.typing-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  padding: 20px 10px;
+  justify-content: center;
+  background: var(--outgoing-chat-bg);
+  border-top: 1px solid var(--incoming-chat-border);
+}
+.typing-container .typing-content {
+  display: flex;
+  max-width: 950px;
+  width: 100%;
+  align-items: flex-end;
+}
+.typing-container .typing-textarea {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+.typing-textarea textarea {
+  resize: none;
+  height: 55px;
+  width: 100%;
+  border: none;
+  padding: 15px 45px 15px 20px;
+  color: var(--text-color);
+  font-size: 1rem;
+  border-radius: 4px;
+  max-height: 250px;
+  overflow-y: auto;
+  background: var(--incoming-chat-bg);
+  outline: 1px solid var(--incoming-chat-border);
+}
+.typing-textarea textarea::placeholder {
+  color: var(--placeholder-color);
+}
+.typing-content span {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  border-radius: 4px;
+  font-size: 1.35rem;
+  align-items: center;
+  justify-content: center;
+  color: var(--icon-color);
+}
+.typing-textarea span {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  visibility: hidden;
+}
+.typing-textarea textarea:valid ~ span {
+  visibility: visible;
+}
+.typing-controls {
+  display: flex;
+}
+.typing-controls span {
+  margin-left: 7px;
+  font-size: 1.4rem;
+  background: var(--incoming-chat-bg);
+  outline: 1px solid var(--incoming-chat-border);
+}
+.typing-controls span:hover {
+  background: var(--icon-hover-bg);
+}
+
+/* Reponsive Media Query */
+@media screen and (max-width: 600px) {
+  .default-text h1 {
+    font-size: 2.3rem;
+  }
+  :where(.default-text p, textarea, .chat p) {
+    font-size: 0.95rem!important;
+  }
+  .chat-container .chat {
+    padding: 20px 10px;
+  }
+  .chat-container .chat img {
+    height: 32px;
+    width: 32px;
+  }
+  .chat-container .chat p {
+    padding: 0 20px;
+  }
+  .chat .chat-content:not(:has(.typing-animation), :has(.error)) span {
+    visibility: visible;
+  }
+  .typing-container {
+    padding: 15px 10px;
+  }
+  .typing-textarea textarea {
+    height: 45px;
+    padding: 10px 40px 10px 10px;
+  }
+  .typing-content span {
+    height: 45px;
+    width: 45px;
+    margin-left: 5px;
+  }
+  span.material-symbols-rounded {
+    font-size: 1.25rem!important;
+  }
+}
+    </style>
+  </head>
+  <body class="light-mode">
+            <!-- NavBar -->
+            <div class="n-wrapper" id='Navebar'>
+                <div class="n-left">
+                    <div class="n-logo">
+                        <img src="../images/logo.png" />
+                        <P><a href="index.html" style="text-decoration: none;  color: #08de9d;">Shefaa</a></P>
+                    </div>
+                    <Toggle />
+                </div>
+                <div class="n-right">
+                    <div class="u-list">
+                        <ul>
+                            <li>
+                                <i class="fa-solid fa-house"></i>
+                                <a href="index.html" onclick="setActive(0)">Home</a></li>
+                            <li class="nav-item dropdown" >
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-solid fa-robot"></i>
+                                    Detector
+                                  </a>
+                                  <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="ecg.html">ECG</a></li>
+                                    <li><a class="dropdown-item" href="stroke.html">Stroke</a></li>
+                                    <li><a class="dropdown-item" href="./chd.html">CHD</a></li>
+                                  </ul>
+                                <!-- <a href="detector.html">Detector</a> -->
+                            </li>
+                            <li class="nav-item dropdown" onclick="setActive(2)">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-solid fa-notes-medical"></i>
+                                    Analysis
+                                  </a>
+                                  <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="./strokeanalysis.html">Stroke</a></li>
+                                    <li><a class="dropdown-item" href="chdanalysis.html">CHD</a></li>
+                                  </ul>
+                                <!-- <a href="detector.html">Detector</a> -->
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-circle-info" onclick="setActive(3)"></i>
+                                <a href="about2.html">About</a></li>
+                                <li>
+                                    <i class="fa-solid fa-notes-medical"></i>
+                                    <a href="chat.html" onclick="setActive(4)">Chatbot</a></li>
+                            <!-- <li style="margin-left: 17rem; "><a>Schedule</a></li> -->
+                            <button class="button n-button" >
+                                <a href="index.html" style="text-decoration: none; color: #20c0ac;">Get Started</a>
+                                
+                            </button>
+    
+    
+                    </div>
+                </div>
+            </div>
+    <div class="ChatPage">
+        <div class="chatLeftSide">
+            <div class="chatup">
+                <div class="chatupContainer">
+                    <img src="../images/logo.png">
+                    <p>Shefaa Chatbot</p>
+                </div>
+            </div>
+            <div class="chatmid">
+                <div class="chatmidContainer">
+                    <img src="../images/man.jpg">
+                    <p style="font-size: 28px;"> Ahmed Ali</p>
+                    <p style="font-size: 16px; margin-top: -1rem;"> Ahmed2024@gmail.com</p>
+                </div>
+            </div>
+            <div class="chatdown">
+                <i class="fa-solid fa-robot" style="border:1px solid black; padding: 8px; border-radius:50% ;"></i>
+                <p>Upgrade plan
+                    Shefaa Chat 2,more intellegence </p>
+            </div>
+        </div>
+        <div class="chatRightSide">
+                <!-- Chats container -->
+    <div class="chat-container"></div>
+
+    <!-- if you want active dark_mode delete display:none from span id theme-btn and active 
+    the toggle localStorage code below in the script in loadDataFromLocalstorage and delete the class from <body >  -->
+    
+    <!-- Typing container -->
+    <div class="typing-container" >
+      <div class="typing-content">
+        <div class="typing-textarea" style="margin-left: -17rem;">
+          <textarea id="chat-input" spellcheck="false" placeholder="Enter a prompt here" required></textarea>
+          <span id="send-btn" class="material-symbols-rounded">send</span>
+        </div>
+        <div class="typing-controls">
+          <span id="theme-btn" class="material-symbols-rounded" style="display: none">light_mode</span>
+          <span id="delete-btn" class="material-symbols-rounded">delete</span>
+      </div>
+    </div>
+        </div>
+    </div>
+
+
+
+    <script>
+
+
+
+// animation navbar
+let prevScrollPos = window.pageYOffset;
+
+window.onscroll = function() {
+  let currentScrollPos = window.pageYOffset;
+
+  if (prevScrollPos > currentScrollPos) {
+    // document.getElementById("Navebar").style.left = "0";
+    document.getElementById("Navebar").style.paddingLeft = "6rem";
+  } else {
+    document.getElementById("Navebar").style.paddingLeft = "0rem";
+    // document.getElementById("content").style. = "-100%";
+  }
+
+  prevScrollPos = currentScrollPos;
+};
+
+
+
+
+        const chatInput = document.querySelector("#chat-input");
+const sendButton = document.querySelector("#send-btn");
+const chatContainer = document.querySelector(".chat-container");
+const themeButton = document.querySelector("#theme-btn");
+const deleteButton = document.querySelector("#delete-btn");
+
+let userText = null;
+const API_KEY = "PASTE-YOUR-API-KEY-HERE"; // Paste your API key here
+
+const loadDataFromLocalstorage = () => {
+    // Load saved chats and theme from local storage and apply/add on the page
+    const themeColor = localStorage.getItem("themeColor");
+
+    // document.body.classList.toggle("light-mode", themeColor === "light_mode");
+    themeButton.innerText = document.body.classList.contains("light-mode") ? "light-mode" : "light_mode";
+
+    // const defaultText = `<div class="default-text">
+    //                         <h1>ChatGPT Clone</h1>
+    //                         <p>Start a conversation and explore the power of AI.<br> Your chat history will be displayed here.</p>
+    //                     </div>`
+    const defaultText = `<div class="default-text">
+                            <h1>Shefaa ChatBot</h1>
+                            <p>Start a conversation and explore the power of AI.<br> Your chat history will be displayed here.</p>
+                        </div>`
+
+    chatContainer.innerHTML = localStorage.getItem("all-chats") || defaultText;
+    chatContainer.scrollTo(0, chatContainer.scrollHeight); // Scroll to bottom of the chat container
+}
+
+const createChatElement = (content, className) => {
+    // Create new div and apply chat, specified class and set html content of div
+    const chatDiv = document.createElement("div");
+    chatDiv.classList.add("chat", className);
+    chatDiv.innerHTML = content;
+    return chatDiv; // Return the created chat div
+}
+
+const getChatResponse = async (incomingChatDiv) => {
+    const API_URL = "https://api.openai.com/v1/completions";
+    const pElement = document.createElement("p");
+
+    // Define the properties and data for the API request
+    const requestOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${API_KEY}`
+        },
+        body: JSON.stringify({
+            model: "text-davinci-003",
+            prompt: userText,
+            max_tokens: 2048,
+            temperature: 0.2,
+            n: 1,
+            stop: null
+        })
+    }
+
+    // Send POST request to API, get response and set the reponse as paragraph element text
+    try {
+        const response = await (await fetch(API_URL, requestOptions)).json();
+        pElement.textContent = response.choices[0].text.trim();
+    } catch (error) { // Add error class to the paragraph element and set error text
+        pElement.classList.add("error");
+        pElement.textContent = "Oops! Something went wrong while retrieving the response. Please try again.";
+    }
+
+    // Remove the typing animation, append the paragraph element and save the chats to local storage
+    incomingChatDiv.querySelector(".typing-animation").remove();
+    incomingChatDiv.querySelector(".chat-details").appendChild(pElement);
+    localStorage.setItem("all-chats", chatContainer.innerHTML);
+    chatContainer.scrollTo(0, chatContainer.scrollHeight);
+}
+
+const copyResponse = (copyBtn) => {
+    // Copy the text content of the response to the clipboard
+    const reponseTextElement = copyBtn.parentElement.querySelector("p");
+    navigator.clipboard.writeText(reponseTextElement.textContent);
+    copyBtn.textContent = "done";
+    setTimeout(() => copyBtn.textContent = "content_copy", 1000);
+}
+
+const showTypingAnimation = () => {
+    // Display the typing animation and call the getChatResponse function
+    const html = `<div class="chat-content">
+                    <div class="chat-details">
+                        <img src="../images/logo.png" alt="chatbot-img">
+                        <div class="typing-animation">
+                            <div class="typing-dot" style="--delay: 0.2s"></div>
+                            <div class="typing-dot" style="--delay: 0.3s"></div>
+                            <div class="typing-dot" style="--delay: 0.4s"></div>
+                        </div>
+                    </div>
+                    <span onclick="copyResponse(this)" class="material-symbols-rounded">content_copy</span>
+                </div>`;
+    // Create an incoming chat div with typing animation and append it to chat container
+    const incomingChatDiv = createChatElement(html, "incoming");
+    chatContainer.appendChild(incomingChatDiv);
+    chatContainer.scrollTo(0, chatContainer.scrollHeight);
+    getChatResponse(incomingChatDiv);
+}
+
+const handleOutgoingChat = () => {
+    userText = chatInput.value.trim(); // Get chatInput value and remove extra spaces
+    if(!userText) return; // If chatInput is empty return from here
+
+    // Clear the input field and reset its height
+    chatInput.value = "";
+    chatInput.style.height = `${initialInputHeight}px`;
+
+    const html = `<div class="chat-content">
+                    <div class="chat-details">
+                        <img src="../images/man.jpg" alt="user-img">
+                        <p>${userText}</p>
+                    </div>
+                </div>`;
+
+    // Create an outgoing chat div with user's message and append it to chat container
+    const outgoingChatDiv = createChatElement(html, "outgoing");
+    chatContainer.querySelector(".default-text")?.remove();
+    chatContainer.appendChild(outgoingChatDiv);
+    chatContainer.scrollTo(0, chatContainer.scrollHeight);
+    setTimeout(showTypingAnimation, 500);
+}
+
+deleteButton.addEventListener("click", () => {
+    // Remove the chats from local storage and call loadDataFromLocalstorage function
+    if(confirm("Are you sure you want to delete all the chats?")) {
+        localStorage.removeItem("all-chats");
+        loadDataFromLocalstorage();
+    }
+});
+
+themeButton.addEventListener("click", () => {
+    // Toggle body's class for the theme mode and save the updated theme to the local storage 
+    document.body.classList.toggle("light-mode");
+    localStorage.setItem("themeColor", themeButton.innerText);
+    themeButton.innerText = document.body.classList.contains("light-mode") ? "dark_mode" : "light_mode";
+});
+
+const initialInputHeight = chatInput.scrollHeight;
+
+chatInput.addEventListener("input", () => {   
+    // Adjust the height of the input field dynamically based on its content
+    chatInput.style.height =  `${initialInputHeight}px`;
+    chatInput.style.height = `${chatInput.scrollHeight}px`;
+});
+
+chatInput.addEventListener("keydown", (e) => {
+    // If the Enter key is pressed without Shift and the window width is larger 
+    // than 800 pixels, handle the outgoing chat
+    if (e.key === "Enter" && !e.shiftKey && window.innerWidth > 800) {
+        e.preventDefault();
+        handleOutgoingChat();
+    }
+});
+
+loadDataFromLocalstorage();
+sendButton.addEventListener("click", handleOutgoingChat);
+    </script>
+  </body>
+</html>

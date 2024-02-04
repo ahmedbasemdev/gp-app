@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Styles/index.css">
+    <title>Shefaa | CHD Analysis</title>
+    <link rel="icon" type="image/png" href="../images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&display=swap" rel="stylesheet"></head>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+<body>
+    <div class="home">
+        <!-- NavBar -->
+        <div class="n-wrapper" id='Navebar'>
+            <div class="n-left">
+                <div class="n-logo">
+                    <img src="../images/logo.png" />
+                    <P><a href="index.html" style="text-decoration: none;  color: #08de9d;">Shefaa</a></P>
+
+                </div>
+                <Toggle />
+            </div>
+            <div class="n-right">
+                <div class="u-list">
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-house"></i>
+                            <a href="index.html">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-robot"></i>
+                                Detector
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="ecg.html">ECG</a></li>
+                                <li><a class="dropdown-item" href="stroke.html">Stroke</a></li>
+                                <li><a class="dropdown-item" href="./chd.html">CHD</a></li>
+                              </ul>
+                            <!-- <a href="detector.html">Detector</a> -->
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-notes-medical"></i>
+                                Analysis
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="stroke.html">Stroke</a></li>
+                                <li><a class="dropdown-item" href="./chd.html">CHD</a></li>
+                              </ul>
+                            <!-- <a href="detector.html">Detector</a> -->
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-info"></i>
+                            <a href="about2.html">About</a></li>
+                            <li>
+                                <i class="fa-solid fa-notes-medical"></i>
+                                <a href="chat.html">Chatbot</a></li>
+                        <!-- <li style="margin-left: 17rem; "><a>Schedule</a></li> -->
+                        <button class="button n-button" >
+                            <a href="index.html" style="text-decoration: none; color: #20c0ac;">Get Started</a>
+                            
+                        </button>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class='intro '>
+            <div class="i-left">
+                <div class="i-name">
+                    <span>Check Your Dental</span>
+                    <span>Health Today</span>
+                    <span>Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit.
+                        Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit.
+                    </span>
+                </div>
+                <button class=" button i-button" id="homeBtn">Get Started</button>
+                <!-- <div class="i-icons">
+                <img src={LinkedIn} alt="" />
+                <img src={Instagram} alt="" />
+               </div> -->
+
+            </div>
+            <div class="i-right">
+                <img src="../images/Analysis.png" alt="" id="introImg" class="animate-on-scroll"/>
+
+            </div>
+        </div>
+
+
+        <div class="chart">
+            <iframe title="CHD Dashboard" width="1500" height="750" src="https://app.powerbi.com/reportEmbed?reportId=0ecc43d9-e724-4d2e-b0d3-34cf608f6b58&autoAuth=true&ctid=1158e2d5-dc24-41ad-abce-62841076dbde" frameborder="0" allowFullScreen="true"></iframe>
+        </div>
+
+
+
+        <div class="footer" >
+            <div class="footer-container" >
+                <div class="left">
+                    <img src="../images/logo2.png"/>
+                    <!-- <p>alcnaknc cknndskvn vldnvdsnvs</p> -->
+                </div>
+                <div class="mid">
+                    <h5 style="border-bottom: 3px solid #0fe100;  padding-bottom: 0.5rem; font-size: 24px;">Main</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about2.html"> About</a></li>
+                        <li><a href="chat.html"> Chat</a></li>
+                        <!-- <li><a href="index.html"> >another</a></li> -->
+                    </ul>
+                </div>
+                <div class="right">
+                    <h5 style="border-bottom: 3px solid #0fe100;  padding-bottom: 0.5rem; font-size: 24px;">Detector</h5>
+                    <ul>
+                        <li><a href="ecg.html"> ECG</a></li>
+                        <li><a href="stroke.html"> STROKE</a></li>
+                        <li><a href="chd.html"> CHD</a></li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <h5 style="border-bottom: 3px solid #0fe100; padding-bottom: 0.5rem; font-size: 24px;">Analysis</h5>
+                    <ul>
+                        <li><a href="./strokeanalysis.html" > STROKE</a></li>
+                        <li><a href="./chdanalysis.html"> CHD</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>   
+    <script src="../Scripts/script.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

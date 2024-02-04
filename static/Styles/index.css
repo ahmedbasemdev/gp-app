@@ -1,0 +1,551 @@
+body{
+    width: 100vw;
+    display: flex;
+    overflow-x: hidden; /* Hides horizontal scrollbar */
+
+}
+
+/* NavBar */
+
+.n-wrapper{
+    height:14vh;
+    width: 92vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    padding-left: 6rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 15px;
+    padding-left: 100px;
+    transition: padding-left 0.5s ease;
+    z-index: 999;
+    background-color: white;
+    
+}
+.n-left{
+    flex: 2;
+    align-items: center;
+    display: flex;
+    gap: 2rem;
+}
+.n-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.n-logo:hover{
+    cursor: pointer;
+}
+.n-logo> img{
+margin-left: 2rem;
+ width: 150px;
+ height: 150px;
+}
+.n-logo p{
+    margin-left: -2rem;
+    font-size: 22px;
+    font-weight: bolder;
+    margin-right: 3rem;
+}
+.n-logo p:hover{
+    cursor: pointer;
+}
+.n-right{
+     display: flex;
+    flex: 9;
+    align-items: center;  
+    justify-content: center;
+    font-weight: 400;
+    font-size: 20px;
+    z-index: 2;
+    margin-left: 5rem;
+    
+}
+.u-list{
+    flex: 10;
+    margin-right: 120px;
+}
+.u-list>ul{
+    display: flex;
+    gap: 1.5rem;
+    margin-right: 30px;
+    list-style: none;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.701);
+}
+
+.u-list>ul>*:hover{
+    cursor: pointer;
+    color: #08de9d;
+    /* transform: scale(1.1); */
+
+}
+.u-list>ul li {
+    margin-right: 1rem;
+ }
+
+ /* li.active {
+    background-color: #4CAF50;
+  } */
+.u-list>ul li a{
+    text-decoration: none;
+    color: black;
+ }
+ .u-list>ul li a:hover{
+    text-decoration: none;
+    color: #08de9d;
+ }
+.u-list>ul li i{
+   margin-right: 0.5rem;
+}
+
+.dropdown-menu{
+    align-self: center;
+    
+}
+
+.active {
+    background-color: #08de9d;
+    color: black;
+  }
+/* .u-list>ul>li:hover{
+    cursor: pointer;
+    color: var(--orange);
+} دي لما عملنا جزء link اللي في الاخر غيرناها * عشان تغير اللون */
+.n-button{
+    /* flex: 2; */
+    background-color: transparent;
+    width: 6rem;
+    /* height: 2rem; */
+    /* border: white; */
+    font-size: 16px;
+    color: black;
+    /* background-color: #20c0ac; */
+    border: 2px solid #20c0ac;
+    border-radius: 2rem;
+    padding: 2px 4px;
+    animation: pulse 1.8s infinite; /* Adjust the duration as needed */
+
+}
+
+.n-button:hover {
+    transform: scale(1.1); /* Adjust the scale factor as needed */
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Intro */
+.intro{
+    display: flex;
+    height: 110vh;
+    margin-top: -4rem;
+    width: 100vw;
+    /* font-family: 'Cairo', sans-serif; */
+}
+.i-left{
+    display: flex;
+    flex: 8;
+    position: relative;
+    flex-direction: column;
+    /* left: 5rem; */
+    gap: 1.5rem;
+    padding-top: 10rem;
+    background-color: #08de9e19;
+    margin-top: 4rem;
+}
+.i-name{
+    display: flex;
+    flex-direction: column;
+    /* gap: 0.2rem; */
+    margin-left: 10rem;
+    margin-top: 2rem;
+}
+.i-name>:nth-child(1){
+    color: var(--black);
+    font-weight: bold;
+    font-size: 3rem;
+    animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+}
+.i-name>:nth-child(2){
+    color: var(--orange);
+    font-weight: bold;
+    font-size: 3rem;
+    animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    
+}
+.i-name>:nth-child(3){
+    color: var(--black);
+    font-weight: b;
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    max-width: 22rem;
+    color: rgba(0, 0, 0, 0.845);
+    animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    font-family: 'EB Garamond', serif;
+    font-family: 'Cairo', sans-serif;
+    
+    /* margin-left: 5rem; */
+}
+.i-button{
+    width: 10rem;
+    height: 3rem;
+    background-color: #20c0ac;
+    border-radius: 1rem;
+    font-size: 22px;
+    color: white;
+    border: none;
+    margin-left: 10rem;
+    animation: slide-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+}
+@keyframes slide-top {
+    0% {
+      transform: translateY(150px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+/*  */
+.i-button:hover{
+transform: scale(1.1);
+color: black;
+}
+
+
+
+.i-right{
+    position: relative;
+    flex: 4;
+    background-color: #20c0ac;
+    margin-top: 8rem;
+}
+.i-right>*{
+    position: absolute;
+    z-index: 1;
+    
+}
+
+#introImg{
+    animation: slide-left 0.7s ease-in-out both; /* Adjust duration and easing as needed */
+width: 500px;
+    height: 500px;
+    left: -280px;
+
+    margin-top: 5rem;
+}
+#introImg.animate-on-scroll { /* Apply this class when in view */
+    opacity: 1;
+    transform: translateX(0);
+  }
+@keyframes slide-left {
+    0% { transform: translateX(100%); } /* Start off-screen to the right */
+    100% { transform: translateX(0); } /* End in its original position */
+  }
+.i-right>:nth-child(2){
+    transform: scale(0.7);
+    left: -3rem;
+    top: -4.5rem;
+}
+.i-right>:nth-child(3){
+    transform: scale(1.4);
+    left: 28%;
+    
+}
+
+.i-right>:nth-child(4){
+    transform: scale(0.6);
+    left: -24%;
+    top: -19%;
+    border-radius: 50%;
+}
+/* .blur{
+    position: absolute;
+    width: 22rem;
+    height: 14rem;
+    border-radius: 50%;
+    background: #edd0ff;
+    filter: blur(212px);
+    z-index: -9;
+    top: -18%;
+    left: 56%;
+    filter: blur(72px);
+} */
+
+
+/* Services */
+#Services{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+.Services-Sheader{
+    text-align: center;
+    margin-bottom: 3rem;
+    
+ }
+ .Services-Sheader .Services-h{
+ font-size: 36px;
+ font-weight: bolder;
+ }
+ .Services-Sheader .Services-p {
+    
+ font-size: 22px;
+ }
+ .Services-container{
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    align-items: center;
+    width: 90dvw;
+    justify-content: space-around;
+
+ }
+ /* .Services-container{
+    display: flex;
+    flex-wrap: wrap;
+   
+    flex-direction: column;
+    width: 50vw;
+    justify-content: space-around;
+    border: 1px solid rgba(0, 0, 0, 0.196);
+    padding: 2rem;
+
+ } */
+
+ 
+ .Services-container .oneServices {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* gap: 0.1rem; */
+    padding-top: 2rem;
+    /* border: 1px solid green; */
+    width: 300px;
+    height: 400px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    position: relative;
+}
+@keyframes scale-up {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); } /* Adjust the final scale as desired */
+  }
+.Services-container .oneServices:hover{
+    animation: scale-up 0.3s ease-in-out; /* 3s duration, ease-in-out timing function */
+    animation-fill-mode: forwards;
+    border-top: 5px solid #082cde;
+   
+    border-width: 4px;
+    border-style: solid;
+    border-image: 
+    linear-gradient(
+      to bottom, 
+      #08de9d, 
+      rgba(0, 0, 0, 0)
+    ) 1 100%;
+}
+.Services-container .Stwo {
+    height: 450px;
+    
+}
+.Services-container .Sthree {
+    height: 450px;
+    
+}
+/* .Services-container .oneServices i{
+    color: #08de9d;
+} */
+/* Define a gradient color */
+.icon-gradient {
+    background: linear-gradient(to right, #00ff77, #99e3b4); /* Replace these colors with your desired gradient */
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+.fa-icon {
+    font-size: 360px; /* Adjust as needed */
+  }
+ .Services .Services-header{
+    font-size: 32px;
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 2rem;
+ }
+ .Services-desc{
+    
+ }
+
+ .oneServices .S-btn{
+    border: 1px solid green;
+    background-color: transparent;
+    border-radius: 1rem;
+    padding: 0.7rem 1.3rem;
+    font-size: 20px;
+    position: absolute;
+    bottom: 2rem;
+ }
+ .oneServices .S-btn:hover{
+    cursor: pointer;
+    background-color: #08de9d;
+    color: white;
+ }
+
+
+
+/* Detector Work */
+
+.Detector-work{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dtwContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70vw;
+
+}
+.dtwBody{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.parts{
+    display: flex;
+    height: 500px;
+    gap: 2rem;
+
+}
+
+.partLeft{
+    flex: 6;
+}
+
+.partLeft .partInfo{
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 1.5rem;
+}
+.partLeft .partInfo ul li{
+    margin-bottom: 1rem;
+}
+.partRight{
+    flex: 6;
+    text-align: center;
+    margin-top: -2rem;
+}
+
+
+
+
+
+
+ /* Footer */
+ .footer{
+    /* height: 20vh; */
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    background-color: #20c0ad55;
+    /* background-image: url("../images/logo2.png");  */
+}
+
+ .footer-container{
+    display: flex;
+    align-items: start;
+    /* justify-content: space-between; */
+    gap: 8rem;
+    width: 70vw;
+    /* flex-direction: column; */
+        padding-top: 80px;
+        
+
+ }
+ .footer .footer-container a{
+    text-decoration: none;
+    color: black;
+}
+
+ .footer-container .left{
+    margin-top: -50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+ }
+ .footer-container .left img{
+    width: 300px;
+    height: 300px;
+    
+ }
+ .footer-container .left p{
+font-size: 16px;
+    
+ }
+
+ .footer-container .mid ul{
+    list-style-type: none;
+    margin-left: -1.7rem;
+
+ }
+ .footer-container .mid li{
+    padding-top: 0.5rem;
+    font-size: 17px;
+ }
+ .footer-container .mid li a:hover{
+    cursor: pointer;
+    color: rgb(0, 102, 255);
+
+    /* font-size: 19px; */
+ }
+ .footer-container .mid li a{
+    /* list-style: none;  */
+    text-decoration: none;
+    color: black;
+    }
+ .footer-container .right ul{
+    list-style-type: none;
+    margin-left: -1.7rem;
+
+ }
+ .footer-container .right li{
+    padding-top: 0.5rem;
+    font-size: 17px;
+ }
+ .footer-container .right li:hover{
+    cursor: pointer;
+    /* font-size: 19px; */
+    color: rgb(0, 102, 255);
+ }
+
+
