@@ -10,13 +10,6 @@ app = Flask(__name__)
 #chatbot = ChatBotManager()
 
 
-@app.route("/chdform", methods=["POST"])
-def chds():
-    print(request.form)
-    data = request.form
-
-    return {"hello":str(request.form.get('age'))}
-
 
 
 
@@ -85,9 +78,9 @@ def stroke_prediction():
         return render_template("stroke.html")
 
 
-@app.route("/chd", methods=["GET"])
+@app.route("/chd", methods=["POST","GET"])
 def chd_prediction():
-    if request.method == "GET":
+    if request.method == "POST":
         data = request.args.to_dict(flat=False)
         print(data)
         #data = request.json
@@ -96,34 +89,43 @@ def chd_prediction():
         model = joblib.load("chd/model.joblib")
 
         prediction = chd.perform_prediction(data, pipeline, model)
-        return prediction
+        return render_template("chd.html",
+                               result = prediction['prediction'], message=prediction['Message'])
     else:
-        return "Wrong Method"
+        return render_template("chd.html")
     
-@app.route("/ecg_mi", methods=['POST'])
+@app.route("/ecg_mi", methods=["POST","GET"])
 def ecg_mi():
-    data = {
-        "Age":int(request.files.get("Age")),
-        "Gender":request.files.get("Gender"),
-        "Heart rate":int(request.files.get("Heart rate")),
-        "Systolic blood pressure":int(request.files.get("Systolic blood pressure")),
-        "Diastolic blood pressure":int(request.files.get("Diastolic blood pressure")),
-        "Blood sugar":int(request.files.get("Blood sugar")),
-        "CK-M":int(request.files.get("CK-M")),
-        "Troponin":int(request.files.get("Troponin"))}
-    image_path = ""
-    pipeline = joblib.load("ecg_mi/")
-    model = joblib.load("chd/model.joblib")
-    ecg_model = joblib.load('ecg_mi/RF_model_ecg.pkl')
+    if request.method == "POST":
+        data = {
+            "Age":int(request.files.get("Age")),
+            "Gender":request.files.get("Gender"),
+            "Heart rate":int(request.files.get("Heart rate")),
+            "Systolic blood pressure":int(request.files.get("Systolic blood pressure")),
+            "Diastolic blood pressure":int(request.files.get("Diastolic blood pressure")),
+            "Blood sugar":int(request.files.get("Blood sugar")),
+            "CK-M":int(request.files.get("CK-M")),
+            "Troponin":int(request.files.get("Troponin"))}
+        image_path = ""
+        pipeline = joblib.load("ecg_mi/")
+        model = joblib.load("chd/model.joblib")
+        ecg_model = joblib.load('ecg_mi/RF_model_ecg.pkl')
+        
+        prediction = ecg_mi.mi_ecg_prediction(data, pipeline, model, image_path, ecg_model)
+
+        return render_template("ecg.html",
+                               result = prediction['prediction'], message=prediction['Message'])
+    else:
+        return render_template("ecg.html")
+
     
-    result = ecg_mi.mi_ecg_prediction(data, pipeline, model, image_path, ecg_model)
+@app.route("/stroke_analysis")
+def stroke_analysis():
+    return render_template("stroke_analysis.html")
 
-    return result
-
-    
-    
-
-
+@app.route("/chd_analysis")
+def chd_anlaysis():
+    return render_template("chd_analysis.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
