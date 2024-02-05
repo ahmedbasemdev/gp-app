@@ -61,21 +61,21 @@ document.getElementById("homeBtn").addEventListener("click", function() {
 
 
 
-// imageUpload.addEventListener("change", function(event) {
-//   const file = event.target.files[0]; // Get the selected image file
+imageUpload.addEventListener("change", function(event) {
+  const file = event.target.files[0]; // Get the selected image file
 
-//   // Validate file type (optional):
-//   if (!file.type.match("image.*")) {
-//     alert("Please select an image file.");
-//     return;
-//   }
+  // Validate file type (optional):
+  if (!file.type.match("image.*")) {
+    alert("Please select an image file.");
+    return;
+  }
 
-//   const reader = new FileReader();
-//   reader.onload = function(event) {
-//     previewImage.src = event.target.result; // Display the preview
-//   };
-//   reader.readAsDataURL(file); // Read the file as a data URL
-// });
+  const reader = new FileReader();
+  reader.onload = function(event) {
+    previewImage.src = event.target.result; // Display the preview
+  };
+  reader.readAsDataURL(file); // Read the file as a data URL
+});
 
 
 document.querySelector(".intro").classList.add("show");

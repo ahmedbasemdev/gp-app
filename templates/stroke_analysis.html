@@ -19,6 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&display=swap" rel="stylesheet"></head>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300&display=swap" rel="stylesheet">
 <body>
     <div class="home">
         <!-- NavBar -->
@@ -102,7 +103,7 @@
         </div>
 
 
-        <div class="chart">
+        <div class="chart" id="chart">
             <iframe title="CHD Dashboard" width="1500" height="750" src="https://app.powerbi.com/reportEmbed?reportId=0ecc43d9-e724-4d2e-b0d3-34cf608f6b58&autoAuth=true&ctid=1158e2d5-dc24-41ad-abce-62841076dbde" frameborder="0" allowFullScreen="true"></iframe>
         </div>
 
@@ -142,6 +143,12 @@
                 </div>
             </div>
         </div>    
+
+        <script>
+            document.getElementById("homeBtn").addEventListener("click", function() {
+  document.getElementById("chart").scrollIntoView({ behavior: "smooth" });
+});
+        </script>
     <script src="../Scripts/script.js"></script>
 </body>
 
