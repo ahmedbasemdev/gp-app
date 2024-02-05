@@ -19,7 +19,7 @@ app.config['UPLOAD_FOLDER'] = "ecg_mi/images"
 def home():
     return render_template("index.html")
 
-
+"""
 @app.route("/chat", methods=['GET'])
 def chat():
     try:
@@ -28,7 +28,7 @@ def chat():
         return {"answer": answer}
     except Exception as e:
         return {"error" :str(e)}
-
+"""
 
 @app.route("/get_doctors", methods=["GET"])
 def get_doctors():
