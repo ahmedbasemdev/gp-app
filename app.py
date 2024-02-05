@@ -5,9 +5,11 @@ from ChatBot import ChatBotManager
 import chd
 import ecg_mi
 import stroke
+import os
 
 app = Flask(__name__)
 #chatbot = ChatBotManager()
+app.config['UPLOAD_FOLDER'] = "ecg_mi/images"
 
 
 
@@ -95,28 +97,28 @@ def chd_prediction():
         return render_template("chd.html")
     
 @app.route("/ecg_mi", methods=["POST","GET"])
-def ecg_mi():
+def ecg_mi_prediction():
     if request.method == "POST":
         data = {
-            "Age":int(request.files.get("Age")),
-            "Gender":request.files.get("Gender"),
-            "Heart rate":int(request.files.get("Heart rate")),
-            "Systolic blood pressure":int(request.files.get("Systolic blood pressure")),
-            "Diastolic blood pressure":int(request.files.get("Diastolic blood pressure")),
-            "Blood sugar":int(request.files.get("Blood sugar")),
-            "CK-M":int(request.files.get("CK-M")),
-            "Troponin":int(request.files.get("Troponin"))}
-        image_path = ""
-        pipeline = joblib.load("ecg_mi/")
-        model = joblib.load("chd/model.joblib")
+            "Age":int(request.form.get("Age")),
+            "CK-MB":int(request.form.get("CK-MB")),
+            "Troponin":float(request.form.get("Troponin"))}
+        #uploaded_file = request.files['file']
+        #file_path = os.path.join(
+        #app.config['UPLOAD_FOLDER'], uploaded_file.filename)
+        #uploaded_file.save(file_path)
+        file_path = "ecg_mi/images/mi1.jpg"
+        pipeline = joblib.load("ecg_mi/mi_pipeline.joblib")
+        model = joblib.load("ecg_mi/mi_model.joblib")
         ecg_model = joblib.load('ecg_mi/RF_model_ecg.pkl')
         
-        prediction = ecg_mi.mi_ecg_prediction(data, pipeline, model, image_path, ecg_model)
+        prediction = ecg_mi.mi_ecg_prediction(data, pipeline, model, file_path, ecg_model)
 
         return render_template("ecg.html",
-                               result = prediction['prediction'], message=prediction['Message'])
+                               result = prediction['s'], message=prediction['s'])
     else:
         return render_template("ecg.html")
+    
 
     
 @app.route("/stroke_analysis")
@@ -126,6 +128,10 @@ def stroke_analysis():
 @app.route("/chd_analysis")
 def chd_anlaysis():
     return render_template("chd_analysis.html")
+
+@app.route("/about")
+def about():
+    render_template("about.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

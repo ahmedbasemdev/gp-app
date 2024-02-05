@@ -246,31 +246,10 @@ body {
     <div class='Services-container'>
 
         <h2 style="margin-bottom: 1rem;">Part 1: Quick Questionaire</h2>
-        <form>
+        <form action="/ecg_mi" method="POST">
             <label for="age" class="mb-3">AGE:</label>
             <input type="number" class="form-control mb-3"  id="age" name="Age" value="65" class="mb-3"><br>
             
-
-            <label for="Gender" class="form-label mb-3">Gender</label>
-            <select class="form-select mb-3 aria-label="Default select example" id="Gender" name="Gender">
-                <option value="1">Male</option>
-                <option value="0">Female</option>
-            </select>
-
-        
-            <label for="Heart rate" class="mb-3">Heart rate :</label>
-            <input type="number" class="form-control mb-3"  id="Heart rate" name="Heart rate" value="77" class="mb-3"><br>
-            
-            
-            <label for="Systolic blood pressure" class="mb-3">Systolic blood pressure :</label>
-            <input type="number" class="form-control mb-3"  id="Systolic blood pressure" name="Systolic blood pressure" value="120" class="mb-3"><br>
-            
-            <label for="Diastolic blood pressure" class="mb-3">Diastolic blood pressure :</label>
-            <input type="number" class="form-control mb-3"  id="Diastolic blood pressure" name="Diastolic blood pressure" value="50" class="mb-3"><br>
-            
-            <label for="Blood sugar" class="mb-3">Blood Sufar :</label>
-            <input type="number" class="form-control mb-3"  id="Blood sugar" name="Blood sugar" value="240" class="mb-3"><br>
-           
             <label for="CK-MB" class="mb-3">CK-MB :</label>
             <input type="number" class="form-control mb-3"  id="CK-MB" name="CK-MB" value="14" class="mb-3"><br>
            
@@ -281,7 +260,7 @@ body {
 <!-- <h2 style="margin-top: 2rem;">Part 2: Examines Uploading</h2> 
 <p style="margin-top: 1rem; margin-bottom: 2rem;" >Upload your Heart Examines for better result</p>         -->
 
-<input type="file" id="imageUpload" >
+<input type="file" id="imageUpload" name="file">
 <img id="previewImage" src="#" alt="Image Preview">
 <input type="submit" value="Check your Heart" 
 style="background-color: rgb(3, 208, 92); color: white; padding: 10px;
@@ -294,7 +273,7 @@ style="background-color: rgb(3, 208, 92); color: white; padding: 10px;
 <div class="Result">
     <h1>Your Result</h1>
     <div class="checkResult">
-        <p style="font-size: 20px; font-weight: bold;">Your Heart is good  </p>
+        <p style="font-size: 20px; font-weight: bold;">{{ message}}  </p>
     </div>
 </div>
 

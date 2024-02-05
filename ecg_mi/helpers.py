@@ -91,5 +91,7 @@ def mi_ecg_prediction(input_data, mi_pipeline, mi_model, image_path, ecg_model):
     mi_ouput = mi_prediction(input_data, mi_pipeline,mi_model)
     ecg_ouput = ecg_prediction(image_path, ecg_model)
     
-    return {"s":str(mi_ouput) + str(ecg_ouput)}
+    if mi_ouput == 1:
+        pass
+        
 
