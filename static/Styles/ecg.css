@@ -207,7 +207,7 @@ background-color: rgba(0, 0, 0, 0.079);
     max-width: 20rem;
     color: rgba(0, 0, 0, 0.845);
     animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    font-family: 'EB Garamond', serif;
+    font-family: 'Cairo', sans-serif;
 
     /* margin-left: 5rem; */
 }

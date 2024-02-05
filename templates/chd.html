@@ -17,6 +17,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300&display=swap" rel="stylesheet">
 
     <style> 
     .i-right{
@@ -446,63 +447,63 @@
         },
     });
 
-    function getDataAndSubmit() {
-      const apiUrl = 'https://grad-app-aab7fc96d900.herokuapp.com/chd';
-      const form = document.getElementById('myForm');
+    // function getDataAndSubmit() {
+    //   const apiUrl = 'https://grad-app-aab7fc96d900.herokuapp.com/chd';
+    //   const form = document.getElementById('myForm');
 
-      // Get form data as URLSearchParams
-      const formData = new URLSearchParams(new FormData(form));
+    //   // Get form data as URLSearchParams
+    //   const formData = new URLSearchParams(new FormData(form));
 
-      // Construct the URL by appending form data
-      const fullUrl = `${apiUrl}?${formData.toString()}`;
+    //   // Construct the URL by appending form data
+    //   const fullUrl = `${apiUrl}?${formData.toString()}`;
 
-      // Make the GET request
-      fetch(fullUrl)
-        .then(response => response.json())
-        .then(data => {
-          console.log(data);
-        })
-        .catch(error => {
-          console.error('Error:', error);
-        });
-    }
+    //   // Make the GET request
+    //   fetch(fullUrl)
+    //     .then(response => response.json())
+    //     .then(data => {
+    //       console.log(data);
+    //     })
+    //     .catch(error => {
+    //       console.error('Error:', error);
+    //     });
+    // }
 
 
-    document.getElementById('my-form').addEventListener('submit', function(event) {
-            event.preventDefault();
+    // document.getElementById('my-form').addEventListener('submit', function(event) {
+    //         event.preventDefault();
 
-            // Get form data
-            const formData = new FormData(this);
+    //         // Get form data
+    //         const formData = new FormData(this);
 
-            // Convert FormData to JSON
-            const jsonObject = {};
-            formData.forEach((value, key) => {
-                jsonObject[key] = value;
-            });
+    //         // Convert FormData to JSON
+    //         const jsonObject = {};
+    //         formData.forEach((value, key) => {
+    //             jsonObject[key] = value;
+    //         });
 
-            // API endpoint
-            const apiUrl = 'https://grad-app-aab7fc96d900.herokuapp.com/chd';
+    //         // API endpoint
+    //         const apiUrl = 'https://grad-app-aab7fc96d900.herokuapp.com/chd';
 
-            // Fetch data from the API
-            fetch(apiUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(jsonObject),
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Handle the response data
-                console.log(data);
+    //         // Fetch data from the API
+    //         fetch(apiUrl, {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify(jsonObject),
+    //         })
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             // Handle the response data
+    //             console.log(data);
 
-                // Display the result on the page
-                document.getElementById('result').innerHTML = JSON.stringify(data);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        });
+    //             // Display the result on the page
+    //             document.getElementById('result').innerHTML = JSON.stringify(data);
+    //         })
+    //         .catch(error => {
+    //             console.error('Error:', error);
+    //         });
+    //     });
     </script>
     <script src="../Scripts/script.js"></script>
 </body>

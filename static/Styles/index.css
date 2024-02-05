@@ -208,7 +208,7 @@ margin-left: 2rem;
     max-width: 22rem;
     color: rgba(0, 0, 0, 0.845);
     animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    font-family: 'EB Garamond', serif;
+    /* font-family: 'EB Garamond', serif; */
     font-family: 'Cairo', sans-serif;
     
     /* margin-left: 5rem; */
@@ -398,6 +398,11 @@ width: 500px;
     font-weight: bolder;
     text-align: center;
     margin-bottom: 2rem;
+    margin-top: -1.5rem;
+ }
+ .Services-details{
+    width: 200px;
+    text-align: center;
  }
  .Services-desc{
     
