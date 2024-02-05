@@ -83,14 +83,27 @@ def stroke_prediction():
 @app.route("/chd", methods=["POST","GET"])
 def chd_prediction():
     if request.method == "POST":
-        data = request.args.to_dict(flat=False)
-        print(data)
-        #data = request.json
-
+        data = {
+        "age": int(request.form.get('age')),
+        "currentSmoker": int(request.form.get('currentSmoker')),
+        "cigsPerDay": int(request.form.get('cigsPerDay')),
+        "BPMeds": int(request.form.get('BPMeds')),
+        "prevalentStroke": int(request.form.get('prevalentStroke')),
+        "prevalentHyp": int(request.form.get('prevalentHyp')),
+        "diabetes":int( request.form.get('diabetes')),
+        "totChol":int( request.form.get('totChol')),
+        "sysBP": int(request.form.get('sysBP')),
+        "diaBP": int(request.form.get('diaBP')),
+        "BMI": int(request.form.get('BMI')),
+        "heartRate": int(request.form.get('heartRate')),
+        "glucose": int(request.form.get('glucose')),
+        "gender": int(request.form.get('gender'))
+        }
         pipeline = joblib.load("chd/pipeline.joblib")
         model = joblib.load("chd/model.joblib")
 
         prediction = chd.perform_prediction(data, pipeline, model)
+        print(prediction)
         return render_template("chd.html",
                                result = prediction['prediction'], message=prediction['Message'])
     else:
@@ -118,6 +131,10 @@ def ecg_mi_prediction():
                                result = prediction['s'], message=prediction['s'])
     else:
         return render_template("ecg.html")
+    
+@app.route("/chat")
+def chat_page():
+    return render_template("chat.html")
     
 
     
