@@ -8,7 +8,7 @@ import stroke
 import os
 
 app = Flask(__name__)
-#chatbot = ChatBotManager()
+chatbot = ChatBotManager()
 app.config['UPLOAD_FOLDER'] = "ecg_mi/images"
 
 
@@ -24,7 +24,14 @@ def get_cities():
 
     return list(cities.unique())
 
-
+@app.route("/chat_api", methods=['GET'])
+def chat():
+    try:
+        question = request.form["question"]
+        answer = chatbot.generate_answer(question)
+        return {"answer": answer}
+    except Exception as e:
+        return {"error" :str(e)}
 
 
 @app.route("/stroke", methods=["POST","GET"])
