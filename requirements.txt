@@ -8,6 +8,7 @@ python-dotenv
 flask
 pandas
 joblib
+tiktoken
 openpyxl
 scikit-learn
 scikit-image
