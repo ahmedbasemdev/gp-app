@@ -160,8 +160,8 @@
         <div class="n-wrapper" id='Navebar'>
             <div class="n-left">
                 <div class="n-logo">
-                    <img src="../static/images/logo.png" />
-                    <P><a href="index.html" style="text-decoration: none;  color:black;"><span style="color: #08de9d;;">Sh</span>efa<span style="color: #08de9d;;">a</span></a></P>
+                    <img src="static/images/logo.png" />
+                    <P><a href="/" style="text-decoration: none;  color:black;"><span style="color: #08de9d;;">Sh</span>efa<span style="color: #08de9d;;">a</span></a></P>
                 </div>
                 <Toggle />
             </div>
@@ -170,16 +170,16 @@
                     <ul>
                         <li>
                             <i class="fa-solid fa-house"></i>
-                            <a href="index.html" >Home</a></li>
+                            <a href="/" >Home</a></li>
                         <li class="nav-item dropdown" >
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa-solid fa-robot"></i>
                                 Detector
                               </a>
                               <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="ecg.html">ECG</a></li>
-                                <li><a class="dropdown-item" href="stroke.html">Stroke</a></li>
-                                <li><a class="dropdown-item" href="chd.html">CHD</a></li>
+                                <li><a class="dropdown-item" href="/ecg_mi">ECG</a></li>
+                                <li><a class="dropdown-item" href="/stroke">Stroke</a></li>
+                                <li><a class="dropdown-item" href="/chd">CHD</a></li>
                               </ul>
                         </li>
                         <li class="nav-item dropdown" >
@@ -188,19 +188,19 @@
                                 Analysis
                               </a>
                               <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="stroke_analysis.html">Stroke</a></li>
-                                <li><a class="dropdown-item" href="chd_analysis.html">CHD</a></li>
+                                <li><a class="dropdown-item" href="/stroke_analysis">Stroke</a></li>
+                                <li><a class="dropdown-item" href="/chd_analysis">CHD</a></li>
                               </ul>
                         </li>
                         <li>
                             <i class="fa-solid fa-circle-info" ></i>
-                            <a href="about.html">About</a></li>
+                            <a href="/about">About</a></li>
                             <li>
                                 <i class="fa-solid fa-notes-medical"></i>
-                                <a href="chat.html" >Chatbot</a></li>
+                                <a href="/chat" >Chatbot</a></li>
                         <!-- <li style="margin-left: 17rem; "><a>Schedule</a></li> -->
                         <button class="button n-button" >
-                            <a href="index.html" style="text-decoration: none; color: #20c0ac;">Get Started</a>
+                            <a href="/" style="text-decoration: none; color: #20c0ac;">Get Started</a>
                             
                         </button>
 
@@ -341,56 +341,72 @@
          Dolore necessitatibus eligendi voluptates laudantium!</p>
 </div>
 
+<!-- Doctor Suggestion -->
+{% if prediction != "0" %}
+<div class="doctors">
+    <div class="doctorsContainer">
+    <!-- <p style="color: rgb(0, 179, 255); font-size: 22px;">Doctors</p> -->
+    <p style="font-size: 40px; margin-top: -1rem;"> Meet Our</p>
+    <p style="font-size: 45px; margin-top: -1.5rem;"> <span style="color: #20c0ac;"> Top Rated </span>Doctors</p>
+    <p style="text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         Quasi, voluptas exercitationem atque mollitia necessitatibus
+          suscipit laudantium quia incidunt molestias dolorum! Quasi
+           incidunt doloremque quisquam iusto?
+         Dolore necessitatibus eligendi voluptates laudantium!</p>
+</div>
+
 <div class="swiper-container">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
-            <img src="../static/images/man.jpg" alt="Card Image 1">
+            <img src="{{doctors[0].image}}" alt="Card Image 1">
             <div class="card-content">
-                <h2>Dr. Ahmed Ali</h2>
-                <p style="margin-bottom: -0.02rem;">Specialist Neurosergeon</p>
-                <p>Cairo Hospital, Egy</p>
+                <h3>{{doctors[0].name}}</h3>
+                <p style="margin-bottom: -0.02rem;">{{doctors[0].location}}</p>
+                <p>{{doctors[0].price}} $</p>
             </div>
             <button class="card-btn">Book Appointment</button>
 
         </div>
         <div class="swiper-slide">
-            <img src="../static/images/man.jpg" alt="Card Image 2">
+            <img src="{{doctors[1].image}}" alt="Card Image 2">
             <div class="card-content">
-                <h2>Dr. Mohamed sayed</h2>
-                <p style="margin-bottom: -0.02rem;">Specialist Neurosergeon</p>
-                <p >Cairo Hospital, Egy</p>
+                <h3>{{doctors[1].name}}</h3>
+                <p style="margin-bottom: -0.02rem;">{{doctors[1].location}}</p>
+                <p >{{doctors[1].price}} $</p>
             </div>
             <button class="card-btn">Book Appointment</button>
 
         </div>
         <div class="swiper-slide">
-            <img src="../static/images/man.jpg" alt="Card Image 3">
+            <img src="{{doctors[2].image}}" alt="Card Image 3">
             <div class="card-content">
-                <h2>Dr. Ali Kamel</h2>
-                <p style="margin-bottom: -0.02rem;">Specialist Neurosergeon</p>
-                <p>Cairo Hospital, Egy</p>
+                <h3>{{doctors[2].name}}</h3>
+                <p style="margin-bottom: -0.02rem;">{{doctors[2].location}}</p>
+                <p>{{doctors[2].price}} $</p>
             </div>
             <button class="card-btn">Book Appointment</button>
 
         </div>
         <div class="swiper-slide">
-            <img src="../static/images/man.jpg" alt="Card Image 4">
+            <img src="{{doctors[3].image}}" alt="Card Image 4">
             <div class="card-content">
-                <h2>Header 3</h2>
-                <p>Paragraph 1</p>
-                <p>Paragraph 2</p>
+                <h3>{{doctors[3].name}}</h3>
+                <p style="margin-bottom: -0.02rem;">{{doctors[3].location}}</p>
+                <p>{{doctors[3].price}} $</p>
             </div>
             <button class="card-btn">Book Appointment</button>
 
         </div>
+      
+     
 
+        
         <!-- Add more slides if needed -->
     </div>
 </div>
 <div class="swiper-pagination"></div>
 </div>
-   <!-- Pagination is now placed here -->
-<!-- End Doctor Suggestion -->
+{% endif %}
 
 <div class="footer" >
     <div class="footer-container" >

@@ -3,7 +3,9 @@ from skimage import measure, color, io
 from skimage.filters import threshold_otsu, gaussian
 from skimage.transform import resize
 from sklearn.preprocessing import MinMaxScaler
+import messages
 
+mes = "sss"
 
 def process_ecg_image(image_path):
     # Read the image
@@ -90,7 +92,20 @@ def ecg_prediction(image_path, model):
 def mi_ecg_prediction(input_data, mi_pipeline, mi_model, image_path, ecg_model):
     mi_ouput = mi_prediction(input_data, mi_pipeline,mi_model)
     ecg_ouput = ecg_prediction(image_path, ecg_model)
-    
-    return f"{mi_ouput}{ecg_ouput}"
+    if mi_ouput == 1:
+        if ecg_ouput == "HB":
+            return {"prediction": "1", "Message": messages.m_1_hb}
+        if ecg_ouput == "MI":
+            return {"prediction": "1", "Message": messages.m_1_mi}
+        if ecg_ouput == "PM":
+            return {"prediction": "1", "Message": messages.m_1_pm}
+    else:
+        if ecg_ouput == "HB":
+            return {"prediction": "1", "Message": messages.m_0_hb}
+        if ecg_ouput == "MI":
+            return {"prediction": "1", "Message": messages.m_0_mi}
+        if ecg_ouput == "No":
+            return {"prediction": "0", "Message": messages.m_0_no}
+
         
 

@@ -12,38 +12,9 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = "ecg_mi/images"
 
 
-
-
-
 @app.route("/")
 def home():
     return render_template("index.html")
-
-"""
-@app.route("/chat", methods=['GET'])
-def chat():
-    try:
-        question = request.form["question"]
-        answer = chatbot.generate_answer(question)
-        return {"answer": answer}
-    except Exception as e:
-        return {"error" :str(e)}
-"""
-
-@app.route("/get_doctors", methods=["GET"])
-def get_doctors():
-    if request.method == "GET":
-        user_city = request.form["city"]
-        doctor_data = pd.read_excel('doctors.xlsx')
-        custom_data = doctor_data[doctor_data.city == user_city]
-        data_list = []
-        for i in range(len(custom_data)):
-            row_data = custom_data.iloc[i]
-            dict_data = {"name": str(row_data[0]), "image": row_data.image,
-                         "location": row_data.location, "price": row_data.price}
-            data_list.append(dict_data)
-
-        return jsonify(data_list)
 
 
 @app.route("/cities", methods=["GET"])
@@ -75,9 +46,9 @@ def stroke_prediction():
         model = joblib.load("stroke/model.joblib")
         prediction = stroke.perform_prediction(data, pipeline, model)
         return render_template("stroke.html", 
-                               result = prediction['prediction'], message=prediction['Message'])
+                               result = prediction['prediction'], message=prediction['Message'],doctors=doctors)
     else:
-        return render_template("stroke.html")
+        return render_template("stroke.html", prediction="0")
 
 
 @app.route("/chd", methods=["POST","GET"])
@@ -103,14 +74,15 @@ def chd_prediction():
         model = joblib.load("chd/model.joblib")
 
         prediction = chd.perform_prediction(data, pipeline, model)
-        print(prediction)
+        doctors = get_doctors()
         return render_template("chd.html",
-                               result = prediction['prediction'], message=prediction['Message'])
+                               result = prediction['prediction'], message=prediction['Message'],doctors=doctors)
     else:
-        return render_template("chd.html")
+        return render_template("chd.html", prediction="0")
     
 @app.route("/ecg_mi", methods=["POST","GET"])
 def ecg_mi_prediction():
+    
     if request.method == "POST":
         data = {
             "Age":int(request.form.get("Age")),
@@ -128,11 +100,11 @@ def ecg_mi_prediction():
         ecg_model = joblib.load('ecg_mi/RF_model_ecg.pkl')
         
         prediction = ecg_mi.mi_ecg_prediction(data, pipeline, model, file_path, ecg_model)
-
+        doctors = get_doctors()
         return render_template("ecg.html",
-                               message=prediction)
+                               result = prediction['prediction'], message=prediction['Message'],doctors=doctors)
     else:
-        return render_template("ecg.html")
+        return render_template("ecg.html", prediction="0")
     
 @app.route("/chat")
 def chat_page():
@@ -151,6 +123,18 @@ def chd_anlaysis():
 @app.route("/about")
 def about():
     return render_template("about.html")
+
+def get_doctors(city="المنوفية"):
+    doctor_data = pd.read_excel('doctors.xlsx')
+    custom_data = doctor_data[doctor_data.city == city]
+    data_list = []
+    for i in range(len(custom_data)):
+        row_data = custom_data.iloc[i]
+        dict_data = {"name": str(row_data[0]), "image": row_data.image,
+                        "location": row_data.location, "price": row_data.price}
+        data_list.append(dict_data)
+    return data_list
+
 
 if __name__ == "__main__":
     app.run(debug=True)
