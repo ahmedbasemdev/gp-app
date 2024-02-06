@@ -5,12 +5,9 @@ openai
 langchain
 chromadb
 python-dotenv
-tiktoken
 flask
-python-dotenv
 pandas
 joblib
 openpyxl
 scikit-learn
 scikit-image
-xgboost
