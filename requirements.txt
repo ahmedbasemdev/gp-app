@@ -11,4 +11,3 @@ joblib
 openpyxl
 scikit-learn
 scikit-image
-xgboost
