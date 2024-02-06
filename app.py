@@ -52,6 +52,7 @@ def stroke_prediction():
         pipeline = joblib.load("stroke/pipeline.joblib")
         model = joblib.load("stroke/model.joblib")
         prediction = stroke.perform_prediction(data, pipeline, model)
+        doctors = get_doctors()
         return render_template("stroke.html", 
                                result = prediction['prediction'], message=prediction['Message'],doctors=doctors)
     else:
