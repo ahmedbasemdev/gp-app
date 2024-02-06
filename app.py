@@ -8,7 +8,7 @@ import stroke
 import os
 
 app = Flask(__name__)
-chatbot = ChatBotManager()
+#chatbot = ChatBotManager()
 app.config['UPLOAD_FOLDER'] = "ecg_mi/images"
 
 
