@@ -25,7 +25,8 @@ body{
     transition: padding-left 0.5s ease;
     z-index: 999;
     background-color: white;
-    
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+
 }
 .n-left{
     flex: 2;
@@ -63,7 +64,7 @@ margin-left: 2rem;
     font-weight: 400;
     font-size: 20px;
     z-index: 2;
-    margin-left: 5rem;
+    margin-left: 3rem;
     
 }
 .u-list{
@@ -455,12 +456,14 @@ width: 500px;
 
 .partLeft{
     flex: 6;
+    
 }
 
 .partLeft .partInfo{
     font-size: 18px;
     font-weight: 400;
     margin-left: 1.5rem;
+    
 }
 .partLeft .partInfo ul li{
     margin-bottom: 1rem;

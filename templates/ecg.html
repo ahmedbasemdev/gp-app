@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/Styles/ecg.css">
+    <link rel="stylesheet" href="../static/Styles/ecg.css">
     
     <title>Shefaa | ECG</title>
     <link rel="icon" type="image/png" href="static/images/logo.png">
@@ -166,7 +166,7 @@ body {
         <div class="n-wrapper" id='Navebar'>
             <div class="n-left">
                 <div class="n-logo">
-                    <img src="static/images/logo.png" />
+                    <img src="../static/images/logo.png" />
                     <P><a href="/" style="text-decoration: none;  color: #08de9d;">Shefaa</a></P>
                 </div>
                 <Toggle />
@@ -236,7 +236,7 @@ body {
 
             </div>
             <div class="i-right">
-                <img src="static/images/ECG , CK-MB & Troponin.png" alt="" id="introImg" class="animate-on-scroll"/>
+                <img src="../static/images/ECG , CK-MB & Troponin.png" alt="" id="introImg" class="animate-on-scroll"/>
 
             </div>
         </div>
@@ -253,25 +253,41 @@ body {
 
         <h2 style="margin-bottom: 1rem;">Part 1: Quick Questionaire</h2>
         <form action="/ecg_mi" method="POST" enctype="multipart/form-data">
+            <label for="Gender" class="mb-3">Prevalent Hypertensive:</label>
+            <select class="form-select mb-3" aria-label="Default select example"  id="Gender" name="Gender" required>
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+            </select> 
+
             <label for="age" class="mb-3">AGE:</label>
-            <input type="number" class="form-control mb-3"  id="age" name="Age" value="65" class="mb-3"><br>
+            <input type="number" class="form-control mb-3"  id="age" name="Age" value="65" ><br>
             
             <label for="CK-MB" class="mb-3">CK-MB :</label>
-            <input type="number" class="form-control mb-3"  id="CK-MB" name="CK-MB" value="14" class="mb-3"><br>
+            <input type="number" class="form-control mb-3"  id="CK-MB" name="CK-MB" value="14" ><br>
            
             <label for="Troponin" class="mb-3">Troponin :</label>
-            <input type="number" class="form-control mb-3"  id="Troponin" name="Troponin" value="0.12" class="mb-3"><br>
+            <input type="number" class="form-control mb-3"  id="Troponin" name="Troponin" value="0.12" ><br>
             
-        
+            <label for="Heart rate" class="mb-3">Heart rate</label>
+            <input type="number" class="form-control mb-3"  id="Heart rate" name="AHeart ratege" value="65" ><br>
+            
+            <label for="Systolic blood pressure" class="mb-3">Systolic blood pressure</label>
+            <input type="number" class="form-control mb-3"  id="Systolic blood pressure" name="Systolic blood pressure" value="65" ><br>
+
+            <label for="Diastolic blood pressure" class="mb-3">Diastolic blood pressure</label>
+            <input type="number" class="form-control mb-3"  id="Diastolic blood pressure" name="Diastolic blood pressure" value="65" ><br>
+            
+            <label for="Blood sugar" class="mb-3">Blood sugar</label>
+            <input type="number" class="form-control mb-3"  id="Blood sugar" name="Blood sugar" value="65" ><br>
 <!-- <h2 style="margin-top: 2rem;">Part 2: Examines Uploading</h2> 
 <p style="margin-top: 1rem; margin-bottom: 2rem;" >Upload your Heart Examines for better result</p>         -->
 
 <input type="file" id="imageUpload" name="image" accept="image/*">
 <img id="previewImage" src="#" alt="Image Preview">
-<input type="submit" value="Check your Heart" 
-style="background-color: rgb(3, 208, 92); color: white; padding: 10px;
- width: 400px;  align-self: center; font-size: 26px; border-radius: 10px;" >
-</form>
+<button type="submit"  value="Check your Heart" onclick="getDataAndSubmit()"
+                style="background-color: rgb(3, 208, 92); color: white; padding: 10px;
+                width: 300px;  align-self: center; font-size: 26px; border-radius: 10px; margin: auto auto; margin-left: 13rem; margin-top: 2rem;" >Check Your Heart</button>
+               </form>
 
     </div>
 </div>
@@ -299,7 +315,7 @@ style="background-color: rgb(3, 208, 92); color: white; padding: 10px;
 <div class="swiper-container">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
-            <img src="static/images/man.jpg" alt="Card Image 1">
+            <img src="../static/images/man.jpg" alt="Card Image 1">
             <div class="card-content">
                 <h2>Dr. Ahmed Ali</h2>
                 <p style="margin-bottom: -0.02rem;">Specialist Neurosergeon</p>
@@ -309,7 +325,7 @@ style="background-color: rgb(3, 208, 92); color: white; padding: 10px;
 
         </div>
         <div class="swiper-slide">
-            <img src="static/images/man.jpg" alt="Card Image 2">
+            <img src="../static/images/man.jpg" alt="Card Image 2">
             <div class="card-content">
                 <h2>Dr. Mohamed sayed</h2>
                 <p style="margin-bottom: -0.02rem;">Specialist Neurosergeon</p>
@@ -319,7 +335,7 @@ style="background-color: rgb(3, 208, 92); color: white; padding: 10px;
 
         </div>
         <div class="swiper-slide">
-            <img src="static/images/man.jpg" alt="Card Image 3">
+            <img src="../static/images/man.jpg" alt="Card Image 3">
             <div class="card-content">
                 <h2>Dr. Ali Kamel</h2>
                 <p style="margin-bottom: -0.02rem;">Specialist Neurosergeon</p>
@@ -329,7 +345,7 @@ style="background-color: rgb(3, 208, 92); color: white; padding: 10px;
 
         </div>
         <div class="swiper-slide">
-            <img src="static/images/man.jpg" alt="Card Image 4">
+            <img src="../static/images/man.jpg" alt="Card Image 4">
             <div class="card-content">
                 <h2>Header 3</h2>
                 <p>Paragraph 1</p>
@@ -338,25 +354,10 @@ style="background-color: rgb(3, 208, 92); color: white; padding: 10px;
             <button class="card-btn">Book Appointment</button>
 
         </div>
-        <div class="swiper-slide">
-            <img src="static/images/man.jpg" alt="Card Image 35">
-            <div class="card-content">
-                <h2>Header 3</h2>
-                <p>Paragraph 1</p>
-                <p>Paragraph 2</p>
-            </div>
-            <button class="card-btn">Book Appointment</button>
-        </div>
+      
+     
 
-         <div class="swiper-slide">
-            <img src="static/images/man.jpg" alt="Card Image 6">
-            <div class="card-content">
-                <h2>Header 3</h2>
-                <p>Paragraph 1</p>
-                <p>Paragraph 2</p>
-            </div>
-            <button class="card-btn">Book Appointment</button>
-        </div>
+        
         <!-- Add more slides if needed -->
     </div>
 </div>
@@ -368,7 +369,7 @@ style="background-color: rgb(3, 208, 92); color: white; padding: 10px;
 <div class="footer" >
     <div class="footer-container" >
         <div class="left">
-            <img src="static/images/logo2.png"/>
+            <img src="../static/images/logo2.png"/>
             <!-- <p>alcnaknc cknndskvn vldnvdsnvs</p> -->
         </div>
         <div class="mid">

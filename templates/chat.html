@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Shefaa | Chat</title>
-    <link rel="icon" type="image/png" href="static/images/logo.png">
+    <link rel="icon" type="image/png" href="../static/images/logo.png">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" -->
@@ -17,9 +17,10 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&display=swap" rel="stylesheet">
+<!-- <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&display=swap" rel="stylesheet"> -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300&display=swap" rel="stylesheet">
 
    
    
@@ -58,7 +59,10 @@ body {
   background: var(--outgoing-chat-bg);
 }
 
-
+/* .home{
+  display: flex;
+  flex-direction: column;
+} */
 /* NavBar */
 
 .n-wrapper{
@@ -80,6 +84,8 @@ body {
     z-index: 999;
     background-color: white;
     border-bottom: 1px solid rgba(0, 0, 0, 0.141);
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+
 }
 .n-left{
     flex: 2;
@@ -250,7 +256,7 @@ margin-left: 2rem;
  align-items: center;
  margin-left: -1rem;
  justify-content: center;
- margin-top: -1.5rem;
+ margin-top: 0.5rem;
 }
 .chatLeftSide .chatmidContainer {
     display: flex;
@@ -259,6 +265,7 @@ margin-left: 2rem;
     /* gap: 0.5rem; */
     font-size: 20px;
     color: black;
+    margin-top: -2rem;
 }
 .chatLeftSide .chatmidContainer img{
     width: 150px;
@@ -280,7 +287,7 @@ margin-left: 2rem;
 .chatRightSide{
     flex: 9;
     height: 90vh;
-    margin-top: 1rem;
+    margin-top: 2rem;
     padding-left: 2rem;
 }
 
@@ -516,80 +523,82 @@ span.material-symbols-rounded {
     </style>
   </head>
   <body class="light-mode">
+    <div class="home">
             <!-- NavBar -->
             <div class="n-wrapper" id='Navebar'>
-                <div class="n-left">
-                    <div class="n-logo">
-                        <img src="static/images/logo.png" />
-                        <P><a href="index.html" style="text-decoration: none;  color: #08de9d;">Shefaa</a></P>
-                    </div>
-                    <Toggle />
-                </div>
-                <div class="n-right">
-                    <div class="u-list">
-                        <ul>
-                            <li>
-                                <i class="fa-solid fa-house"></i>
-                                <a href="index.html" onclick="setActive(0)">Home</a></li>
-                            <li class="nav-item dropdown" >
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa-solid fa-robot"></i>
-                                    Detector
-                                  </a>
-                                  <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="ecg.html">ECG</a></li>
-                                    <li><a class="dropdown-item" href="stroke.html">Stroke</a></li>
-                                    <li><a class="dropdown-item" href="./chd.html">CHD</a></li>
-                                  </ul>
-                                <!-- <a href="detector.html">Detector</a> -->
-                            </li>
-                            <li class="nav-item dropdown" onclick="setActive(2)">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa-solid fa-notes-medical"></i>
-                                    Analysis
-                                  </a>
-                                  <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="./strokeanalysis.html">Stroke</a></li>
-                                    <li><a class="dropdown-item" href="chdanalysis.html">CHD</a></li>
-                                  </ul>
-                                <!-- <a href="detector.html">Detector</a> -->
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-circle-info" onclick="setActive(3)"></i>
-                                <a href="about2.html">About</a></li>
-                                <li>
-                                    <i class="fa-solid fa-notes-medical"></i>
-                                    <a href="chat.html" onclick="setActive(4)">Chatbot</a></li>
-                            <!-- <li style="margin-left: 17rem; "><a>Schedule</a></li> -->
-                            <button class="button n-button" >
-                                <a href="index.html" style="text-decoration: none; color: #20c0ac;">Get Started</a>
-                                
-                            </button>
-    
-    
-                    </div>
-                </div>
-            </div>
+              <div class="n-left">
+                  <div class="n-logo">
+                      <img src="../static/images/logo.png" />
+                      <P><a href="index.html" style="text-decoration: none;  color:black;"><span style="color: #08de9d;;">Sh</span>efa<span style="color: #08de9d;;">a</span></a></P>
+                  </div>
+                  <Toggle />
+              </div>
+              <div class="n-right">
+                  <div class="u-list">
+                      <ul>
+                          <li>
+                              <i class="fa-solid fa-house"></i>
+                              <a href="index.html" >Home</a></li>
+                          <li class="nav-item dropdown" >
+                              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  <i class="fa-solid fa-robot"></i>
+                                  Detector
+                                </a>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="ecg.html">ECG</a></li>
+                                  <li><a class="dropdown-item" href="stroke.html">Stroke</a></li>
+                                  <li><a class="dropdown-item" href="chd.html">CHD</a></li>
+                                </ul>
+                          </li>
+                          <li class="nav-item dropdown" >
+                              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  <i class="fa-solid fa-notes-medical"></i>
+                                  Analysis
+                                </a>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="stroke_analysis.html">Stroke</a></li>
+                                  <li><a class="dropdown-item" href="chd_analysis.html">CHD</a></li>
+                                </ul>
+                          </li>
+                          <li>
+                              <i class="fa-solid fa-circle-info" ></i>
+                              <a href="about.html">About</a></li>
+                              <li>
+                                  <i class="fa-solid fa-notes-medical"></i>
+                                  <a href="chat.html" >Chatbot</a></li>
+                          <!-- <li style="margin-left: 17rem; "><a>Schedule</a></li> -->
+                          <button class="button n-button" >
+                              <a href="index.html" style="text-decoration: none; color: #20c0ac;">Get Started</a>
+                              
+                          </button>
+  
+  
+                  </div>
+              </div>
+          </div>
     <div class="ChatPage">
         <div class="chatLeftSide">
             <div class="chatup">
                 <div class="chatupContainer">
-                    <img src="static/images/logo.png">
-                    <p>Shefaa Chatbot</p>
+                    <!-- <img src="../static/images/logo.png" style="margin-bottom: -1rem;"> -->
+                    <!-- <p>Shefaa Chatbot</p> -->
                 </div>
             </div>
             <div class="chatmid">
                 <div class="chatmidContainer">
-                    <img src="./static/images/Chatbot.png">
-                    <p style="font-size: 28px;"> Ahmed Ali</p>
-                    <p style="font-size: 16px; margin-top: -1rem;"> Ahmed2024@gmail.com</p>
+                    <img src="../static/images/Chatbot.png">
+                    <p style="width: 59%; font-size: 17px;text-align: center;  line-height: 1.7; margin-top: 1rem; padding: 10px;margin-left: 1.5rem;
+                    font-family: 'Cairo', sans-serif; "> Meet our intelligent chatbot, your personal guide to understanding cardiovascular
+                      health. Get instant answers to your queries, personalized health tips, and navigate
+                      through our platform with ease.</p>
+                    <!-- <p style="font-size: 16px; margin-top: -1rem;"> Ahmed2024@gmail.com</p> -->
                 </div>
             </div>
-            <div class="chatdown">
+            <!-- <div class="chatdown">
                 <i class="fa-solid fa-robot" style="border:1px solid black; padding: 8px; border-radius:50% ;"></i>
                 <p>Upgrade plan
                     Shefaa Chat 2,more intellegence </p>
-            </div>
+            </div> -->
         </div>
         <div class="chatRightSide">
                 <!-- Chats container -->
@@ -603,16 +612,16 @@ span.material-symbols-rounded {
       <div class="typing-content">
         <div class="typing-textarea" style="margin-left: -17rem;">
           <textarea id="chat-input" spellcheck="false" placeholder="Enter a prompt here" required></textarea>
-          <span id="send-btn" class="material-symbols-rounded">send</span>
+          <span id="send-btn" class="material-symbols-rounded"><i class="fa-regular fa-paper-plane"></i></span>
         </div>
         <div class="typing-controls">
           <span id="theme-btn" class="material-symbols-rounded" style="display: none">light_mode</span>
-          <span id="delete-btn" class="material-symbols-rounded">delete</span>
+          <span id="delete-btn" class="material-symbols-rounded"> <i class="fa-solid fa-trash"></i></span>
       </div>
     </div>
         </div>
     </div>
-
+  </div>  
 
 
     <script>
@@ -725,7 +734,7 @@ const showTypingAnimation = () => {
     // Display the typing animation and call the getChatResponse function
     const html = `<div class="chat-content">
                     <div class="chat-details">
-                        <img src="static/images/logo.png" alt="chatbot-img">
+                        <img src="../static/images/logo.png" alt="chatbot-img">
                         <div class="typing-animation">
                             <div class="typing-dot" style="--delay: 0.2s"></div>
                             <div class="typing-dot" style="--delay: 0.3s"></div>
@@ -751,7 +760,7 @@ const handleOutgoingChat = () => {
 
     const html = `<div class="chat-content">
                     <div class="chat-details">
-                        <img src="static/images/man.jpg" alt="user-img">
+                        <img src="../static/images/man.jpg" alt="user-img">
                         <p>${userText}</p>
                     </div>
                 </div>`;
