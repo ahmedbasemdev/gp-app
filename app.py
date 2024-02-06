@@ -116,11 +116,13 @@ def ecg_mi_prediction():
             "Age":int(request.form.get("Age")),
             "CK-MB":int(request.form.get("CK-MB")),
             "Troponin":float(request.form.get("Troponin"))}
-        #uploaded_file = request.files['file']
-        #file_path = os.path.join(
-        #app.config['UPLOAD_FOLDER'], uploaded_file.filename)
-        #uploaded_file.save(file_path)
-        file_path = "ecg_mi/images/mi1.jpg"
+        file = request.files['image']
+        if file.filename == '':
+            return 'No selected file', 400
+        if file:
+            file_path = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
+            print("file_path")
+        file.save(file_path)
         pipeline = joblib.load("ecg_mi/mi_pipeline.joblib")
         model = joblib.load("ecg_mi/mi_model.joblib")
         ecg_model = joblib.load('ecg_mi/RF_model_ecg.pkl')
@@ -128,7 +130,7 @@ def ecg_mi_prediction():
         prediction = ecg_mi.mi_ecg_prediction(data, pipeline, model, file_path, ecg_model)
 
         return render_template("ecg.html",
-                               result = prediction['s'], message=prediction['s'])
+                               message=prediction)
     else:
         return render_template("ecg.html")
     

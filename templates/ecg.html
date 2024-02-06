@@ -252,7 +252,7 @@ body {
     <div class='Services-container'>
 
         <h2 style="margin-bottom: 1rem;">Part 1: Quick Questionaire</h2>
-        <form action="/ecg_mi" method="POST">
+        <form action="/ecg_mi" method="POST" enctype="multipart/form-data">
             <label for="age" class="mb-3">AGE:</label>
             <input type="number" class="form-control mb-3"  id="age" name="Age" value="65" class="mb-3"><br>
             
@@ -266,7 +266,7 @@ body {
 <!-- <h2 style="margin-top: 2rem;">Part 2: Examines Uploading</h2> 
 <p style="margin-top: 1rem; margin-bottom: 2rem;" >Upload your Heart Examines for better result</p>         -->
 
-<input type="file" id="imageUpload" name="file">
+<input type="file" id="imageUpload" name="image" accept="image/*">
 <img id="previewImage" src="#" alt="Image Preview">
 <input type="submit" value="Check your Heart" 
 style="background-color: rgb(3, 208, 92); color: white; padding: 10px;

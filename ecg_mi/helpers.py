@@ -76,14 +76,14 @@ def mi_prediction(input_data, pipeline, model):
 
     preprocessed_data = pipeline.transform(intput_df)
 
-    prediction = model.predict(preprocessed_data)
+    prediction = model.predict(preprocessed_data)[0]
 
     return prediction
 
 
 def ecg_prediction(image_path, model):
     processed_image = process_ecg_image(image_path)
-    prediction = model.predict(processed_image)
+    prediction = model.predict(processed_image)[0]
     return prediction
 
 
@@ -91,7 +91,6 @@ def mi_ecg_prediction(input_data, mi_pipeline, mi_model, image_path, ecg_model):
     mi_ouput = mi_prediction(input_data, mi_pipeline,mi_model)
     ecg_ouput = ecg_prediction(image_path, ecg_model)
     
-    if mi_ouput == 1:
-        pass
+    return f"{mi_ouput}{ecg_ouput}"
         
 
