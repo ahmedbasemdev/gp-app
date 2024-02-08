@@ -41,6 +41,9 @@
              box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
          
           }
+          .subBtn:hover{
+    transform: scale(1.03);
+ }
           /* End Stroke-form */
  .Result{
     display: flex;
@@ -200,9 +203,15 @@
                                 <a href="/chat" >Chatbot</a></li>
                         <!-- <li style="margin-left: 17rem; "><a>Schedule</a></li> -->
                         <button class="button n-button" >
-                            <a href="/" style="text-decoration: none; color: #20c0ac;">Get Started</a>
+                            <a href="index.html" style="text-decoration: none; color: #20c0ac;">Get Started</a>
                             
                         </button>
+                       
+                       
+                        <select class="custom-select">
+                            <option value="en"  data-lng="english">English </option>
+                            <option value="ar" data-lng="arabic"> Arabic</option>
+                        </select>
 
 
                 </div>
@@ -235,74 +244,74 @@
 
         <!-- Stroke Questionaire -->
         <div class='Services-Sheader' id="Services-Sheader" style="margin-top: 3rem; ">
-            <p class='Services-h'> Stroke Questionaire </p>
-            <p class='Services-p'>Answer this Questions </p>
+            <p class='Services-h' data-lng="STtitle"> Stroke Questionaire </p>
+            <p class='Services-p' data-lng="STtitle2">Answer this Questions </p>
         </div>
-        <div class="Stroke-form" >
+        <div class="Stroke-form"  >
             <form id="my-form" style="width: 50vw;" action="/stroke" method="post">
                 
-                    <label for="gender"  class="mb-3">What is your gender?</label>
+                    <label for="gender"  class="mb-3" data-lng="gender">What is your gender?</label>
                     <select class="form-select mb-3" aria-label="Default select example" id="gender" name="gender" required>
                         <!-- <option selected>Open this select menu</option> -->
-                        <option value="0" >Male</option>
-                        <option value="1">Female</option>
+                        <option value="0"  data-lng="male">Male</option>
+                        <option value="1" data-lng="female">Female</option>
                     </select>
                    
                
-                    <label for="worktype" class="mb-3">Which of the following best describes your current work status?</label>
+                    <label for="worktype" class="mb-3" data-lng="currentWork">Which of the following best describes your current work status?</label>
                     <select class="form-select mb-3" aria-label="Default select example" required id="worktype" name="work_type">
                         <!-- <option selected>Open this select menu</option> -->
-                        <option value="1">Private</option>
-                        <option value="2"> Self-Employed</option>
-                        <option value="3">Govt_job, Children</option>
-                        <option value="4">Never_Worked</option>
-
+                        <option value="1" data-lng="private">Private</option>
+                        <option value="2" data-lng="SelfEmployed"> Self-Employed</option>
+                        <option value="3" data-lng="govtJob">Govt_job, Children</option>
+                        <option value="3" data-lng="children">Children</option>
+                        <option value="4" data-lng="NeverWorked">Never_Worked</option>
                     </select>
               
                   
-                    <label for="age" class="mb-3">What is your current age?</label>
-                    <input type="number" class="form-control mb-3" id="age" placeholder="Your Age" name="age" required>
+                    <label for="age" class="mb-3" data-lng="age">What is your current age?</label>
+                    <input type="number" class="form-control mb-3" id="age" placeholder="" name="age" required>
                  
-                    <label for="bloodpressure" class="mb-3">Have you been diagnosed with hypertension (high blood pressure)?</label>
+                    <label for="bloodpressure" class="mb-3" data-lng="bloodPressure">Have you been diagnosed with hypertension (high blood pressure)?</label>
                     <select class="form-select mb-3" aria-label="Default select example" id="bloodpressure" name="hypertension" required>
                         <!-- <option selected>Open this select menu</option> -->
-                        <option value="1">Yes</option>
-                        <option value="0">No</option>
+                        <option value="1" data-lng="yes">Yes</option>
+                        <option value="0" data-lng="no">No</option>
                     </select>
                 
-                    <label for="status" class="mb-3">Have you ever been married?</label>
+                    <label for="status" class="mb-3" data-lng="status">Have you ever been married?</label>
                     <select class="form-select mb-3" aria-label="Default select example" id="status" name="ever_married" required>
                         <!-- <option selected>Open this select menu</option> -->
-                        <option value="1">Yes</option>
-                        <option value="0">No</option>
+                        <option value="1" data-lng="yes">Yes</option>
+                        <option value="0" data-lng="no">No</option>
                     </select>
                 
-                    <label for="workstatus" class="mb-3">Heart disease</label>
+                    <label for="workstatus" class="mb-3" data-lng="heartDisease">Do you have Heart disease</label>
                     <select class="form-select mb-3" aria-label="Default select example" id="status" name="heart_disease" required>
                         <!-- <option selected>Open this select menu</option> -->
-                        <option value="1">Yes</option>
-                        <option value="0">No</option>
+                        <option value="1" data-lng="yes">Yes</option>
+                        <option value="0" data-lng="no">No</option>
                 </select> 
                
-                    <label for="area" class="mb-3">Do you live in an urban or rural area?</label>
+                    <label for="area" class="mb-3" data-lng="live">Do you live in an urban or rural area?</label>
                     <select class="form-select mb-3" aria-label="Default select example" id="area" name="Residence_type" required>
                         <!-- <option selected>Open this select menu</option> -->
-                        <option value="0">urban</option>
-                        <option value="1">Rural</option>
+                        <option value="0" data-lng="urban">urban</option>
+                        <option value="1" data-lng="rural">Rural</option>
                     </select>
                 
-                    <label for="glucose" class="mb-3">What is your most recent fasting blood glucose level (mg/dL)?</label>
-                    <input type="number" class="form-control mb-3" id="glucose" placeholder="Blood glucose level" name="avg_glucose_level" required>
+                    <label for="glucose" class="mb-3" data-lng="glucoseLevel">What is your most recent fasting blood glucose level (mg/dL)?</label>
+                    <input type="number" class="form-control mb-3" id="glucose" placeholder="" name="avg_glucose_level" required>
                   
-                    <label for="Mass" class="mb-3">What is your current Body Mass Index (BMI)?</label>
-                    <input type="number" class="form-control mb-3" id="Mass" placeholder="Body Mass Index" name="bmi" required>
+                    <label for="Mass" class="mb-3" data-lng="bodyMass">What is your current Body Mass Index (BMI)?</label>
+                    <input type="number" class="form-control mb-3" id="Mass" placeholder="" name="bmi" required>
                
-                    <label for="smokingstatus" class="form-label mb-3">Which of the following best describes your smoking status?</label>
+                    <label for="smokingstatus" class="form-label mb-3" data-lng="smokeStatus">Which of the following best describes your smoking status?</label>
                     <select class="form-select mb-3" aria-label="Default select example" id="smokingstatus" name="smoking_status" required> 
                         <!-- <option selected>Open this select menu</option> -->
-                        <option value="1">Never Smoked</option>
-                        <option value="2">Smokes</option>
-                        <option value="3">Formerly Smoked</option>
+                        <option value="1" data-lng="neverSmoke">Never Smoked</option>
+                        <option value="2" data-lng="smoke">Smokes</option>
+                        <option value="3" data-lng="formerlySmoke">Formerly Smoked</option>
                         <!-- <option value="2">Smokes</option> -->
 
                     </select>
@@ -313,18 +322,17 @@
                   <input type="checkbox" class="form-check-input" id="exampleCheck1">
                   <label class="form-check-label" for="exampleCheck1">Check me out</label>
                 </div> -->
-                <input type="submit" value="Check your Heart" 
-                    style="background-color: rgb(3, 208, 92); color: white; padding: 10px;
-                    width: 300px;  align-self: center; font-size: 26px; border-radius: 10px; margin: auto auto; margin-left: 13rem ; margin-top: 2rem;" >
-              </form>
+                <button type="submit"  value="Check your Heart" class="subBtn" id="formBtn" data-lng="formCheck"
+                style="background-color: #20c0ac; color: white; padding: 7px; border: none;
+                width: 35%;  align-self: center; font-size: 26px; border-radius: 15px; margin: auto auto; margin-left: 14.2rem; margin-top: 2rem;" >Check Your Heart</button>               </form>
         </div>
 
         <!-- Result Secion -->
             
         <div class="Result">
-            <h1>Your Result</h1>
+            <h1 data-lng="result">Your Result</h1>
             <div class="checkResult">
-                <p style="font-size: 20px; font-weight: bold;">{{message}}  </p>
+                <p style="font-size: 20px; font-weight: bold;" >{{message}}  </p>
             </div>
         </div>
         <!-- End Result Secion -->
@@ -332,9 +340,9 @@
 <div class="doctors">
     <div class="doctorsContainer">
     <!-- <p style="color: rgb(0, 179, 255); font-size: 22px;">Doctors</p> -->
-    <p style="font-size: 40px; margin-top: -1rem;"> Meet Our</p>
-    <p style="font-size: 45px; margin-top: -1.5rem;"> <span style="color: #20c0ac;"> Top Rated </span>Doctors</p>
-    <p style="text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    <p style="font-size: 40px; margin-top: -1rem;" data-lng="meetDr"> Meet Our</p>
+    <p style="font-size: 45px; margin-top: -1.5rem;" data-lng="topDr"> <span style="color: #20c0ac;"> Top Rated </span>Doctors</p>
+    <p style="text-align: center;" data-lng="topicsDr">Lorem ipsum dolor sit amet consectetur adipisicing elit.
          Quasi, voluptas exercitationem atque mollitia necessitatibus
           suscipit laudantium quia incidunt molestias dolorum! Quasi
            incidunt doloremque quisquam iusto?
@@ -346,9 +354,9 @@
 <div class="doctors">
     <div class="doctorsContainer">
     <!-- <p style="color: rgb(0, 179, 255); font-size: 22px;">Doctors</p> -->
-    <p style="font-size: 40px; margin-top: -1rem;"> Meet Our</p>
-    <p style="font-size: 45px; margin-top: -1.5rem;"> <span style="color: #20c0ac;"> Top Rated </span>Doctors</p>
-    <p style="text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    <p style="font-size: 40px; margin-top: -1rem;" data-lng="meetDr"> Meet Our</p>
+    <p style="font-size: 45px; margin-top: -1.5rem;" data-lng="topDr"> <span style="color: #20c0ac;"> Top Rated </span>Doctors</p>
+    <p style="text-align: center;" data-lng="topicsDr">Lorem ipsum dolor sit amet consectetur adipisicing elit.
          Quasi, voluptas exercitationem atque mollitia necessitatibus
           suscipit laudantium quia incidunt molestias dolorum! Quasi
            incidunt doloremque quisquam iusto?
@@ -360,11 +368,11 @@
         <div class="swiper-slide">
             <img src="{{doctors[0].image}}" alt="Card Image 1">
             <div class="card-content">
-                <h3>{{doctors[0].name}}</h3>
-                <p style="margin-bottom: -0.02rem;">{{doctors[0].location}}</p>
-                <p>{{doctors[0].price}} $</p>
+                <h3 data-lng="drName">{{doctors[0].name}}</h3>
+                <p style="margin-bottom: -0.02rem;" data-lng="drLoc">{{doctors[0].location}}</p>
+                <p data-lng="drPrice">{{doctors[0].price}} $</p>
             </div>
-            <button class="card-btn">Book Appointment</button>
+            <button class="card-btn" data-lng="drBook">Book Appointment</button>
 
         </div>
         <div class="swiper-slide">

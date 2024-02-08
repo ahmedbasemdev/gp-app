@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/Styles/ecg.css">
-    
     <title>Shefaa | ECG</title>
     <link rel="icon" type="image/png" href="static/images/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -64,7 +63,9 @@ body {
     transform: translateY(0);
 }
 
-
+.subBtn:hover{
+    transform: scale(1.03);
+ }
 /* Doctor Suggesion */
 
 
@@ -167,54 +168,56 @@ body {
             <div class="n-left">
                 <div class="n-logo">
                     <img src="../static/images/logo.png" />
-                    <P><a href="/" style="text-decoration: none;  color: #08de9d;">Shefaa</a></P>
+                    <P><a href="/" style="text-decoration: none;  color:black;"><span style="color: #08de9d;;">Sh</span>efa<span style="color: #08de9d;;">a</span></a></P>
                 </div>
                 <Toggle />
             </div>
-            <div class="n-right">
+            <div class="n-right" id="n-right">
                 <div class="u-list">
                     <ul>
                         <li>
-                            <i class="fa-solid fa-house"></i>
-                            <a href="/" >Home</a></li>
+                            
+                            <a href="/"  ><i class="fa-solid fa-house"></i>Home</a></li>
                         <li class="nav-item dropdown" >
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa-solid fa-robot"></i>
                                 Detector
                               </a>
                               <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/ecg_mi">ECG</a></li>
-                                <li><a class="dropdown-item" href="/stroke">Stroke</a></li>
-                                <li><a class="dropdown-item" href="/chd">CHD</a></li>
+                                <li><a class="dropdown-item" href="/ecg_mi" >ECG</a></li>
+                                <li><a class="dropdown-item" href="/stroke" >Stroke</a></li>
+                                <li><a class="dropdown-item" href="/chd" >CHD</a></li>
                               </ul>
-                            <!-- <a href="detector.html">Detector</a> -->
                         </li>
                         <li class="nav-item dropdown" >
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa-solid fa-notes-medical"></i>
                                 Analysis
                               </a>
                               <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="/stroke_analysis">Stroke</a></li>
-                                <li><a class="dropdown-item" href="/chd_analysis">CHD</a></li>
+                                <li><a class="dropdown-item" href="/chd_analysis" >CHD</a></li>
                               </ul>
-                            <!-- <a href="detector.html">Detector</a> -->
                         </li>
                         <li>
-                            <i class="fa-solid fa-circle-info" ></i>
-                            <a href="/about">About</a></li>
+                            
+                            <a href="/about" ><i class="fa-solid fa-circle-info" ></i>About</a></li>
                             <li>
-                                <i class="fa-solid fa-notes-medical"></i>
-                                <a href="/chat" >Chatbot</a></li>
+                                
+                                <a href="/chat"><i class="fa-solid fa-notes-medical"></i>Chatbot</a></li>
                         <!-- <li style="margin-left: 17rem; "><a>Schedule</a></li> -->
                         <button class="button n-button" >
-                            <a href="index.html" style="text-decoration: none; color: #20c0ac;">Get Started</a>
-                            
+                            <a href="/" style="text-decoration: none; color: #20c0ac;">Get Started</a>
                         </button>
+                            <select class="custom-select">
+                                <option value="en"  data-lng="english" selected>English </option>
+                                <option value="ar" data-lng="arabic"> Arabic</option>
+                            </select>
 
 
                 </div>
             </div>
+            <!-- <i class="fa-solid fa-bars" id="menu"></i> -->
         </div>
 
 
@@ -245,21 +248,21 @@ body {
 
 
     <div class='Services-Sheader'>
-        <p class='Services-h'> Our Services </p>
-        <p class='Services-p'>Tell Us How Can Help? </p>
+        <p class='Services-h' data-lng="ECGtitle"> Our Services </p>
+        <p class='Services-p' data-lng="ECGtitle2">Tell Us How Can Help? </p>
     </div>
 
     <div class='Services-container'>
 
-        <h2 style="margin-bottom: 1rem;">Part 1: Quick Questionaire</h2>
-        <form action="/ecg_mi" method="POST" enctype="multipart/form-data">
-            <label for="age" class="mb-3">AGE:</label>
+        <h2 style="margin-bottom: 1rem;" data-lng="ECGhead">Part 1: Quick Questionaire</h2>
+        <form id="my-form" action="/ecg_mi" method="POST" enctype="multipart/form-data" >
+            <label for="age" class="mb-3" data-lng="age">AGE:</label>
             <input type="number" class="form-control mb-3"  id="age" name="Age" value="65" class="mb-3"><br>
             
-            <label for="CK-MB" class="mb-3">CK-MB :</label>
+            <label for="CK-MB" class="mb-3" data-lng="ckmb">CK-MB :</label>
             <input type="number" class="form-control mb-3"  id="CK-MB" name="CK-MB" value="14" class="mb-3"><br>
            
-            <label for="Troponin" class="mb-3">Troponin :</label>
+            <label for="Troponin" class="mb-3" data-lng="troponin">Troponin :</label>
             <input type="number" class="form-control mb-3"  id="Troponin" name="Troponin" value="0.12" class="mb-3"><br>
             
         
@@ -268,16 +271,16 @@ body {
 
 <input type="file" id="imageUpload" name="image" accept="image/*">
 <img id="previewImage" src="#" alt="Image Preview">
-<button type="submit"  value="Check your Heart" onclick="getDataAndSubmit()"
-                style="background-color: rgb(3, 208, 92); color: white; padding: 10px;
-                width: 300px;  align-self: center; font-size: 26px; border-radius: 10px; margin: auto auto; margin-left: 13rem; margin-top: 2rem;" >Check Your Heart</button>
+<button type="submit"  value="Check your Heart" class="subBtn" id="formBtn" data-lng="formCheck"
+                style="background-color: #20c0ac; color: white; padding: 7px; border: none;
+                width: 35%;  align-self: center; font-size: 26px; border-radius: 15px; margin: auto auto; margin-left: 14.2rem; margin-top: 2rem;" >Check Your Heart</button>
                </form>
 
     </div>
 </div>
 
 <div class="Result">
-    <h1>Your Result</h1>
+    <h1 data-lng="result">Your Result</h1>
     <div class="checkResult">
         <p style="font-size: 20px; font-weight: bold;">{{ message}}  </p>
     </div>
@@ -288,9 +291,9 @@ body {
 <div class="doctors">
     <div class="doctorsContainer">
     <!-- <p style="color: rgb(0, 179, 255); font-size: 22px;">Doctors</p> -->
-    <p style="font-size: 40px; margin-top: -1rem;"> Meet Our</p>
-    <p style="font-size: 45px; margin-top: -1.5rem;"> <span style="color: #20c0ac;"> Top Rated </span>Doctors</p>
-    <p style="text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    <p style="font-size: 40px; margin-top: -1rem;" data-lng="meetDr"> Meet Our</p>
+    <p style="font-size: 45px; margin-top: -1.5rem;" data-lng="topDr"> <span style="color: #20c0ac;"> Top Rated </span>Doctors</p>
+    <p style="text-align: center;" data-lng="topicsDr">Lorem ipsum dolor sit amet consectetur adipisicing elit.
          Quasi, voluptas exercitationem atque mollitia necessitatibus
           suscipit laudantium quia incidunt molestias dolorum! Quasi
            incidunt doloremque quisquam iusto?
@@ -302,9 +305,9 @@ body {
         <div class="swiper-slide">
             <img src="{{doctors[0].image}}" alt="Card Image 1">
             <div class="card-content">
-                <h3>{{doctors[0].name}}</h3>
-                <p style="margin-bottom: -0.02rem;">{{doctors[0].location}}</p>
-                <p>{{doctors[0].price}} $</p>
+                <h3 data-lng="drName"> {{doctors[0].name}}</h3>
+                <p style="margin-bottom: -0.02rem;" data-lng="drLoc">{{doctors[0].location}}</p>
+                <p data-lng="drPrice">{{doctors[0].price}} $</p>
             </div>
             <button class="card-btn">Book Appointment</button>
 
@@ -391,6 +394,112 @@ body {
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
 
+
+const transilations = {
+  en:{
+
+    //NAV
+    // home:"Home",
+    // detector:"Detector",
+    // ecg:"Ecg",
+    // stroke:"Stroke",
+    // chd:"Chd",
+    // analysis:"Analysis",
+    // strokeAnalysis:"Stroke",
+    // chdAnalysis:"Chd",
+    // about:"About",
+    // chatbot:"Chatbot",
+    english:"English",
+    arabic:"Arabic",
+
+    
+    // ECG
+    ECGtitle:"Our Services",
+    ECGtitle2:"Tell Us How Can Help?",
+    ECGhead:"Part 1: Quick Questionaire",
+    ckmb:"CK-MB",
+    troponin:"Troponin",
+
+    //RESULT
+    formCheck:"Check your Heart",
+    result:"Your Result",
+
+    // DOCTOR
+    // meetDr:"Meet Our",
+    // topDr:"Top Rated Doctors",
+    // topicsDr:"Lorem ipsum dolor sit amet consectetur adipisicing elit.Quasi, voluptas exercitationem atque mollitia necessitatibussuscipit laudantium quia incidunt molestias dolorum! Quasiincidunt doloremque quisquam iusto?Dolore necessitatibus eligendi voluptates laudantium!",
+    // drName:"Smokes",
+    // drLoc:"Smokes",
+    // drPrice:"Smokes",
+    // drBook:"Book Appointment",
+
+    // detector:"Detector",
+
+  },
+  ar:{
+    // home:"الرئيسية",
+    // detector:"الكشف",
+    // ecg:"Ecg",
+    // stroke:"Stroke",
+    // chd:"Chd",
+    // analysis:"تحاليل",
+    // strokeAnalysis:"Stroke",
+    // chdAnalysis:"Chd",
+    // about:"عنا",
+    // chatbot:"الدردشة",
+    english:"انجليزي",
+    arabic:"عربي",
+ 
+
+
+    //ECG
+    ECGtitle:"ترجم",
+    ECGtitle2:"ترجم",
+    ECGhead:"ترجم",
+    ckmb:"ترجم",
+    troponin:"ترجم",
+
+
+ 
+    //RESULT
+    formCheck:"ابدا الفحص",
+    result:"نتيجتك",
+
+    //DOCTOR
+    // meetDr:"تواصل مع",
+    // topDr:"الاطباء الاعلي تقييما",
+    // topicsDr:"Lorem ipsum dolor sit amet consectetur adipisicing elit.Quasi, voluptas exercitationem atque mollitia necessitatibussuscipit laudantium quia incidunt molestias dolorum! Quasiincidunt doloremque quisquam iusto?Dolore necessitatibus eligendi voluptates laudantium!",
+    // drName:"Smokes",
+    // drLoc:"Smokes",
+    // drPrice:"Smokes",
+    // drBook:"Book Appointment",
+    // detector:"Detector",
+
+  },
+}
+const langSelector = document.querySelector("select")
+
+langSelector.addEventListener("change",(event)=>{
+    setLanguage(event.target.value)
+  localStorage.setItem("lang",event.target.value)
+})
+document.addEventListener('DOMContentLoaded',()=>{
+  setLanguage(localStorage.getItem("lang"))
+})
+const setLanguage = (language)=>{
+  const elements = document.querySelectorAll('[data-lng]')
+  // console.log(element)
+  elements.forEach((element)=>{
+    const transilationKey = element.getAttribute("data-lng")
+    element.textContent = transilations[language][transilationKey]
+  })
+  document.getElementById('Services').dir = language === 'ar'? 'rtl': 'ltr';
+//   document.getElementById('my-form').dir = lang === 'ar'? 'rtl': 'ltr'
+  document.getElementById("formBtn").style.marginRight = language==='ar'?'13rem':'0'
+
+}
+
+
 document.getElementById("homeBtn").addEventListener("click", function() {
   document.getElementById("Services").scrollIntoView({ behavior: "smooth" });
 });
@@ -398,7 +507,21 @@ document.getElementById("homeBtn").addEventListener("click", function() {
 
 
         // animation navbar
+        let prevScrollPos = window.pageYOffset;
 
+window.onscroll = function() {
+  let currentScrollPos = window.pageYOffset;
+
+  if (prevScrollPos > currentScrollPos) {
+    // document.getElementById("Navebar").style.left = "0";
+    document.getElementById("Navebar").style.paddingLeft = "6rem";
+  } else {
+    document.getElementById("Navebar").style.paddingLeft = "0rem";
+    // document.getElementById("content").style. = "-100%";
+  }
+
+  prevScrollPos = currentScrollPos;
+};
 
 // Animation Form 
 document.addEventListener('DOMContentLoaded', function() {
@@ -428,7 +551,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //  End Doctor Suggestion 
 
     </script>
-    <script src="static/Scripts/script.js"></script>
+        <script src="../static/Scripts/script.js"></script>
 </body>
 
 </html>

@@ -41,52 +41,57 @@
                 </div>
                 <Toggle />
             </div>
-            <div class="n-right">
+            <div class="n-right" id="n-right">
                 <div class="u-list">
                     <ul>
                         <li>
                             
-                            <a href="/" ><i class="fa-solid fa-house"></i>Home</a></li>
+                            <a href="/"  ><i class="fa-solid fa-house"></i>Home</a></li>
                         <li class="nav-item dropdown" >
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa-solid fa-robot"></i>
                                 Detector
                               </a>
                               <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/ecg_mi">ECG</a></li>
-                                <li><a class="dropdown-item" href="/stroke">Stroke</a></li>
-                                <li><a class="dropdown-item" href="/chd">CHD</a></li>
+                                <li><a class="dropdown-item" href="/ecg_mi" >ECG</a></li>
+                                <li><a class="dropdown-item" href="/stroke" >Stroke</a></li>
+                                <li><a class="dropdown-item" href="/chd" >CHD</a></li>
                               </ul>
                         </li>
                         <li class="nav-item dropdown" >
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa-solid fa-notes-medical"></i>
                                 Analysis
                               </a>
                               <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="/stroke_analysis">Stroke</a></li>
-                                <li><a class="dropdown-item" href="/chd_analysis">CHD</a></li>
+                                <li><a class="dropdown-item" href="/chd_analysis" >CHD</a></li>
                               </ul>
                         </li>
                         <li>
                             
-                            <a href="/about"><i class="fa-solid fa-circle-info" ></i>About</a></li>
+                            <a href="/about" ><i class="fa-solid fa-circle-info" ></i>About</a></li>
                             <li>
                                 
-                                <a href="/chat" ><i class="fa-solid fa-notes-medical"></i>Chatbot</a></li>
+                                <a href="/chat"><i class="fa-solid fa-notes-medical"></i>Chatbot</a></li>
                         <!-- <li style="margin-left: 17rem; "><a>Schedule</a></li> -->
                         <button class="button n-button" >
                             <a href="/" style="text-decoration: none; color: #20c0ac;">Get Started</a>
                             
                         </button>
+                        <select class="custom-select">
+                            <option value="en"  data-lng="english" selected>English </option>
+                            <option value="ar" data-lng="arabic"> Arabic</option>
+                        </select>
 
 
                 </div>
             </div>
+            <!-- <i class="fa-solid fa-bars" id="menu"></i> -->
         </div>
 
         <div class='intro '>
-            <div class="i-left">
+            <div class="i-left flex-item">
                 <div class="i-name">
                     <span>Check Your Dental</span>
                     <span>Health Today</span>
@@ -100,7 +105,7 @@
                
 
             </div>
-            <div class="i-right">
+            <div class="i-right flex-item">
                 <img src="../static/images/Home.png" alt="" id="introImg" class="animate-on-scroll"/>
 
             </div>
@@ -110,7 +115,7 @@
         <div class='Services' id='Services'>
 
 
-            <div class='Services-Sheader'>
+            <div class='Services-Sheader' id="Services-Sheader">
                 <p class='Services-h'> Our Services </p>
                 <p class='Services-p'>Tell Us How Can Help? </p>
             </div>
@@ -244,7 +249,18 @@
             </div>
         </div>     
 
-    
+    <!-- <script>
+        const Nav = document.getElementById('n-wrapper')
+        const Menu = document.getElementById('menu')
+        const NavRight= document.getElementById('n-right')
+        Menu.addEventListener('click',function(){
+                // NavRight.style.display='flex'
+                // NavRight.style.flexDirection='column'
+                // Nav.style.position='relative'
+                // NavRight.style.position='absolute'
+
+        })
+    </script> -->
     <script src="../static/Scripts/script.js"></script>
 </body>
 

@@ -9,7 +9,7 @@ body{
 
 .n-wrapper{
     height:14vh;
-    width: 92vw;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -78,6 +78,7 @@ margin-left: 2rem;
     list-style: none;
     cursor: pointer;
     color: rgba(0, 0, 0, 0.701);
+    padding-top: 15px;
 }
 
 .u-list>ul>*:hover{
@@ -87,7 +88,7 @@ margin-left: 2rem;
 
 }
 .u-list>ul li {
-    margin-right: 1rem;
+    /* margin-right: 1rem; */
  }
 
  /* li.active {
@@ -102,7 +103,7 @@ margin-left: 2rem;
     color: #08de9d;
  }
 .u-list>ul li i{
-   margin-right: 0.5rem;
+   margin-right: 0.1rem;
 }
 
 .dropdown-menu{
@@ -149,6 +150,25 @@ margin-left: 2rem;
     }
 }
 
+.custom-select {
+    width: 100px; /* Set width as needed */
+    padding: 5px 0;  /* Add padding for better appearance */
+    font-size: 16px; /* Adjust font size */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 10px; /* Add border radius for rounded corners */
+    background-color: #ffffff; /* Set background color */
+    color: black; /* Set text color */
+  }
+  
+  .custom-select:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #08de9d; /* Change border color on focus */
+    
+  }
+
+/* .n-wrapper i{
+    display: none;
+} */
 
 
 
@@ -557,3 +577,59 @@ font-size: 16px;
  }
 
 
+ @media screen and (max-width: 600px) {
+    .n-wrapper{
+        display: flex;
+        /* flex-direction: row; */
+    }
+    .intro{
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        background-color: #20c0ac;
+        align-items: center;
+    }
+    .flex-item:nth-child(1) {
+        order: 2;
+        
+      }
+      .flex-item:nth-child(1) .i-name{
+        margin-left: 2rem;
+        width: 88%;
+        text-align: center;
+      }
+      .flex-item:nth-child(1) .i-name>:nth-child(1){
+        color: var(--black);
+        font-weight: normal;
+        font-size: 32px;
+        animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    
+      }
+      .flex-item:nth-child(1) .i-name>:nth-child(2){
+        color: var(--black);
+        font-weight: normal;
+        font-size: 30px;
+        animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    
+      }
+    
+       .i-button{
+        display: none;
+      }
+      .flex-item:nth-child(2) {
+        order: 1;
+        margin-bottom: 10rem;
+        transform: scale(0.5);
+        margin-left: 2rem;
+      }
+   
+    #Services{
+        display: none;
+    }
+    .Detector-work{
+        display: none;
+    }
+    .footer{
+        display: none;
+    }
+ }
