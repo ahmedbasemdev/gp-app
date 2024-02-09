@@ -4,12 +4,12 @@ from skimage.filters import threshold_otsu, gaussian
 from skimage.transform import resize
 from sklearn.preprocessing import MinMaxScaler
 import messages
+from cv2 import imread
 
-mes = "sss"
 
 def process_ecg_image(image_path):
     # Read the image
-    image = io.imread(image_path)
+    image = imread(image_path)
 
     # Defining the leads coordinates
     Lead_1 = image[300:600, 150:643]
@@ -92,19 +92,20 @@ def ecg_prediction(image_path, model):
 def mi_ecg_prediction(input_data, mi_pipeline, mi_model, image_path, ecg_model):
     mi_ouput = mi_prediction(input_data, mi_pipeline,mi_model)
     ecg_ouput = ecg_prediction(image_path, ecg_model)
+    print(mi_ouput, ecg_ouput, "s")
     if mi_ouput == 1:
-        if ecg_ouput == "HB":
+        if ecg_ouput == 0:
             return {"prediction": "1", "Message": messages.m_1_hb}
-        if ecg_ouput == "MI":
+        if ecg_ouput == 1:
             return {"prediction": "1", "Message": messages.m_1_mi}
-        if ecg_ouput == "PM":
+        if ecg_ouput == 3:
             return {"prediction": "1", "Message": messages.m_1_pm}
     else:
-        if ecg_ouput == "HB":
+        if ecg_ouput == 0:
             return {"prediction": "1", "Message": messages.m_0_hb}
-        if ecg_ouput == "MI":
+        if ecg_ouput == 1:
             return {"prediction": "1", "Message": messages.m_0_mi}
-        if ecg_ouput == "No":
+        if ecg_ouput == 2:
             return {"prediction": "0", "Message": messages.m_0_no}
 
         

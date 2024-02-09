@@ -1,6 +1,5 @@
 flask
 gunicorn
-catboost
 openai
 langchain
 chromadb
@@ -12,3 +11,6 @@ tiktoken
 openpyxl
 scikit-learn
 scikit-image
+xgboost
+catboost
+opencv-python

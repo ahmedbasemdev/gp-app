@@ -6,6 +6,10 @@ import chd
 import ecg_mi
 import stroke
 import os
+import time
+
+api_key = "sk-2LsuYpxzZFo3Yma9mszrT3BlbkFJsdnyurgbArO8i6LZbZU5123456"[:-6]
+os.environ['OPENAI_API_KEY'] = api_key
 
 app = Flask(__name__)
 chatbot = ChatBotManager()
@@ -53,6 +57,7 @@ def stroke_prediction():
         model = joblib.load("stroke/model.joblib")
         prediction = stroke.perform_prediction(data, pipeline, model)
         doctors = get_doctors()
+        time.sleep(10)
         return render_template("stroke.html", 
                                result = prediction['prediction'], message=prediction['Message'],doctors=doctors)
     else:
@@ -105,7 +110,7 @@ def ecg_mi_prediction():
         file.save(file_path)
         pipeline = joblib.load("ecg_mi/mi_pipeline.joblib")
         model = joblib.load("ecg_mi/mi_model.joblib")
-        ecg_model = joblib.load('ecg_mi/RF_model_ecg.pkl')
+        ecg_model = joblib.load('ecg_mi/best_rf_model_ecg_images.pkl')
         
         prediction = ecg_mi.mi_ecg_prediction(data, pipeline, model, file_path, ecg_model)
         doctors = get_doctors()
@@ -114,9 +119,19 @@ def ecg_mi_prediction():
     else:
         return render_template("ecg.html", prediction="0")
     
-@app.route("/chat")
+@app.route("/chat", methods=["POST","GET"])
 def chat_page():
-    return render_template("chat.html")
+    if request.method == "POST":
+        try:
+            
+            question = request.form["question"]
+            print(question)
+            answer = chatbot.generate_answer(question)
+            return render_template("chat.html", question=question, answer=answer)
+        except Exception as e:
+            return {"error" :str(e)}
+    else:
+        return render_template("chat.html")
     
 
     

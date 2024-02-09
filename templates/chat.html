@@ -612,18 +612,23 @@ span.material-symbols-rounded {
             </div> -->
         </div>
         <div class="chatRightSide">
+          <!-- <div class="default-text">
+                                           <h1>Shifaa ChatBot</h1>
+                                  <p>Start a conversation and explore the power of AI.<br> Your chat history will be displayed here.</p>
+                                       </div> -->
+    <div class="chat-container">
                 <!-- Chats container -->
     <div class="chat-container">
       <div class="chat-content" style="min-height: 50px; background-color: red; max-width:  80%; margin-bottom: 2rem ; margin-top: 2rem;" >
         <div class="chat-details man">
           <!-- <img src="../static/images/man.jpg" alt="user-img"> -->
-          <p>${userText}</p>
+          <p>{{ question}}</p>
         </div>
       </div>
       <div class="chat-content" style="min-height: 50px; background-color: #08de9d; max-width:  80%;">
         <div class="chat-details ai">
             <img src="../static/images/man.jpg" alt="user-img" width="50px" height="50px">
-            <p>${userText}</p>
+            <p>{{ answer }}</p>
         </div>
     </div>
 
@@ -635,14 +640,17 @@ span.material-symbols-rounded {
     <!-- Typing container -->
     <div class="typing-container" >
       <div class="typing-content">
-        <div class="typing-textarea" style="margin-left: -17rem;">
-          <textarea id="chat-input" spellcheck="false" placeholder="Enter a prompt here" required></textarea>
-          <span id="send-btn" class="material-symbols-rounded"><i class="fa-regular fa-paper-plane"></i></span>
+        <form action="/chat" method="post" class="typing-content" >
+          <div class="typing-textarea" style="margin-left: -17rem;">
+            <textarea id="chat-input" spellcheck="false" id="question" name="question" placeholder="Enter a prompt here" required></textarea>
+            <span id="send-btn" class="material-symbols-rounded"><i class="fa-regular fa-paper-plane"></i></span>
+          </div>
+          <div class="typing-controls">
+            <button id="delete-btn" class="material-symbols-rounded" type="submit" value=""> <i class="fa-solid fa-trash"></i></button>
         </div>
-        <div class="typing-controls">
-          <span id="theme-btn" class="material-symbols-rounded" style="display: none">light_mode</span>
-          <span id="delete-btn" class="material-symbols-rounded"> <i class="fa-solid fa-trash"></i></span>
-      </div>
+          
+      </form>
+
     </div>
         </div>
     </div>

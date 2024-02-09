@@ -20,7 +20,8 @@ Answer:
 class ChatBotManager():
     def __init__(self) -> None:
 
-        embedding_func = OpenAIEmbeddings(api_key=os.environ.get("OPENAI_API_KEY"))
+        embedding_func = OpenAIEmbeddings(model="text-embedding-3-small",
+                                          api_key=os.environ.get("OPENAI_API_KEY"))
         persistent_client = chromadb.PersistentClient("shifaa_VDB")
 
         db = Chroma(client=persistent_client,collection_name="main_collection",
@@ -30,7 +31,7 @@ class ChatBotManager():
                 input_variables=['context','question',])
         
         retriver = db.as_retriever(search_type='similarity', search_kwargs={"k":2})
-        llm = OpenAI(temperature=0)
+        llm = OpenAI(model_name="gpt-3.5-turbo-instruct", temperature=0)
 
         self.qa = RetrievalQA.from_chain_type(llm=llm, chain_type='stuff',retriever=retriver,
                                         chain_type_kwargs={"prompt": prompt})
