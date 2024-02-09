@@ -302,47 +302,22 @@ body {
 
 <div class="swiper-container">
     <div class="swiper-wrapper">
+
+        {% for doctor in doctors %}
+
         <div class="swiper-slide">
-            <img src="{{doctors[0].image}}" alt="Card Image 1">
+            <img src="{{doctor.image}}" alt="Card Image 1">
             <div class="card-content">
-                <h3 data-lng="drName"> {{doctors[0].name}}</h3>
-                <p style="margin-bottom: -0.02rem;" data-lng="drLoc">{{doctors[0].location}}</p>
-                <p data-lng="drPrice">{{doctors[0].price}} $</p>
+                <h3 > {{doctor.name}}</h3>
+                <p style="margin-bottom: -0.02rem;" >{{doctor.location}}</p>
+                <p >{{doctor.price}} $</p>
             </div>
             <button class="card-btn">Book Appointment</button>
 
         </div>
-        <div class="swiper-slide">
-            <img src="{{doctors[1].image}}" alt="Card Image 2">
-            <div class="card-content">
-                <h3>{{doctors[1].name}}</h3>
-                <p style="margin-bottom: -0.02rem;">{{doctors[1].location}}</p>
-                <p >{{doctors[1].price}} $</p>
-            </div>
-            <button class="card-btn">Book Appointment</button>
 
-        </div>
-        <div class="swiper-slide">
-            <img src="{{doctors[2].image}}" alt="Card Image 3">
-            <div class="card-content">
-                <h3>{{doctors[2].name}}</h3>
-                <p style="margin-bottom: -0.02rem;">{{doctors[2].location}}</p>
-                <p>{{doctors[2].price}} $</p>
-            </div>
-            <button class="card-btn">Book Appointment</button>
-
-        </div>
-        <div class="swiper-slide">
-            <img src="{{doctors[3].image}}" alt="Card Image 4">
-            <div class="card-content">
-                <h3>{{doctors[3].name}}</h3>
-                <p style="margin-bottom: -0.02rem;">{{doctors[3].location}}</p>
-                <p>{{doctors[3].price}} $</p>
-            </div>
-            <button class="card-btn">Book Appointment</button>
-
-        </div>
-      
+        {% endfor %}
+        
      
 
         
