@@ -521,16 +521,43 @@ span.material-symbols-rounded {
   }
 }
 
+.chat-content{
+  border-radius: 10px;
+}
+.chat-details{
+  padding: 5px;
+}
+.ai-content{
+  /* align-self: e; */
+  float: right;
+  margin-bottom: 2rem;
+  margin-right: 1rem;
+}
  .ai{
   display: flex;
   align-items: center;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
   /* flex-direction: column; */
 }
 .man{
   display: flex;
   align-items: center;
+  padding-top: 0.5rem;
   /* flex-direction: column; */
 }
+#chat-container{
+  margin-top: -9rem;
+}
+#chat-container:first-child{
+  margin-top: 3rem;
+  /* margin-bottom: 1rem; */
+}
+#chat-container:last-child{
+height: 50%; /* margin-bottom: 1rem; */
+}
+
+
     </style>
   </head>
   <body class="light-mode">
@@ -612,21 +639,65 @@ span.material-symbols-rounded {
             </div> -->
         </div>
         <div class="chatRightSide">
+          <!-- <div class="default-text">
+                                           <h1>Shifaa ChatBot</h1>
+                                  <p>Start a conversation and explore the power of AI.<br> Your chat history will be displayed here.</p>
+                                       </div> -->
+    <div class="chat-container" style="padding-bottom: 0;">
                 <!-- Chats container -->
-    <div class="chat-container">
-      <div class="chat-content" style="min-height: 50px; background-color: red; max-width:  80%; margin-bottom: 2rem ; margin-top: 2rem;" >
-        <div class="chat-details man">
-          <!-- <img src="../static/images/man.jpg" alt="user-img"> -->
-          <p>${userText}</p>
+    <div class="chat-container" id="chat-container">
+      <div class="chat-content" style="min-height: 50px; background-color: rgba(128, 128, 128, 0.1); max-width:  50vw;padding-left: 5px; margin-bottom: 2rem ; " >
+        <div class="chat-details man" >
+          <p style="max-width: 45vw; word-wrap: break-word; font-size: 14px;">{{ question}}Meet our intelligent chatbot, your personal guide to understanding cardiovascular health. Get instant answers to your queries, personalized</p>
         </div>
       </div>
-      <div class="chat-content" style="min-height: 50px; background-color: #08de9d; max-width:  80%;">
+      <div class="chat-content ai-content" style="min-height: 50px; background-color: #08de9e31; max-width:  80%; ">
         <div class="chat-details ai">
-            <img src="../static/images/man.jpg" alt="user-img" width="50px" height="50px">
-            <p>${userText}</p>
+            <!-- <img src="../static/images/chatbot icon.png" alt="user-img" width="50px" height="50px" style="border-radius: 50%; margin-right: 1rem; border: 2px solid black;"> -->
+            <p style="max-width: 45vw; word-wrap: break-word; font-size: 14px;">{{ answer }}Meet our intelligent chatbot, your personal guide to understanding cardiovascular health. Get instant answers to your queries, personalized</p>
         </div>
     </div>
+    </div>
+     <div class="chat-container" id="chat-container">
+      <div class="chat-content" style="min-height: 50px; background-color: rgba(128, 128, 128, 0.1); max-width:  50vw;padding-left: 5px; margin-bottom: 2rem ; " >
+        <div class="chat-details man" >
+          <p style="max-width: 45vw; word-wrap: break-word; font-size: 14px;">{{ question}}Meet our intelligent chatbot, your personal guide to understanding cardiovascular health. Get instant answers to your queries, personalized</p>
+        </div>
+      </div>
+      <div class="chat-content ai-content" style="min-height: 50px; background-color: #08de9e31; max-width:  80%; ">
+        <div class="chat-details ai">
+            <!-- <img src="../static/images/chatbot icon.png" alt="user-img" width="50px" height="50px" style="border-radius: 3px; margin-right: 1rem;"> -->
+            <p style="max-width: 45vw; word-wrap: break-word; font-size: 14px;">{{ answer }}Meet our intelligent chatbot, your personal guide to understanding cardiovascular health. Get instant answers to your queries, personalized</p>
+        </div>
+    </div>
+    </div>
+    <div class="chat-container" id="chat-container">
+      <div class="chat-content" style="min-height: 50px; background-color: rgba(128, 128, 128, 0.1); max-width:  50vw;padding-left: 5px; margin-bottom: 2rem ; " >
+        <div class="chat-details man" >
 
+          <p style="max-width: 45vw; word-wrap: break-word; font-size: 14px;">{{ question}}Meet our intelligent chatbot, your personal guide to understanding cardiovascular health. Get instant answers to your queries, personalized</p>
+        </div>
+      </div>
+      <div class="chat-content ai-content" style="min-height: 50px; background-color: #08de9e31; max-width:  80%; ">
+        <div class="chat-details ai">
+            <!-- <img src="../static/images/chatbot icon.png" alt="user-img" width="50px" height="50px" style="border-radius: 3px; margin-right: 1rem;"> -->
+            <p style="max-width: 45vw; word-wrap: break-word; font-size: 14px;">{{ answer }}Meet our intelligent chatbot, your personal guide to understanding cardiovascular health. Get instant answers to your queries, personalized</p>
+        </div>
+    </div>
+    </div>
+    <div class="chat-container" id="chat-container"  >
+      <div class="chat-content" style="min-height: 50px; background-color: rgba(128, 128, 128, 0.1); max-width:  50vw;padding-left: 5px; margin-bottom: 2rem ; " >
+        <div class="chat-details man" >
+
+          <p style="max-width: 45vw; word-wrap: break-word; font-size: 14px;">{{ question}}Meet our intelligent chatbot, your personal guide to understanding cardiovascular health. Get instant answers to your queries, personalized</p>
+        </div>
+      </div>
+      <div class="chat-content ai-content" style="min-height: 50px; background-color: #08de9e31; max-width:  80%;">
+        <div class="chat-details ai">
+            <!-- <img src="../static/images/chatbot icon.png" alt="user-img" width="50px" height="50px" style="border-radius: 3px; margin-right: 1rem;"> -->
+            <p style="max-width: 45vw; word-wrap: break-word; font-size: 14px;">{{ answer }}Meet our intelligent chatbot, your personal guide to understanding cardiovascular health. Get instant answers to your queries, personalized</p>
+        </div>
+    </div>
     </div>
 
     <!-- if you want active dark_mode delete display:none from span id theme-btn and active 
@@ -635,14 +706,17 @@ span.material-symbols-rounded {
     <!-- Typing container -->
     <div class="typing-container" >
       <div class="typing-content">
-        <div class="typing-textarea" style="margin-left: -17rem;">
-          <textarea id="chat-input" spellcheck="false" placeholder="Enter a prompt here" required></textarea>
-          <span id="send-btn" class="material-symbols-rounded"><i class="fa-regular fa-paper-plane"></i></span>
+        <form action="/chat" method="post" class="typing-content" >
+          <div class="typing-textarea" style="margin-left: -17rem;">
+            <textarea id="chat-input" spellcheck="false" id="question" name="question" placeholder="Enter a prompt here" required></textarea>
+            <span id="send-btn" class="material-symbols-rounded"><i class="fa-regular fa-paper-plane"></i></span>
+          </div>
+          <div class="typing-controls">
+            <button id="delete-btn" class="material-symbols-rounded" type="submit" value="" style="height: 55px; width: 55px; margin-left: 1rem; border: none; border-radius: 3px;"> <i class="fa-solid fa-paper-plane"></i></button>
         </div>
-        <div class="typing-controls">
-          <span id="theme-btn" class="material-symbols-rounded" style="display: none">light_mode</span>
-          <span id="delete-btn" class="material-symbols-rounded"> <i class="fa-solid fa-trash"></i></span>
-      </div>
+          
+      </form>
+
     </div>
         </div>
     </div>
