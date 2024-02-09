@@ -15,6 +15,7 @@ app = Flask(__name__)
 chatbot = ChatBotManager()
 app.config['UPLOAD_FOLDER'] = "ecg_mi/images"
 
+chats=[]
 
 @app.route("/")
 def home():
@@ -127,7 +128,8 @@ def chat_page():
             question = request.form["question"]
             print(question)
             answer = chatbot.generate_answer(question)
-            return render_template("chat.html", question=question, answer=answer)
+            chats.append({"question":question, "answer":answer})
+            return render_template("chat.html", chats=chats)
         except Exception as e:
             return {"error" :str(e)}
     else:
