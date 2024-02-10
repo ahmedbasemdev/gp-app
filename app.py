@@ -47,7 +47,8 @@ def stroke_prediction():
         "hypertension": int(request.form.get('hypertension')),
         "heart_disease": int(request.form.get('heart_disease')),
         "avg_glucose_level": int(request.form.get('avg_glucose_level')),
-        "bmi": int(request.form.get('bmi')),
+        "height": int(request.form.get('height')),
+        "weight": int(request.form.get('weight')),
         "gender": int(request.form.get('gender')),
         "ever_married":int( request.form.get('ever_married')),
         "work_type":int( request.form.get('work_type')),
@@ -55,10 +56,9 @@ def stroke_prediction():
         "smoking_status": int(request.form.get('smoking_status'))
         }
         pipeline = joblib.load("stroke/pipeline.joblib")
-        model = joblib.load("stroke/model.joblib")
+        model = joblib.load("stroke/rf_under_Stroke_model.joblib")
         prediction = stroke.perform_prediction(data, pipeline, model)
         doctors = get_doctors()
-        time.sleep(10)
         return render_template("stroke.html", 
                                result = prediction['prediction'], message=prediction['Message'],doctors=doctors)
     else:
@@ -85,7 +85,7 @@ def chd_prediction():
         "gender": int(request.form.get('gender'))
         }
         pipeline = joblib.load("chd/pipeline.joblib")
-        model = joblib.load("chd/model.joblib")
+        model = joblib.load("chd/rf_CHD_under_model.joblib")
 
         prediction = chd.perform_prediction(data, pipeline, model)
         doctors = get_doctors()

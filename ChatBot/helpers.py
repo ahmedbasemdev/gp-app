@@ -13,7 +13,7 @@ If you don't know the answer, just say that you don't know,don't try to make up 
 {context}
 
 Question: {question}
-Answer:
+Answer in arabic:
 '''
 
 class ChatBotManager():

@@ -223,7 +223,7 @@
         <div class='intro '>
             <div class="i-left">
                 <div class="i-name">
-                    <span>Check Your Dental</span>
+                    <span>Check Your Heart</span>
                     <span>Health Today</span>
                     <span>Assess your risk of developing Coronary Heart Disease (CHD) within the next 10
                         years. Our CHD Predictor, powered by the Framingham Heart Study data. Simply fill in
@@ -338,56 +338,27 @@
     <!-- <p style="color: rgb(0, 179, 255); font-size: 22px;">Doctors</p> -->
     <p style="font-size: 40px; margin-top: -1rem;" data-lng="meetDr"> Meet Our</p>
     <p style="font-size: 45px; margin-top: -1.5rem;" data-lng="topDr"> <span style="color: #20c0ac;"> Top Rated </span>Doctors</p>
-    <p style="text-align: center;" data-lng="topicsDr">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-         Quasi, voluptas exercitationem atque mollitia necessitatibus
-          suscipit laudantium quia incidunt molestias dolorum! Quasi
-           incidunt doloremque quisquam iusto?
-         Dolore necessitatibus eligendi voluptates laudantium!</p>
+    
 </div>
 
 <div class="swiper-container">
     <div class="swiper-wrapper">
+
+        {% for doctor in doctors %}
+
         <div class="swiper-slide">
-            <img src="{{doctors[0].image}}" alt="Card Image 1">
+            <img src="{{doctor.image}}" alt="Card Image 1">
             <div class="card-content">
-                <h3 data-lng="drName">{{doctors[0].name}}</h3>
-                <p style="margin-bottom: -0.02rem;" data-lng="drLoc">{{doctors[0].location}}</p>
-                <p data-lng="drPrice">{{doctors[0].price}} $</p>
+                <h3 > {{doctor.name}}</h3>
+                <p style="margin-bottom: -0.02rem;" >{{doctor.location}}</p>
+                <p >{{doctor.price}} $</p>
             </div>
             <button class="card-btn">Book Appointment</button>
 
         </div>
-        <div class="swiper-slide">
-            <img src="{{doctors[1].image}}" alt="Card Image 2">
-            <div class="card-content">
-                <h3>{{doctors[1].name}}</h3>
-                <p style="margin-bottom: -0.02rem;">{{doctors[1].location}}</p>
-                <p >{{doctors[1].price}} $</p>
-            </div>
-            <button class="card-btn">Book Appointment</button>
 
-        </div>
-        <div class="swiper-slide">
-            <img src="{{doctors[2].image}}" alt="Card Image 3">
-            <div class="card-content">
-                <h3>{{doctors[2].name}}</h3>
-                <p style="margin-bottom: -0.02rem;">{{doctors[2].location}}</p>
-                <p>{{doctors[2].price}} $</p>
-            </div>
-            <button class="card-btn">Book Appointment</button>
-
-        </div>
-        <div class="swiper-slide">
-            <img src="{{doctors[3].image}}" alt="Card Image 4">
-            <div class="card-content">
-                <h3>{{doctors[3].name}}</h3>
-                <p style="margin-bottom: -0.02rem;">{{doctors[3].location}}</p>
-                <p>{{doctors[3].price}} $</p>
-            </div>
-            <button class="card-btn">Book Appointment</button>
-
-        </div>
-      
+        {% endfor %}
+        
      
 
         
@@ -397,7 +368,6 @@
 <div class="swiper-pagination"></div>
 </div>
 {% endif %}
-
 
 <div class="footer" >
     <div class="footer-container" >

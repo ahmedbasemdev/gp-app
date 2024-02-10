@@ -158,6 +158,7 @@ margin-left: 2rem;
     border-radius: 10px; /* Add border radius for rounded corners */
     background-color: #ffffff; /* Set background color */
     color: black; /* Set text color */
+    font-weight: bold;
   }
   
   .custom-select:focus {

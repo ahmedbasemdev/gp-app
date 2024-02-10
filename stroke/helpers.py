@@ -21,7 +21,8 @@ Best."""
 
 def perform_prediction(sample_input_data, pipeline, model):
     intput_df = pd.DataFrame(sample_input_data, index=[1])
-    
+    intput_df['bmi'] =  intput_df.weight / (intput_df.height * intput_df.height)
+    intput_df = intput_df.drop(['height', 'weight'], axis=1)
     preprocessed_data = pipeline.transform(intput_df)
 
     prediction = model.predict(preprocessed_data)

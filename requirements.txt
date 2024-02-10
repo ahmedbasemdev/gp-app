@@ -12,4 +12,5 @@ openpyxl
 scikit-learn
 scikit-image
 xgboost
+catboost
 opencv-python

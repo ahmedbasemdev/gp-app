@@ -224,7 +224,7 @@ body {
         <div class='intro '>
             <div class="i-left">
                 <div class="i-name">
-                    <span>Check Your Dental</span>
+                    <span>Check Your Heart</span>
                     <span>Health Today</span>
                     <span>Early detection of Myocardial Infarction (MI) can save lives. Our Heart Attack
                         Detector combines ECG image analysis with medical test results for accurate and swift
@@ -248,21 +248,21 @@ body {
 
 
     <div class='Services-Sheader'>
-        <p class='Services-h' data-lng="ECGtitle"> Our Services </p>
-        <p class='Services-p' data-lng="ECGtitle2">Tell Us How Can Help? </p>
+        <p class='Services-h' data-lng="ECGtitle">  ECG Questionaire </p>
+        <p class='Services-p' data-lng="ECGtitle2">Answer this Questions </p>
     </div>
 
     <div class='Services-container'>
 
-        <h2 style="margin-bottom: 1rem;" data-lng="ECGhead">Part 1: Quick Questionaire</h2>
+        <h2 style="margin-bottom: 1rem;" data-lng="ECGhead">Quick Questionaire</h2>
         <form id="my-form" action="/ecg_mi" method="POST" enctype="multipart/form-data" >
-            <label for="age" class="mb-3" data-lng="age">AGE:</label>
+            <label for="age" class="mb-3" data-lng="age">What is your current age ?</label>
             <input type="number" class="form-control mb-3"  id="age" name="Age" value="65" class="mb-3"><br>
             
-            <label for="CK-MB" class="mb-3" data-lng="ckmb">CK-MB :</label>
+            <label for="CK-MB" class="mb-3" data-lng="ckmb">What is Your creatine kinase-myocardial band (CK-MB) ?</label>
             <input type="number" class="form-control mb-3"  id="CK-MB" name="CK-MB" value="14" class="mb-3"><br>
            
-            <label for="Troponin" class="mb-3" data-lng="troponin">Troponin :</label>
+            <label for="Troponin" class="mb-3" data-lng="troponin">What is Your Troponin Level ?</label>
             <input type="number" class="form-control mb-3"  id="Troponin" name="Troponin" value="0.12" class="mb-3"><br>
             
         
@@ -293,11 +293,7 @@ body {
     <!-- <p style="color: rgb(0, 179, 255); font-size: 22px;">Doctors</p> -->
     <p style="font-size: 40px; margin-top: -1rem;" data-lng="meetDr"> Meet Our</p>
     <p style="font-size: 45px; margin-top: -1.5rem;" data-lng="topDr"> <span style="color: #20c0ac;"> Top Rated </span>Doctors</p>
-    <p style="text-align: center;" data-lng="topicsDr">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-         Quasi, voluptas exercitationem atque mollitia necessitatibus
-          suscipit laudantium quia incidunt molestias dolorum! Quasi
-           incidunt doloremque quisquam iusto?
-         Dolore necessitatibus eligendi voluptates laudantium!</p>
+    
 </div>
 
 <div class="swiper-container">
@@ -389,11 +385,12 @@ const transilations = {
 
     
     // ECG
-    ECGtitle:"Our Services",
-    ECGtitle2:"Tell Us How Can Help?",
-    ECGhead:"Part 1: Quick Questionaire",
-    ckmb:"CK-MB",
-    troponin:"Troponin",
+    ECGtitle:"ECG Questionaire",
+    ECGtitle2:"Answer this Questions",
+    ECGhead:"Quick Questionaire",
+    age:"What is your current age?",
+    ckmb:"What is Your creatine kinase-myocardial band (CK-MB)?",
+    troponin:"What is Your Troponin Level?",
 
     //RESULT
     formCheck:"Check your Heart",
@@ -427,13 +424,13 @@ const transilations = {
  
 
 
-    //ECG
-    ECGtitle:"ترجم",
-    ECGtitle2:"ترجم",
-    ECGhead:"ترجم",
-    ckmb:"ترجم",
-    troponin:"ترجم",
-
+   //ECG
+   ECGtitle:" التحاليل الطبية وتخطيط القلب ",
+    ECGtitle2:"اجب علي تلك الاسئلة",
+    ECGhead:"  اسئلة التحاليل الطبية ",
+    age:"ما هو سنك الحالي ؟",
+    ckmb: " ما هو مستوى شريط الكرياتين كيناز وعضلة القلب لديك (CK-MP) ؟",
+    troponin:" ما هو مستوي التروبونين لديك (Troponin) ؟  ",
 
  
     //RESULT
