@@ -221,7 +221,7 @@
         <div class='intro '>
             <div class="i-left">
                 <div class="i-name">
-                    <span>Check Your Dental</span>
+                    <span>Check Your Heart</span>
                     <span>Health Today</span>
                     <span style="font-family: Cairo, sans-serif;">Understanding your stroke risk is now simpler than ever. Our Stroke Predictor
                         utilizes algorithms to evaluate your risk based on key health indicators. Enter your
@@ -264,7 +264,7 @@
                         <option value="1" data-lng="private">Private</option>
                         <option value="2" data-lng="SelfEmployed"> Self-Employed</option>
                         <option value="3" data-lng="govtJob">Govt_job, Children</option>
-                        <option value="3" data-lng="children">Children</option>
+                        <!-- <option value="3" data-lng="children">Children</option> -->
                         <option value="4" data-lng="NeverWorked">Never_Worked</option>
                     </select>
               
@@ -303,8 +303,11 @@
                     <label for="glucose" class="mb-3" data-lng="glucoseLevel">What is your most recent fasting blood glucose level (mg/dL)?</label>
                     <input type="number" class="form-control mb-3" id="glucose" placeholder="" name="avg_glucose_level" required>
                   
-                    <label for="Mass" class="mb-3" data-lng="bodyMass">What is your current Body Mass Index (BMI)?</label>
-                    <input type="number" class="form-control mb-3" id="Mass" placeholder="" name="bmi" required>
+                    <label for="height" class="mb-3" data-lng="height">What is your current Height?</label>
+                    <input type="number" class="form-control mb-3" id="height" placeholder="" name="height" required>
+
+                    <label for="weight" class="mb-3" data-lng="weight">What is your current Weight?</label>
+                    <input type="number" class="form-control mb-3" id="weight" placeholder="" name="weight" required>
                
                     <label for="smokingstatus" class="form-label mb-3" data-lng="smokeStatus">Which of the following best describes your smoking status?</label>
                     <select class="form-select mb-3" aria-label="Default select example" id="smokingstatus" name="smoking_status" required> 
@@ -336,18 +339,7 @@
             </div>
         </div>
         <!-- End Result Secion -->
-<!-- Doctor Suggestion -->
-<div class="doctors">
-    <div class="doctorsContainer">
-    <!-- <p style="color: rgb(0, 179, 255); font-size: 22px;">Doctors</p> -->
-    <p style="font-size: 40px; margin-top: -1rem;" data-lng="meetDr"> Meet Our</p>
-    <p style="font-size: 45px; margin-top: -1.5rem;" data-lng="topDr"> <span style="color: #20c0ac;"> Top Rated </span>Doctors</p>
-    <p style="text-align: center;" data-lng="topicsDr">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-         Quasi, voluptas exercitationem atque mollitia necessitatibus
-          suscipit laudantium quia incidunt molestias dolorum! Quasi
-           incidunt doloremque quisquam iusto?
-         Dolore necessitatibus eligendi voluptates laudantium!</p>
-</div>
+
 
 <!-- Doctor Suggestion -->
 {% if prediction != "0" %}
