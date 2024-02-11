@@ -20,63 +20,313 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300&display=swap" rel="stylesheet">
+    <style>
+         #menu {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        width: 100vw;
+        display: flex;
+        overflow-x: hidden;
+        /* Hides horizontal scrollbar */
+
+    }
+
+    html {
+        overflow-x: hidden;
+        /* Hides horizontal scrollbar */
+    }
+
+    .n-wrapper {
+        display: flex;
+        height: 80px;
+        max-width: 100%;
+        position: fixed;
+        animation: none;
+        /* flex-direction: row; */
+    }
+
+    .n-wrapper .n-left {
+        margin-left: -6rem;
+    }
+
+    .n-wrapper #n-right {
+        margin-left: -10rem;
+    }
+
+    .n-button {
+        display: none;
+    }
+
+    .n-wrapper #n-right {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 250px;
+        height: 370px;
+        background-color: rgb(125, 253, 244);
+        padding-left: 2rem;
+    }
+
+    .n-wrapper #n-right.open {
+        right: 0;
+    }
+
+    .n-wrapper ul {
+        position: absolute;
+        top: 10px;
+        flex-direction: column;
+
+
+    }
+
+    .n-wrapper #n-right ul li i {
+        margin-right: 1rem;
+    }
+
+    .n-wrapper #n-right ul li .dropdown-menu {
+        background-color: black;
+
+    }
+
+    .n-wrapper #n-right ul li .dropdown-item {
+        color: white;
+    }
+
+    .n-wrapper #n-right ul li:nth-child(2) i {
+        margin-right: 0.5rem;
+    }
+
+    .n-wrapper #n-right ul li:nth-child(3) i {
+        margin-right: 0.5rem;
+    }
+
+    #menu {
+        display: block;
+    }
+
+    .intro {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        background-color: #08de9e19;
+        align-items: center;
+        min-height: 800px;
+        overflow-x: hidden;
+        /* Hides horizontal scrollbar */
+    }
+
+    .flex-item:nth-child(1) {
+        order: 2;
+        background-color: transparent;
+        flex: 12;
+    }
+
+    .flex-item:nth-child(1) .i-name {
+        margin-left: 1.5rem;
+        width: 88%;
+        text-align: center;
+        margin-top: -10rem;
+    }
+
+    .flex-item:nth-child(1) .i-name>:nth-child(1) {
+        color: var(--black);
+        font-weight: normal;
+        font-size: 32px;
+        animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+    }
+
+    .flex-item:nth-child(1) .i-name>:nth-child(2) {
+        color: var(--black);
+        font-weight: normal;
+        font-size: 30px;
+        animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+    }
+
+    /* .flex-item:nth-child(1) .i-name>:nth-child(3){
+    
+      } */
+
+    .i-button {
+        display: none;
+    }
+
+    .flex-item:nth-child(2) {
+        order: 1;
+        margin-bottom: 10rem;
+        transform: scale(0.5);
+        margin-left: 2rem;
+    }
+
+
+    /* SERVICES */
+    #Services {
+        /* display: none; */
+        max-width: 100%;
+    }
+
+    #Services .Services-p {
+        font-size: 17px;
+    }
+
+    .Services-container {
+        display: flex;
+        flex-wrap: wrap;
+        /* flex-direction: column; */
+        align-items: center;
+        max-width: 80%;
+        /* justify-content: space-around; */
+
+    }
+
+
+    .Services-container .oneServices {
+        margin-bottom: 2rem;
+        height: 350px;
+    }
+
+    .Services-details {
+        width: 200px;
+        text-align: center;
+        margin-top: -1.7rem;
+    }
+
+
+    /* Detector-work */
+
+    .Detector-work {
+        /* display: none; */
+        width: 100vw;
+        margin-bottom: 2rem;
+    }
+
+    .dtwContainer>h1 {
+        text-align: center;
+    }
+
+    .dtwBody .parts {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+
+    .parts .partRight img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .order-item:nth-child(1) {
+        order: 2;
+    }
+
+    .order-item:nth-child(2) {
+        order: 1;
+    }
+
+
+    .footer {
+        max-width: 100%;
+        justify-content: left;
+
+    }
+
+    .footer .footer-container {
+        gap: 0;
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        margin-left: 2rem;
+    }
+
+    .footer .left img {
+        width: 300px;
+        height: 150px;
+    }
+
+    .footer-container h5 {}
+
+    .mid,
+    .right {
+        margin-bottom: 1rem;
+    }
+
+    .footer .footer-container ul {
+        margin-top: -0.5rem;
+    }
+
+    .footer .footer-container li {
+        font-size: 22px;
+        margin-left: 1.5rem;
+        list-style: disc;
+    }
+}
+    </style>
 <body>
     <div class="home">
         <!-- NavBar -->
         <div class="n-wrapper" id='Navebar'>
             <div class="n-left">
                 <div class="n-logo">
-                    <img src="static/images/logo.png" />
-                    <P><a href="/" style="text-decoration: none;  color:black;"><span style="color: #08de9d;;">Sh</span>efa<span style="color: #08de9d;;">a</span></a></P>
+                    <img src="../static/images/mLogo.png" />
+                    <!-- <P><a href="/" style="text-decoration: none;  color:black;"><span style="color: #08de9d;;">Sh</span>efa<span style="color: #08de9d;;">a</span></a></P> -->
                 </div>
                 <Toggle />
             </div>
-            <div class="n-right">
+            <div class="n-right" id="n-right">
                 <div class="u-list">
                     <ul>
                         <li>
-                            <i class="fa-solid fa-house"></i>
-                            <a href="/" >Home</a></li>
+                            
+                            <a href="/"  ><i class="fa-solid fa-house"></i>Home</a></li>
                         <li class="nav-item dropdown" >
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa-solid fa-robot"></i>
                                 Detector
                               </a>
                               <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/ecg_mi">ECG</a></li>
-                                <li><a class="dropdown-item" href="/stroke">Stroke</a></li>
-                                <li><a class="dropdown-item" href="/chd">CHD</a></li>
+                                <li><a class="dropdown-item" href="/ecg_mi" >ECG</a></li>
+                                <li><a class="dropdown-item" href="/stroke" >Stroke</a></li>
+                                <li><a class="dropdown-item" href="/chd" >CHD</a></li>
                               </ul>
                         </li>
                         <li class="nav-item dropdown" >
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa-solid fa-notes-medical"></i>
                                 Analysis
                               </a>
                               <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="/stroke_analysis">Stroke</a></li>
-                                <li><a class="dropdown-item" href="/chd_analysis">CHD</a></li>
+                                <li><a class="dropdown-item" href="/chd_analysis" >CHD</a></li>
                               </ul>
                         </li>
                         <li>
-                            <i class="fa-solid fa-circle-info" ></i>
-                            <a href="/about">About</a></li>
+                            
+                            <a href="/about" ><i class="fa-solid fa-circle-info" ></i>About</a></li>
                             <li>
-                                <i class="fa-solid fa-notes-medical"></i>
-                                <a href="/chat" >Chatbot</a></li>
+                                
+                                <a href="/chat"><i class="fa-solid fa-notes-medical"></i>Chatbot</a></li>
                         <!-- <li style="margin-left: 17rem; "><a>Schedule</a></li> -->
                         <button class="button n-button" >
                             <a href="/" style="text-decoration: none; color: #20c0ac;">Get Started</a>
                             
                         </button>
+                        <!-- <select class="custom-select">
+                            <option value="en"  data-lng="english" selected>English </option>
+                            <option value="ar" data-lng="arabic"> Arabic</option>
+                        </select> -->
 
 
                 </div>
             </div>
+            <i class="fa-solid fa-bars " id="menu" style="transform: scale(1.7); margin-right: 5px; color: black;" ></i>
         </div>
 
         <div class='intro '>
-            <div class="i-left">
+            <div class="i-left flex-item">
                 <div class="i-name">
                     <span>Check Your Heart</span>
                     <span>Health Today</span>
@@ -93,8 +343,8 @@
                </div> -->
 
             </div>
-            <div class="i-right">
-                <img src="static/images/Analysis.png" alt="" id="introImg" class="animate-on-scroll"/>
+            <div class="i-right flex-item">
+                <img src="../static/images/Analysis.png" alt="" id="introImg" class="animate-on-scroll" />
 
             </div>
         </div>
@@ -111,7 +361,7 @@
         <div class="footer" >
             <div class="footer-container" >
                 <div class="left">
-                    <img src="static/images/logo2.png"/>
+                    <img src="../static/images/logo2.png"/>
                     <!-- <p>alcnaknc cknndskvn vldnvdsnvs</p> -->
                 </div>
                 <div class="mid">
@@ -146,6 +396,15 @@
             document.getElementById("homeBtn").addEventListener("click", function() {
   document.getElementById("chart").scrollIntoView({ behavior: "smooth" });
 });
+
+  //MenU Click
+  let menu =document.getElementById('menu');
+let rightNav = document.getElementById('n-right')
+
+menu.onclick= () =>{
+menu.classList.toggle('bx-x')
+rightNav.classList.toggle('open')
+}
         </script>
     <script src="static/Scripts/script.js"></script>
 </body>

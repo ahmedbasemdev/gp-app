@@ -28,6 +28,7 @@ const transilations = {
     govtJob:"Govt_job",
     SelfEmployed:"Self-Employed",
     NeverWorked:"Never_Worked",
+    children:"Children ",
     age:"What is your current age?",
     bloodPressure:"Have you been diagnosed with hypertension (high blood pressure)?",
     yes:"Yes",
@@ -108,6 +109,7 @@ const transilations = {
     govtJob:"حكومي",
     SelfEmployed:"لديك عملك الخاص",
     NeverWorked:"لا تعمل ",
+    children:"أطفال ",
     age:"ما هو سنك الحالي؟",
     bloodPressure:" هل سبق أن تم تشخيصك  بارتفاع ضغط الدم ؟",
     yes:"نعم",
@@ -179,6 +181,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 })
 
 const setLanguage = (language)=>{
+  const width = window.innerWidth || document.documentElement.clientWidth;
   const elements = document.querySelectorAll('[data-lng]')
   // console.log(element)
   elements.forEach((element)=>{
@@ -193,10 +196,22 @@ const setLanguage = (language)=>{
   // }
   document.getElementById('Services-Sheader').dir = language === 'ar'? 'rtl': 'ltr';
   document.getElementById('my-form').dir = language === 'ar'? 'rtl': 'ltr'
-  document.getElementById("formBtn").style.marginRight = language==='ar'?'13rem':'0'
+  // document.getElementById("formBtn").style.marginRight = language==='ar'?'13rem':'0'
+  if (width < 600) {
+    document.getElementById("formBtn").style.marginRight = language==='ar'?'0.3rem':'0'
+  } else {
+    document.getElementById("formBtn").style.marginRight = language==='ar'?'13rem':'0'
 
 }
+}
 
+let menu =document.getElementById('menu');
+let rightNav = document.getElementById('n-right')
+
+menu.onclick= () =>{
+menu.classList.toggle('bx-x')
+rightNav.classList.toggle('open')
+}
 
 
 const imageUpload = document.getElementById("imageUpload");
@@ -215,7 +230,9 @@ window.onscroll = function() {
     // document.getElementById("Navebar").style.left = "0";
     document.getElementById("Navebar").style.paddingLeft = "6rem";
   } else {
-    document.getElementById("Navebar").style.paddingLeft = "0rem";
+    if (width > 600) {
+    document.getElementById("Navebar").style.paddingLeft = "1rem";
+  }
     // document.getElementById("content").style. = "-100%";
   }
 

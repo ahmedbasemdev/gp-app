@@ -41,6 +41,15 @@
              box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
          
           }
+          #formBtn{
+        background-color: #20c0ac; color: white; padding: 7px; border: none;
+                width: 35%;
+                    align-self: center;
+                    font-size: 26px;
+                    border-radius: 15px;
+                    margin: auto auto;
+                    margin-left: 14.2rem;
+                    margin-top: 2rem;    }
           .subBtn:hover{
     transform: scale(1.03);
  }
@@ -56,7 +65,7 @@
  }
  .checkResult{
     width: 40vw;
-    height: 200px;
+    min-height: 200px;
     padding: 10px;
     padding-left: 30px;
     border-radius: 20px;
@@ -153,6 +162,301 @@
             /* margin-bottom: 2rem; */
         }
 /* End Doctor Suggesion */
+#menu {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        width: 100vw;
+        display: flex;
+        overflow-x: hidden;
+        /* Hides horizontal scrollbar */
+
+    }
+
+    html {
+        overflow-x: hidden;
+        /* Hides horizontal scrollbar */
+    }
+
+    .n-wrapper {
+        display: flex;
+        height: 80px;
+        max-width: 100%;
+        position: fixed;
+        animation: none;
+        /* flex-direction: row; */
+    }
+
+    .n-wrapper .n-left {
+        margin-left: -6rem;
+    }
+
+    .n-wrapper #n-right {
+        margin-left: -10rem;
+    }
+
+    .n-button {
+        display: none;
+    }
+
+    .n-wrapper #n-right {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 250px;
+        height: 370px;
+        background-color: rgb(125, 253, 244);
+        padding-left: 2rem;
+    }
+
+    .n-wrapper #n-right.open {
+        right: 0;
+    }
+
+    .n-wrapper ul {
+        position: absolute;
+        top: 10px;
+        flex-direction: column;
+
+
+    }
+
+    .n-wrapper #n-right ul li i {
+        margin-right: 1rem;
+    }
+
+    .n-wrapper #n-right ul li .dropdown-menu {
+        background-color: black;
+
+    }
+
+    .n-wrapper #n-right ul li .dropdown-item {
+        color: white;
+    }
+
+    .n-wrapper #n-right ul li:nth-child(2) i {
+        margin-right: 0.5rem;
+    }
+
+    .n-wrapper #n-right ul li:nth-child(3) i {
+        margin-right: 0.5rem;
+    }
+
+    #menu {
+        display: block;
+    }
+
+    .intro {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        background-color: #08de9e19;
+        align-items: center;
+        min-height: 800px;
+        overflow-x: hidden;
+        /* Hides horizontal scrollbar */
+    }
+
+    .flex-item:nth-child(1) {
+        order: 2;
+        background-color: transparent;
+        flex: 12;
+       
+    }
+
+    .flex-item:nth-child(1) .i-name {
+        margin-left: 2rem;
+        width: 80%;
+        text-align: center;
+        margin-top: -10rem;
+    }
+
+    .flex-item:nth-child(1) .i-name>:nth-child(1) {
+        color: var(--black);
+        font-weight: normal;
+        font-size: 32px;
+        animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+    }
+
+    .flex-item:nth-child(1) .i-name>:nth-child(2) {
+        color: var(--black);
+        font-weight: normal;
+        font-size: 30px;
+        animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+    }
+
+    /* .flex-item:nth-child(1) .i-name>:nth-child(3){
+    
+      } */
+
+    .i-button {
+        display: none;
+    }
+
+    .flex-item:nth-child(2) {
+        order: 1;
+        margin-bottom: 10rem;
+        transform: scale(0.5);
+        margin-left: 2rem;
+        margin-bottom: 15rem;
+    }
+
+
+    /* SERVICES */
+    #Services {
+        /* display: none; */
+        max-width: 100%;
+    }
+
+    .Services-Sheader .Services-h {
+        font-size: 26px;
+    }
+    .Services-Sheader .Services-p {
+        font-size: 20px;
+    }
+    #Services .Services-p {
+        font-size: 17px;
+    }
+
+    .Services-container {
+        display: flex;
+        flex-wrap: wrap;
+        /* flex-direction: column; */
+        align-items: center;
+        max-width: 80%;
+        /* justify-content: space-around; */
+
+    }
+
+
+    .Services-container .oneServices {
+        margin-bottom: 2rem;
+        height: 350px;
+    }
+
+    .Services-details {
+        width: 200px;
+        text-align: center;
+        margin-top: -1.7rem;
+    }
+
+
+    .Stroke-form{
+        width: 80vw;
+        border: 0.5px;
+        
+    }
+    
+    #my-form{
+        font-size: 14px;
+    }
+    #formBtn{
+        background-color: #20c0ac; 
+        color: white; 
+        padding: 10px 10px; 
+        border: none;
+                width: 176px;
+                    align-self: center;
+                    font-size: 20px;
+                    border-radius: 15px;
+                    margin: auto auto;
+                    /* margin-left: 0.3rem; */
+                    margin-top: 2rem;    }
+
+
+    /* REsult */
+
+
+    .checkResult{
+        width: 80vw;
+        min-height: 200px;
+
+    }
+
+    /* Doctors */
+    .doctors{
+        width: 100vw;
+    }
+    .doctorsContainer{
+        align-items: center;
+        justify-content: center;
+        margin-left: -2rem;
+    }
+    .doctorsContainer p{
+        font-size: 40px !important;
+        margin-left: 1rem !important;
+        text-align: center;
+    }
+    .doctorsContainer #doctorT2{
+        font-size: 40px !important;
+        margin-left: 1rem !important;
+        text-align: center;
+        width: 290px;
+    }
+
+    .swiper-container {
+width: 100vw;
+        margin-left: -2rem;
+
+    }
+    .swiper-wrapper{
+       margin-left: -3rem;
+    }
+
+    /* .swiper-container .swiper-wrapper #swiper-slide{
+        width: 200px;
+    } */
+    .swiper-slide {
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 380px;
+            box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+            width: 150px;
+        }
+    .footer {
+        max-width: 100%;
+        justify-content: left;
+
+    }
+
+    .footer .footer-container {
+        gap: 0;
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        margin-left: 2rem;
+    }
+
+    .footer .left img {
+        width: 300px;
+        height: 150px;
+    }
+
+    .footer-container h5 {}
+
+    .mid,
+    .right {
+        margin-bottom: 1rem;
+    }
+
+    .footer .footer-container ul {
+        margin-top: -0.5rem;
+    }
+
+    .footer .footer-container li {
+        font-size: 22px;
+        margin-left: 1.5rem;
+        list-style: disc;
+    }
+}
     </style>
 </head>
 
@@ -163,63 +467,62 @@
         <div class="n-wrapper" id='Navebar'>
             <div class="n-left">
                 <div class="n-logo">
-                    <img src="static/images/logo.png" />
-                    <P><a href="/" style="text-decoration: none;  color:black;"><span style="color: #08de9d;;">Sh</span>efa<span style="color: #08de9d;;">a</span></a></P>
+                    <img src="../static/images/mLogo.png" />
+                    <!-- <P><a href="/" style="text-decoration: none;  color:black;"><span style="color: #08de9d;;">Sh</span>efa<span style="color: #08de9d;;">a</span></a></P> -->
                 </div>
                 <Toggle />
             </div>
-            <div class="n-right">
+            <div class="n-right" id="n-right">
                 <div class="u-list">
                     <ul>
                         <li>
-                            <i class="fa-solid fa-house"></i>
-                            <a href="/" >Home</a></li>
+                            
+                            <a href="/"  ><i class="fa-solid fa-house"></i>Home</a></li>
                         <li class="nav-item dropdown" >
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa-solid fa-robot"></i>
                                 Detector
                               </a>
                               <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/ecg_mi">ECG</a></li>
-                                <li><a class="dropdown-item" href="/stroke">Stroke</a></li>
-                                <li><a class="dropdown-item" href="/chd">CHD</a></li>
+                                <li><a class="dropdown-item" href="/ecg_mi" >ECG</a></li>
+                                <li><a class="dropdown-item" href="/stroke" >Stroke</a></li>
+                                <li><a class="dropdown-item" href="/chd" >CHD</a></li>
                               </ul>
                         </li>
                         <li class="nav-item dropdown" >
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa-solid fa-notes-medical"></i>
                                 Analysis
                               </a>
                               <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="/stroke_analysis">Stroke</a></li>
-                                <li><a class="dropdown-item" href="/chd_analysis">CHD</a></li>
+                                <li><a class="dropdown-item" href="/chd_analysis" >CHD</a></li>
                               </ul>
                         </li>
                         <li>
-                            <i class="fa-solid fa-circle-info" ></i>
-                            <a href="/about">About</a></li>
+                            
+                            <a href="/about" ><i class="fa-solid fa-circle-info" ></i>About</a></li>
                             <li>
-                                <i class="fa-solid fa-notes-medical"></i>
-                                <a href="/chat" >Chatbot</a></li>
+                                
+                                <a href="/chat"><i class="fa-solid fa-notes-medical"></i>Chatbot</a></li>
                         <!-- <li style="margin-left: 17rem; "><a>Schedule</a></li> -->
                         <button class="button n-button" >
-                            <a href="index.html" style="text-decoration: none; color: #20c0ac;">Get Started</a>
+                            <a href="/" style="text-decoration: none; color: #20c0ac;">Get Started</a>
                             
                         </button>
-                       
-                       
                         <select class="custom-select">
-                            <option value="en"  data-lng="english">English </option>
+                            <option value="en"  data-lng="english" selected>English </option>
                             <option value="ar" data-lng="arabic"> Arabic</option>
                         </select>
 
 
                 </div>
             </div>
+            <i class="fa-solid fa-bars " id="menu" style="transform: scale(1.7); margin-right: 5px; color: black;" ></i>
         </div>
 
         <div class='intro '>
-            <div class="i-left">
+            <div class="i-left flex-item">
                 <div class="i-name">
                     <span>Check Your Heart</span>
                     <span>Health Today</span>
@@ -236,7 +539,7 @@
                </div> -->
 
             </div>
-            <div class="i-right">
+            <div class="i-right flex-item">
                 <img src="../static/images/Stroke Detector.png" alt="" id="introImg" class="animate-on-scroll"/>
 
             </div>
@@ -263,8 +566,8 @@
                         <!-- <option selected>Open this select menu</option> -->
                         <option value="1" data-lng="private">Private</option>
                         <option value="2" data-lng="SelfEmployed"> Self-Employed</option>
-                        <option value="3" data-lng="govtJob">Govt_job, Children</option>
-                        <!-- <option value="3" data-lng="children">Children</option> -->
+                        <option value="3" data-lng="govtJob">Govt_job</option>
+                        <option value="3" data-lng="children">Children</option>
                         <option value="4" data-lng="NeverWorked">Never_Worked</option>
                     </select>
               
@@ -326,8 +629,7 @@
                   <label class="form-check-label" for="exampleCheck1">Check me out</label>
                 </div> -->
                 <button type="submit"  value="Check your Heart" class="subBtn" id="formBtn" data-lng="formCheck"
-                style="background-color: #20c0ac; color: white; padding: 7px; border: none;
-                width: 35%;  align-self: center; font-size: 26px; border-radius: 15px; margin: auto auto; margin-left: 14.2rem; margin-top: 2rem;" >Check Your Heart</button>               </form>
+              >Check Your Heart</button>               </form>
         </div>
 
         <!-- Result Secion -->
@@ -346,8 +648,8 @@
 <div class="doctors">
     <div class="doctorsContainer">
     <!-- <p style="color: rgb(0, 179, 255); font-size: 22px;">Doctors</p> -->
-    <p style="font-size: 40px; margin-top: -1rem;" data-lng="meetDr"> Meet Our</p>
-    <p style="font-size: 45px; margin-top: -1.5rem;" data-lng="topDr"> <span style="color: #20c0ac;"> Top Rated </span>Doctors</p>
+    <p id="doctorT1" style="font-size: 40px; margin-top: -1rem;" data-lng="meetDr"> Meet Our</p>
+    <p id="doctorT2" style="font-size: 45px; margin-top: -1.5rem;" data-lng="topDr"> <span style="color: #20c0ac;"> Top Rated </span>Doctors</p>
     
 </div>
 
@@ -356,7 +658,7 @@
 
         {% for doctor in doctors %}
 
-        <div class="swiper-slide">
+        <div class="swiper-slide" id="swiper-slide">
             <img src="{{doctor.image}}" alt="Card Image 1">
             <div class="card-content">
                 <h3 > {{doctor.name}}</h3>
@@ -366,6 +668,8 @@
             <button class="card-btn">Book Appointment</button>
 
         </div>
+
+        
 
         {% endfor %}
         
@@ -421,47 +725,36 @@ document.getElementById("homeBtn").addEventListener("click", function() {
   document.getElementById("Services-Sheader").scrollIntoView({ behavior: "smooth" });
 });
 
-function handleSubmit() {
-  event.preventDefault(); // Prevent default form submission
-
-  const formData = new FormData(document.getElementById("my-form"));
-  const urlEncodedData = new URLSearchParams(formData);
-  const jsonData = JSON.stringify(Object.fromEntries(urlEncodedData.entries()));
-
-  fetch("https://grad-app-aab7fc96d900.herokuapp.com/stroke", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: jsonData,
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      // Handle the API response here
-      console.log("API response:", data);
-      // Display the response to the user or use it for further actions
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-      // Handle any errors appropriately
-    });
-}
 
 
 
-
-
-
-
-         // Initialize Swiper
-    const swiper = new Swiper('.swiper-container', {
-        slidesPerView: 3,
-        spaceBetween: 100,
+const width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 600) {
+             // Initialize Swiper
+             const swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        slideWidth: 190, 
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
         },
     });
+  } else {
+         // Initialize Swiper
+         const swiper = new Swiper('.swiper-container', {
+        slidesPerView: 3,
+        spaceBetween: 70,
+        
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+}
+
+
+
 
     
 
